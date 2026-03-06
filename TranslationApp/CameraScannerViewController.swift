@@ -1,8 +1,8 @@
 //
 //  CameraScannerViewController.swift
-//  LiveTextAPISample
+//  TranslationApp
 //
-//  Created by elka belaya  on 09.02.2026.
+//  Created by elka belaya  on 03.03.2026.
 //
 
 import SwiftUI
@@ -52,8 +52,6 @@ struct CameraScannerViewController: UIViewControllerRepresentable {
                 switch item {
                     case .text(let text):
                         parent.scanResult = text.transcript
-                    case .barcode(let code):
-                        parent.scanResult = code.payloadStringValue ?? ""
                     default:
                         break
                 }

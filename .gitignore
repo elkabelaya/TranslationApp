@@ -1,0 +1,65 @@
+DerivedData/
+build/
+*.xcodeproj/xcuserdata/
+*.xcodeproj/project.xcworkspace/
+
+# 2. xcdebugger, logs
+*.xcuserstate
+*.xcscmblueprint
+
+# 3. Swift Package Manager
+.build/
+Package.resolved
+
+# 4. CocoaPods
+Pods/
+*.podspec
+*.xcworkspace/
+
+# 5. Carthage
+Carthage/Build/
+Carthage/Checkouts/
+Carthage/Carthage.xcconfig
+
+# 6. Fastlane
+fastlane/report.xml
+fastlane/Preview.html
+fastlane/screenshots/
+fastlane/test_output/
+
+# 7. Build artifacts for CI
+*.ipa
+*.dSYM.zip
+*.dSYM/
+*.xcarchive
+
+# 8. SwiftGen / Sourcery generated files (если применимо)
+Generated/
+*Generated.swift
+
+# 9. Xcode Cloud / GitHub Actions
+.xcactivitystate/
+xcodecloud/
+
+# 10. User settings & scheme files (не нужны в репозитории)
+*.xcuserstate
+*.xcscheme
+*~.xcodeproj/*.pbxuser
+
+# 11. IDE & OS files
+.DS_Store
+*.swp
+*.swo
+*~.orig
+
+# 12. Backup & temp files created by Xcode
+*.tmp
+*.bak
+*.backup
+
+# 13. SwiftLint / SwiftFormat configs (если храните локально, оставьте)
+# .swiftlint.yml
+# .swiftformat
+
+# 14. Localized strings (если генерируются)
+*.strings

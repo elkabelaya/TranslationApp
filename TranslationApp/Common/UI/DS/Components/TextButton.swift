@@ -1,0 +1,32 @@
+//
+//  TextButton.swift
+//  TranslationApp
+//
+//  Created by elka belaya  on 04.03.2026.
+//
+
+import SwiftUI
+
+struct TextButton: View {
+    let key: String
+    let font: Font
+    let color: Color
+    let action:() -> Void
+    
+    init(_ key: String,
+         _ font: Font,
+         _ color: Color,
+         _ action: @escaping () -> Void) {
+        self.key = key
+        self.font = font
+        self.color = color
+        self.action = action
+    }
+    
+    var body: some View {
+        Button(action: action) {
+            Text(key)
+                .appStyle(font, color)
+        }
+    }
+ }

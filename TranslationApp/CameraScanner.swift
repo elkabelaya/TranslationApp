@@ -1,8 +1,8 @@
 //
 //  CameraScanner.swift
-//  LiveTextAPISample
+//  TranslationApp
 //
-//  Created by elka belaya  on 09.02.2026.
+//  Created by elka belaya  on 03.03.2026.
 //
 import SwiftUI
 
