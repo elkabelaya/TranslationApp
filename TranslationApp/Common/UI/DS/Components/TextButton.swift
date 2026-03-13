@@ -30,3 +30,10 @@ struct TextButton: View {
         }
     }
  }
+
+#Preview(traits: .fixedLayout(width: 300, height: 100)) {
+    VStack(alignment: .leading, spacing: 8) {
+        TextButton("test", .textXs, .appAccentBackground) {}
+        TextButton("test", .titleM, .appAccentBackground) {}
+    }
+}

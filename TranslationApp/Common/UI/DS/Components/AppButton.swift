@@ -24,7 +24,7 @@ struct PrimaryButtonStyle: ButtonStyle {
             .lineSpacing(20)
             .foregroundStyle(.appOnAccentText)
             .background(.appAccentBackground)
-            .cornerRadius(AppDimens.Corners.xxxl.rawValue)
+            .cornerRadius(.xxxl)
             .scaleEffect(configuration.isPressed ? 0.9 : 1)
             .animation(.smooth, value: configuration.isPressed)
     }

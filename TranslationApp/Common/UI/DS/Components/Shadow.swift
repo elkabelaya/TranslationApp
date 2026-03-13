@@ -26,3 +26,18 @@ extension View {
         modifier(Shadow(y: -1))
     }
 }
+
+
+#Preview(traits: .fixedLayout(width: 300, height: 100)) {
+    HStack(spacing: 24) {
+        Rectangle()
+            .fill(.appSecondaryBackground)
+            .frame(width: 100, height: 100)
+            .downShadow()
+        
+        Rectangle()
+            .fill(.appSecondaryBackground)
+            .frame(width: 100, height: 100)
+            .upShadow()
+    }
+}

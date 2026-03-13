@@ -6,12 +6,15 @@
 //
 
 import SwiftUI
+import SwiftData
 
 @main
 struct TranslationApp: App {
     var body: some Scene {
-        WindowGroup {
-            MainView(viewModel: MainViewModel())
+        WindowGroup { 
+            ContentView()
+                
         }
+        .modelContainer(for: FavoriteTranslation.self)
     }
 }

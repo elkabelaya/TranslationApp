@@ -9,8 +9,9 @@ import SwiftUI
 import VisionKit
 
 struct TranslateCardView: View {
-     var lngName: String
-    @Binding var translation: String
+     var lngName: String?
+     var translation: String
+     var isFavorite: Bool
      let onLngClick: () -> Void
      let onSpeakerClick: () -> Void
      let onCopyClick: () -> Void
@@ -20,7 +21,7 @@ struct TranslateCardView: View {
     var body: some View {
         VStack(spacing: .m) {
             HStack(alignment: .center, spacing: .s ) {
-                TextButton(lngName, .titleM, .appSecondaryText, onLngClick)
+                TextButton(lngName ?? "", .titleM, .appSecondaryText, onLngClick)
                 IconButton(.icSpeaker, .s, .appSecondaryText, onSpeakerClick)
                 Spacer()
             }
@@ -33,8 +34,12 @@ struct TranslateCardView: View {
             HStack(spacing: .l) {
                 Spacer()
                 IconButton(.icCopy, .s, .appSecondaryText, onSpeakerClick)
-                IconButton(.icShare, .s, .appSecondaryText, onSpeakerClick)
-                IconButton(.icStarBordered, .s, .appSecondaryText, onSpeakerClick)
+                IconButton(.icShare, .s, .appSecondaryText, onShareClick)
+                IconButton(
+                    isFavorite ? .icStarFilled :.icStarBordered,
+                        .s,
+                        .appSecondaryText, onFavoriteClick
+                )
             }
             
         }
@@ -51,7 +56,8 @@ struct TranslateCardView: View {
     VStack {
         TranslateCardView(
             lngName: lngName,
-            translation: $input,
+            translation: input,
+            isFavorite: false,
             onLngClick: {},
             onSpeakerClick: {},
             onCopyClick: {},
@@ -60,6 +66,17 @@ struct TranslateCardView: View {
         )
         .frame(width: 300, height: 200)
         
+        TranslateCardView(
+            lngName: lngName,
+            translation: input,
+            isFavorite: true,
+            onLngClick: {},
+            onSpeakerClick: {},
+            onCopyClick: {},
+            onShareClick: {},
+            onFavoriteClick: {}
+        )
+        .frame(width: 300, height: 200)
         
     }
 }

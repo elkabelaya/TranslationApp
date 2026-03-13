@@ -18,4 +18,9 @@ extension View {
                                 bottom: bottom.rawValue,
                                 trailing: trailing.rawValue))
     }
+    
+    func cornerRadius(_ radius: AppDimens.Corners ) -> some View {
+        self
+            .cornerRadius(radius.rawValue)
+    }
 }

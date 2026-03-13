@@ -93,10 +93,11 @@ extension View {
 }
 
 #Preview {
-    @Previewable @State var selectedIndex = 1
+    @Previewable @State var selectedIndex = 2
     Text("Any View")
         .tabbar(selectedIndex: $selectedIndex, items: [
             TabItem(type: .icon, title: "item1", icon: .icCopy),
             TabItem(type: .filledIcon, title: "item2", icon: .icMicrophone),
+            TabItem(type: .icon, title: "item3", icon: .icMicrophone),
     ])
 }

@@ -8,20 +8,19 @@
 import SwiftUI
 
 struct LanguagesCardView: View {
-    var lngFrom: String
-    var lngTo: String
+    var lngFrom: String?
+    var lngTo: String?
     let onLngFromClick: () -> Void
     let onLngToClick: () -> Void
     let onSwapClick: () -> Void
-    let onSpeakerClick: () -> Void
     
     var body: some View {
         HStack(alignment: .center, spacing: .s ) {
-            TextButton(lngFrom, .titleM, .appPrimaryText, onLngFromClick)
+            TextButton(lngFrom ?? "Select", .titleM, .appPrimaryText, onLngFromClick)
             Spacer()
-            IconButton(.icSwap, .s, .appSecondaryText, onSpeakerClick)
+            IconButton(.icSwap, .s, .appSecondaryText, onSwapClick)
             Spacer()
-            TextButton(lngTo, .titleM, .appPrimaryText, onLngToClick)
+            TextButton(lngTo ?? "Select", .titleM, .appPrimaryText, onLngToClick)
             
         }
         .paddings(.s,.xxl,.s,.xxl)
@@ -38,8 +37,7 @@ struct LanguagesCardView: View {
                       lngTo: lngToName,
                       onLngFromClick: {},
                       onLngToClick: {},
-                      onSwapClick: {},
-                      onSpeakerClick: {}
+                      onSwapClick: {}
     )
     .frame(width: 300, height: 200)
 }

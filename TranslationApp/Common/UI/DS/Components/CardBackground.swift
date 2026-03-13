@@ -24,3 +24,17 @@ extension View {
         modifier(CardBackground(radius: corners.rawValue))
     }
 }
+
+#Preview {
+    VStack(spacing: 24) {
+        Rectangle()
+            .fill(.appSecondaryBackground)
+            .frame(width: 200, height: 100)
+            .cardBackground(corners: .xs)
+        
+        Rectangle()
+            .fill(.appSecondaryBackground)
+            .frame(width: 200, height: 100)
+            .cardBackground(corners: .xxl)
+    }
+}

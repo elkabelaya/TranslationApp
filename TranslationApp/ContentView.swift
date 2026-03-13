@@ -16,11 +16,46 @@ enum Tabs: Int {
 
 struct ContentView: View {
     @State var selectedTab: Int = Tabs.main.rawValue
+    @Environment(\.modelContext) var modelContext
     var body: some View {
         ZStack {
             switch selectedTab {
             case Tabs.main.rawValue:
-                MainView(viewModel: MainViewModel())
+                //TODO di
+                MainView(
+                    viewModel: MainViewModel(
+                        translateIntractor: TranslateInteractor(
+                            languagesRepository: LocaleLanguageRepository(
+                                localeProvider: SystemLocaleProvider()
+                            ),
+                            translationRepository: TranslationSessionRepository(
+                                mapper:LngMapper()
+                            ),
+                            settingsRpository: UserDefaultsSettingsRepository(
+                                userDefaults: UserDefaults.standard,
+                                mapper: LanguageMapper(),
+                                coder: JSONCoder(
+                                    encoder: JSONEncoder(),
+                                    decoder: JSONDecoder()
+                                )
+                            )
+                        ),
+                        favoritesInteractor: MainFavoritesInteractor(
+                            repository: SwiftDataFavoritesRepository(
+                                context: modelContext,
+                                mapper: TranslationMapper()
+                            )
+                        ),
+                        voiceInteractor: CommonVoiceInteractor(
+                            recogniserRepository: SFSpeechRecognizerRepository(), synthesizerRepository: AVFoundationSpeechSynthesizerRepository(),
+                            soundRepository: BundleSoundRepository(
+                                bundle: Bundle.main,
+                                audioPlayerCreator: DefaultAudioPlayerCreator()
+                            )
+                        )
+                        
+                    )
+                )
             default:
                 Text("TODO")
             }

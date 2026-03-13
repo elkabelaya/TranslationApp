@@ -33,3 +33,10 @@ struct IconButton: View {
         }
     }
  }
+
+#Preview(traits: .fixedLayout(width: 300, height: 100)) {
+    VStack(alignment: .leading, spacing: 8) {
+        IconButton(.icCopy, .s, .appAccentText){}
+        IconButton(.icCopy, .m, .appSecondaryText){}
+    }
+}
