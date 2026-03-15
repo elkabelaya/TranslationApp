@@ -15,6 +15,8 @@ struct MainView<ViewModel: MainViewModelProtocol>: View {
         VStack(spacing:.l) {
             LanguagesCardView(lngFrom: viewModel.fromLng?.name,
                               lngTo: viewModel.toLng?.name,
+                              iconFrom: viewModel.fromIconPath,
+                              iconTo: viewModel.toIconPath,
                               onLngFromClick: viewModel.onLngFromClick,
                               onLngToClick: viewModel.onLngToClick,
                               onSwapClick: viewModel.onSwapClick
@@ -95,3 +97,6 @@ struct MainView<ViewModel: MainViewModelProtocol>: View {
     showSheet: true)
     )
 }
+
+
+

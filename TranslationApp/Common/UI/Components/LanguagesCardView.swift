@@ -10,23 +10,40 @@ import SwiftUI
 struct LanguagesCardView: View {
     var lngFrom: String?
     var lngTo: String?
+    var iconFrom: String?
+    var iconTo: String?
     let onLngFromClick: () -> Void
     let onLngToClick: () -> Void
     let onSwapClick: () -> Void
     
     var body: some View {
         HStack(alignment: .center, spacing: .s ) {
+            lngImage(iconFrom)
             TextButton(lngFrom ?? "Select", .titleM, .appPrimaryText, onLngFromClick)
             Spacer()
             IconButton(.icSwap, .s, .appSecondaryText, onSwapClick)
             Spacer()
             TextButton(lngTo ?? "Select", .titleM, .appPrimaryText, onLngToClick)
-            
+            lngImage(iconTo)
         }
-        .paddings(.s,.xxl,.s,.xxl)
+        .paddings(.s,.xs,.s,.xs)
         .cardBackground(corners: .m)
         .downShadow()
         
+    }
+    
+    @ViewBuilder
+    private func lngImage(_ path: String?) -> some View {
+        if let path {
+            SVGImageFromFile(filePath: path)
+                .frame(
+                    width: AppDimens.Icon.s.rawValue,
+                    height: AppDimens.Icon.s.rawValue)
+                .clipShape(Circle())
+        } else {
+            Spacer()
+                .frame(width: AppDimens.Icon.s.rawValue)
+        }
     }
 }
 

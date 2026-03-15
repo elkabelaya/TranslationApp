@@ -7,7 +7,7 @@
 
 import Foundation
 
-protocol EncoderProtocol {
+protocol EncoderProtocol: Sendable {
     func encode<T: Encodable>(_ value: T) throws -> Data
 }
 

@@ -38,6 +38,23 @@ struct ContentView: View {
                                     encoder: JSONEncoder(),
                                     decoder: JSONDecoder()
                                 )
+                            ),
+                            remoteIconsRepository: NetworkContryIconsRemoteRepository(
+                                iconsNetwork: URLSessionNetwork(
+                                    baseUrl: "https://flagicons.lipis.dev/",
+                                    coder: JSONCoder(
+                                        encoder: JSONEncoder(),
+                                        decoder: JSONDecoder()),
+                                    urlSession: URLSession.shared
+                                ),
+                                mapper: LanguageCountryMapper()
+                            ),
+                            localIconsRepository: FileContryIconsLocalRepository(
+                                files: Files(
+                                    fileManager: FileManager.default,
+                                    directory: .icons
+                                ),
+                                ext: .svg
                             )
                         ),
                         favoritesInteractor: MainFavoritesInteractor(

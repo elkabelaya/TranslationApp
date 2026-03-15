@@ -9,14 +9,20 @@ final class TranslateInteractor: TranslateInteractorProtocol {
     let languagesRepository: LanguagesRepositoryProtocol
     let translationRepository: TranlationRepositoryProtocol
     let settingsRpository: SettingsRepositoryProtocol
+    let remoteIconsRepository: ContryIconsRemoteRepositoryProtocol
+    let localIconsRepository: ContryIconsLocalRepositoryProtocol
 
     
     init(languagesRepository: LanguagesRepositoryProtocol,
          translationRepository: TranlationRepositoryProtocol,
-         settingsRpository: SettingsRepositoryProtocol) {
+         settingsRpository: SettingsRepositoryProtocol,
+         remoteIconsRepository: ContryIconsRemoteRepositoryProtocol,
+         localIconsRepository: ContryIconsLocalRepositoryProtocol) {
         self.languagesRepository = languagesRepository
         self.translationRepository = translationRepository
         self.settingsRpository = settingsRpository
+        self.remoteIconsRepository = remoteIconsRepository
+        self.localIconsRepository = localIconsRepository
         
     }
     
@@ -24,6 +30,16 @@ final class TranslateInteractor: TranslateInteractorProtocol {
         return languagesRepository.getList().filter{
             $0.name.lowercased().contains(filter.lowercased())
         }
+    }
+    
+    func getIconPath(for lng: Language) async throws -> String {
+        if await !localIconsRepository.hasIcon(lng: lng.id) {
+            try await localIconsRepository.save(
+                iconData: try await remoteIconsRepository.getImage(lng: lng.id),
+                lng: lng.id)
+        }
+        
+        return await localIconsRepository.getIconPath(lng: lng.id)
     }
     
     func translate(text: String, from: Language, to: Language) async throws -> String {

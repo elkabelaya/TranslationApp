@@ -30,6 +30,8 @@ final class MainViewModel: MainViewModelProtocol {
     
     var fromLng: Language?
     var toLng: Language?
+    var fromIconPath: String?
+    var toIconPath: String?
     var fromText: String = ""
     var toText: String = ""
     var isFavorite: Bool = false
@@ -47,6 +49,13 @@ final class MainViewModel: MainViewModelProtocol {
     private func setup() {
         Task {
             (fromLng, toLng) = await translateIntractor.savedLanguages()
+            if let fromLng {
+                fromIconPath = try await translateIntractor.getIconPath(for: fromLng)
+            }
+            
+            if let toLng {
+                toIconPath = try await translateIntractor.getIconPath(for: toLng)
+            }
         }
         filterPublisher
             .debounce(for: 1, scheduler: DispatchQueue.main)
@@ -80,10 +89,13 @@ final class MainViewModel: MainViewModelProtocol {
     
     func onSwapClick (){
         let tempFromLng = fromLng
+        let tempFromIconPath = fromIconPath
         fromLng = toLng
         toLng = tempFromLng
         fromText = toText
         toText = ""
+        fromIconPath = toIconPath
+        toIconPath = fromIconPath
     }
     
     func onFromSpeakerClick() {

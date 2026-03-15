@@ -11,6 +11,7 @@ enum AppDimens {
     enum Corners: CGFloat {
         case xs = 12.0
         case m = 16.0
+        case l = 24.0
         case xxl = 50.0
         case xxxl = 100.0
     }

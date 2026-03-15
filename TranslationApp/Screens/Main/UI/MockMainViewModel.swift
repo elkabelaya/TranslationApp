@@ -9,6 +9,10 @@ import SwiftUI
 
 @Observable
 final class MockMainViewModel: MainViewModelProtocol {
+    var fromIconPath: String?
+    
+    var toIconPath: String?
+    
     
     func onToFavoriteClick() {
     

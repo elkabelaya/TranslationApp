@@ -10,6 +10,8 @@ import SwiftUI
 protocol MainViewModelProtocol: Observable {
     var fromLng: Language? {get}
     var toLng: Language? { get }
+    var fromIconPath: String? {get}
+    var toIconPath: String? {get}
     var fromText: String { get set }
     var toText: String { get }
     var filter: String { get set }

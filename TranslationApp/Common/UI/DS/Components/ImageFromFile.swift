@@ -1,0 +1,31 @@
+//
+//  ImageFromFile.swift
+//  TranslationApp
+//
+//  Created by elka belaya  on 15.03.2026.
+//
+
+import SwiftUI
+import UIKit
+
+struct SVGImageFromFile: View {
+    let filePath: String
+    @State private var uiImage: UIImage?
+    
+    var body: some View {
+        Image(uiImage: uiImage ?? UIImage())
+        .resizable()
+        .onAppear {
+                if let url = URL(string: filePath),
+                   let data = try? Data(contentsOf: url),
+                   let svg = SVG(data){
+                    let render = UIGraphicsImageRenderer(size: svg.size)
+                                uiImage = render.image { context in
+                                    svg.draw(in: context.cgContext)
+                                }
+                    
+                }
+            
+        }
+    }
+}

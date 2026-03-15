@@ -72,6 +72,18 @@
 		8F9C0A8E2F63E61000226A67 /* BundleSoundRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F9C0A8D2F63E61000226A67 /* BundleSoundRepository.swift */; };
 		8F9C0A942F63EC7100226A67 /* beep-07a.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8F9C0A932F63EC7100226A67 /* beep-07a.mp3 */; };
 		8F9C0A962F63FB5A00226A67 /* PulseAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F9C0A952F63FB5A00226A67 /* PulseAnimation.swift */; };
+		8F9C0A982F6459C400226A67 /* ContryIconsLocalRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F9C0A972F6459C400226A67 /* ContryIconsLocalRepositoryProtocol.swift */; };
+		8F9C0A9A2F645C5E00226A67 /* ContryIconsRemoteRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F9C0A992F645C5E00226A67 /* ContryIconsRemoteRepositoryProtocol.swift */; };
+		8F9C0A9D2F6510B800226A67 /* URLSessionNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F9C0A9C2F6510A300226A67 /* URLSessionNetwork.swift */; };
+		8F9C0A9F2F657DFC00226A67 /* NetworkContryIconsRemoteRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F9C0A9E2F657DE600226A67 /* NetworkContryIconsRemoteRepository.swift */; };
+		8F9C0AA12F657F7F00226A67 /* NetworkProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F9C0AA02F657F7F00226A67 /* NetworkProtocol.swift */; };
+		8F9C0AAF2F65B81800226A67 /* LanguageCountryMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F9C0AAE2F65B81400226A67 /* LanguageCountryMapper.swift */; };
+		8F9C0AB12F666BC800226A67 /* FileContryIconsLocalRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F9C0AB02F666BBE00226A67 /* FileContryIconsLocalRepository.swift */; };
+		8F9C0AB42F66753F00226A67 /* FileConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F9C0AB32F66753A00226A67 /* FileConstants.swift */; };
+		8F9C0AB72F6675CB00226A67 /* FilesProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F9C0AB52F66755100226A67 /* FilesProtocol.swift */; };
+		8F9C0AB82F667E7600226A67 /* Files.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F9C0AB62F66757300226A67 /* Files.swift */; };
+		8F9C0ABA2F669E3000226A67 /* ImageFromFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F9C0AB92F669E1C00226A67 /* ImageFromFile.swift */; };
+		8F9C0ABC2F66B19F00226A67 /* SVG.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F9C0ABB2F66B19F00226A67 /* SVG.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -140,6 +152,18 @@
 		8F9C0A8D2F63E61000226A67 /* BundleSoundRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BundleSoundRepository.swift; sourceTree = "<group>"; };
 		8F9C0A932F63EC7100226A67 /* beep-07a.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "beep-07a.mp3"; sourceTree = "<group>"; };
 		8F9C0A952F63FB5A00226A67 /* PulseAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PulseAnimation.swift; sourceTree = "<group>"; };
+		8F9C0A972F6459C400226A67 /* ContryIconsLocalRepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContryIconsLocalRepositoryProtocol.swift; sourceTree = "<group>"; };
+		8F9C0A992F645C5E00226A67 /* ContryIconsRemoteRepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContryIconsRemoteRepositoryProtocol.swift; sourceTree = "<group>"; };
+		8F9C0A9C2F6510A300226A67 /* URLSessionNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionNetwork.swift; sourceTree = "<group>"; };
+		8F9C0A9E2F657DE600226A67 /* NetworkContryIconsRemoteRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkContryIconsRemoteRepository.swift; sourceTree = "<group>"; };
+		8F9C0AA02F657F7F00226A67 /* NetworkProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkProtocol.swift; sourceTree = "<group>"; };
+		8F9C0AAE2F65B81400226A67 /* LanguageCountryMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageCountryMapper.swift; sourceTree = "<group>"; };
+		8F9C0AB02F666BBE00226A67 /* FileContryIconsLocalRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileContryIconsLocalRepository.swift; sourceTree = "<group>"; };
+		8F9C0AB32F66753A00226A67 /* FileConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileConstants.swift; sourceTree = "<group>"; };
+		8F9C0AB52F66755100226A67 /* FilesProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilesProtocol.swift; sourceTree = "<group>"; };
+		8F9C0AB62F66757300226A67 /* Files.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Files.swift; sourceTree = "<group>"; };
+		8F9C0AB92F669E1C00226A67 /* ImageFromFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageFromFile.swift; sourceTree = "<group>"; };
+		8F9C0ABB2F66B19F00226A67 /* SVG.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SVG.swift; sourceTree = "<group>"; };
 		8FFA15EE2F3A078A00A99CD0 /* TranslationApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TranslationApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -253,6 +277,7 @@
 		8F07DD8D2F6160F100A44ED7 /* Mapper */ = {
 			isa = PBXGroup;
 			children = (
+				8F9C0AAE2F65B81400226A67 /* LanguageCountryMapper.swift */,
 				8F07DD942F61633600A44ED7 /* JSONCoder.swift */,
 				8F07DD902F61616E00A44ED7 /* LanguageMapper.swift */,
 				8F07DD8E2F61611B00A44ED7 /* TranslationMapper.swift */,
@@ -317,6 +342,8 @@
 				8F49EB2E2F59B82B0089A44F /* SpeachRecognizerRepositoryProtocol.swift */,
 				8F07DD722F5ECC2F00A44ED7 /* SpeechSynthesizerRepositoryProtocol.swift */,
 				8F9C0A8B2F63E4F700226A67 /* SoundRepositoryProtocol.swift */,
+				8F9C0A972F6459C400226A67 /* ContryIconsLocalRepositoryProtocol.swift */,
+				8F9C0A992F645C5E00226A67 /* ContryIconsRemoteRepositoryProtocol.swift */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -324,7 +351,11 @@
 		8F49EB312F59B99E0089A44F /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				8F9C0AB22F66751000226A67 /* Files */,
+				8F9C0A9B2F65104A00226A67 /* Network */,
 				8F49EB322F59B9A50089A44F /* Repository */,
+				8F9C0A8F2F63E71000226A67 /* Bundle */,
+				8F07DD652F5D769500A44ED7 /* SwiftData */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -332,13 +363,13 @@
 		8F49EB322F59B9A50089A44F /* Repository */ = {
 			isa = PBXGroup;
 			children = (
-				8F9C0A8F2F63E71000226A67 /* Bundle */,
+				8F9C0AB02F666BBE00226A67 /* FileContryIconsLocalRepository.swift */,
+				8F9C0A9E2F657DE600226A67 /* NetworkContryIconsRemoteRepository.swift */,
 				8F07DD922F61631600A44ED7 /* CoderProtocol.swift */,
 				8F07DD8D2F6160F100A44ED7 /* Mapper */,
 				8F07DD8A2F6160A200A44ED7 /* Dto */,
 				8F07DD882F615C3C00A44ED7 /* UserDefaultsSettingsRepository.swift */,
 				8F07DD632F5D75D400A44ED7 /* SwiftDataFavoritesRepository.swift */,
-				8F07DD652F5D769500A44ED7 /* SwiftData */,
 				8F49EB332F59B9AF0089A44F /* SFSpeechRecognizerRepository.swift */,
 				8F07DD532F5AF79100A44ED7 /* LocaleLanguageRepository.swift */,
 				8F07DD702F5EB7D500A44ED7 /* AVFoundationSpeechSynthesizerRepository.swift */,
@@ -360,7 +391,6 @@
 		8F69321F2F5850B800C0432E /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				8F07DD5D2F5C8EFA00A44ED7 /* SearchBar.swift */,
 				8F6932262F58AAF500C0432E /* TabBar.swift */,
 				8F6932242F58725500C0432E /* ToolBar.swift */,
 				8F69321A2F584F1800C0432E /* LanguagesCardView.swift */,
@@ -381,6 +411,7 @@
 		8F8CDBB12F57070C006AB03A /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				8F07DD5D2F5C8EFA00A44ED7 /* SearchBar.swift */,
 				8F07DD5B2F5C315500A44ED7 /* AppList.swift */,
 				8F6932142F582A0E00C0432E /* AppButton.swift */,
 				8F6932122F58262000C0432E /* FilledIconButton.swift */,
@@ -389,6 +420,7 @@
 				8F8CDBB62F571497006AB03A /* Shadow.swift */,
 				8F8CDBB42F571291006AB03A /* CardBackground.swift */,
 				8F9C0A952F63FB5A00226A67 /* PulseAnimation.swift */,
+				8F9C0AB92F669E1C00226A67 /* ImageFromFile.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -428,6 +460,7 @@
 				8F6932102F5821F100C0432E /* DimensViewExtensions.swift */,
 				8F8CDBCC2F580A7F006AB03A /* TextExtensions.swift */,
 				8F8CDBCA2F580518006AB03A /* SpacingExtensions.swift */,
+				8F9C0ABB2F66B19F00226A67 /* SVG.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -446,6 +479,25 @@
 				8F9C0A932F63EC7100226A67 /* beep-07a.mp3 */,
 			);
 			path = Sounds;
+			sourceTree = "<group>";
+		};
+		8F9C0A9B2F65104A00226A67 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				8F9C0A9C2F6510A300226A67 /* URLSessionNetwork.swift */,
+				8F9C0AA02F657F7F00226A67 /* NetworkProtocol.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		8F9C0AB22F66751000226A67 /* Files */ = {
+			isa = PBXGroup;
+			children = (
+				8F9C0AB32F66753A00226A67 /* FileConstants.swift */,
+				8F9C0AB52F66755100226A67 /* FilesProtocol.swift */,
+				8F9C0AB62F66757300226A67 /* Files.swift */,
+			);
+			path = Files;
 			sourceTree = "<group>";
 		};
 		8FFA15E52F3A078A00A99CD0 = {
@@ -539,9 +591,11 @@
 			files = (
 				8F07DD6E2F5D8E1700A44ED7 /* SwiftDataFavoritesRepository.swift in Sources */,
 				8F8CDBC82F572AF1006AB03A /* AppFonts.swift in Sources */,
+				8F9C0AA12F657F7F00226A67 /* NetworkProtocol.swift in Sources */,
 				8F3A86E62F56FAFC000CBF7A /* CameraScannerViewController.swift in Sources */,
 				8F8CDBCB2F580520006AB03A /* SpacingExtensions.swift in Sources */,
 				8F07DD6B2F5D7CC400A44ED7 /* MainFavoritesInteractorProtocol.swift in Sources */,
+				8F9C0AB12F666BC800226A67 /* FileContryIconsLocalRepository.swift in Sources */,
 				8F8CDBCF2F580C1E006AB03A /* IconButton.swift in Sources */,
 				8F07DD4E2F5AE32200A44ED7 /* TranslationSessionRepository.swift in Sources */,
 				8F07DD8C2F6160AF00A44ED7 /* LanguageDto.swift in Sources */,
@@ -558,8 +612,11 @@
 				8F49EB2C2F59AD570089A44F /* ConditionalViewExtensions.swift in Sources */,
 				8F3A86E72F56FAFC000CBF7A /* CameraScanner.swift in Sources */,
 				8F9C0A962F63FB5A00226A67 /* PulseAnimation.swift in Sources */,
+				8F9C0AB82F667E7600226A67 /* Files.swift in Sources */,
+				8F9C0ABC2F66B19F00226A67 /* SVG.swift in Sources */,
 				8F8CDBBF2F5718A9006AB03A /* MainViewModelProtocol.swift in Sources */,
 				8F07DD5A2F5B04FD00A44ED7 /* TranslateInteractor.swift in Sources */,
+				8F9C0A9D2F6510B800226A67 /* URLSessionNetwork.swift in Sources */,
 				8F07DD872F615BFF00A44ED7 /* SettingsRepositoryProtocol.swift in Sources */,
 				8F6932232F586E5600C0432E /* MockMainViewModel.swift in Sources */,
 				8F6932132F58262000C0432E /* FilledIconButton.swift in Sources */,
@@ -577,22 +634,29 @@
 				8F07DD502F5AF69600A44ED7 /* LanguagesRepositoryProtocol.swift in Sources */,
 				8F07DD712F5EB7E900A44ED7 /* AVFoundationSpeechSynthesizerRepository.swift in Sources */,
 				8F07DD692F5D7CA200A44ED7 /* MainFavoritesInteractor.swift in Sources */,
+				8F9C0AB42F66753F00226A67 /* FileConstants.swift in Sources */,
 				8F6932112F5821F800C0432E /* DimensViewExtensions.swift in Sources */,
 				8F07DD522F5AF6E200A44ED7 /* Language.swift in Sources */,
 				8F07DD912F61617300A44ED7 /* LanguageMapper.swift in Sources */,
+				8F9C0A9A2F645C5E00226A67 /* ContryIconsRemoteRepositoryProtocol.swift in Sources */,
+				8F9C0AB72F6675CB00226A67 /* FilesProtocol.swift in Sources */,
 				8F07DD542F5AF79100A44ED7 /* LocaleLanguageRepository.swift in Sources */,
+				8F9C0AAF2F65B81800226A67 /* LanguageCountryMapper.swift in Sources */,
 				8F8CDBCD2F580A8B006AB03A /* TextExtensions.swift in Sources */,
+				8F9C0ABA2F669E3000226A67 /* ImageFromFile.swift in Sources */,
 				8F6932212F585C6300C0432E /* TranslateCardView.swift in Sources */,
 				8F3A86E82F56FAFC000CBF7A /* ContentView.swift in Sources */,
 				8F07DD492F5AE29100A44ED7 /* TranlationRepositoryProtocol.swift in Sources */,
 				8F8CDBB72F5714A5006AB03A /* Shadow.swift in Sources */,
 				8F9C0A8C2F63E4F700226A67 /* SoundRepositoryProtocol.swift in Sources */,
+				8F9C0A9F2F657DFC00226A67 /* NetworkContryIconsRemoteRepository.swift in Sources */,
 				8F07DD622F5D756400A44ED7 /* FavoritesRepositoryProtocol.swift in Sources */,
 				8F3A86E92F56FAFC000CBF7A /* TranslationApp.swift in Sources */,
 				8F07DD8F2F61611B00A44ED7 /* TranslationMapper.swift in Sources */,
 				8F07DD762F5ECE8F00A44ED7 /* VoiceInteractorProtocol.swift in Sources */,
 				8F69321B2F584F1800C0432E /* LanguagesCardView.swift in Sources */,
 				8F49EB2F2F59B8530089A44F /* SpeachRecognizerRepositoryProtocol.swift in Sources */,
+				8F9C0A982F6459C400226A67 /* ContryIconsLocalRepositoryProtocol.swift in Sources */,
 			);
 		};
 /* End PBXSourcesBuildPhase section */
