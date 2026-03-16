@@ -40,6 +40,8 @@
 		8F3A86E72F56FAFC000CBF7A /* CameraScanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F3A86DD2F56FAFC000CBF7A /* CameraScanner.swift */; };
 		8F3A86E82F56FAFC000CBF7A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F3A86DF2F56FAFC000CBF7A /* ContentView.swift */; };
 		8F3A86E92F56FAFC000CBF7A /* TranslationApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F3A86E12F56FAFC000CBF7A /* TranslationApp.swift */; };
+		8F3CE6992F67E6E700A221C8 /* ActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F3CE6982F67E6E700A221C8 /* ActivityView.swift */; };
+		8F3CE69B2F67EB5D00A221C8 /* SizeReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F3CE69A2F67EB5D00A221C8 /* SizeReader.swift */; };
 		8F49EB2C2F59AD570089A44F /* ConditionalViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F49EB2B2F59AD450089A44F /* ConditionalViewExtensions.swift */; };
 		8F49EB2F2F59B8530089A44F /* SpeachRecognizerRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F49EB2E2F59B82B0089A44F /* SpeachRecognizerRepositoryProtocol.swift */; };
 		8F49EB342F59B9AF0089A44F /* SFSpeechRecognizerRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F49EB332F59B9AF0089A44F /* SFSpeechRecognizerRepository.swift */; };
@@ -84,6 +86,11 @@
 		8F9C0AB82F667E7600226A67 /* Files.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F9C0AB62F66757300226A67 /* Files.swift */; };
 		8F9C0ABA2F669E3000226A67 /* ImageFromFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F9C0AB92F669E1C00226A67 /* ImageFromFile.swift */; };
 		8F9C0ABC2F66B19F00226A67 /* SVG.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F9C0ABB2F66B19F00226A67 /* SVG.swift */; };
+		8F9C0ABE2F66CCF400226A67 /* CopyRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F9C0ABD2F66CCF400226A67 /* CopyRepositoryProtocol.swift */; };
+		8F9C0AC02F66CD1800226A67 /* PasteboardCopyRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F9C0ABF2F66CD1800226A67 /* PasteboardCopyRepository.swift */; };
+		8F9C0AC22F66D3E000226A67 /* MainShareInteractorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F9C0AC12F66D3E000226A67 /* MainShareInteractorProtocol.swift */; };
+		8F9C0AC42F66D45C00226A67 /* MainShareInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F9C0AC32F66D45C00226A67 /* MainShareInteractor.swift */; };
+		8F9C0AC62F66D6AB00226A67 /* Toast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F9C0AC52F66D6AB00226A67 /* Toast.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -120,6 +127,8 @@
 		8F3A86DF2F56FAFC000CBF7A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		8F3A86E02F56FAFC000CBF7A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8F3A86E12F56FAFC000CBF7A /* TranslationApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslationApp.swift; sourceTree = "<group>"; };
+		8F3CE6982F67E6E700A221C8 /* ActivityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityView.swift; sourceTree = "<group>"; };
+		8F3CE69A2F67EB5D00A221C8 /* SizeReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SizeReader.swift; sourceTree = "<group>"; };
 		8F49EB2B2F59AD450089A44F /* ConditionalViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConditionalViewExtensions.swift; sourceTree = "<group>"; };
 		8F49EB2E2F59B82B0089A44F /* SpeachRecognizerRepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeachRecognizerRepositoryProtocol.swift; sourceTree = "<group>"; };
 		8F49EB332F59B9AF0089A44F /* SFSpeechRecognizerRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFSpeechRecognizerRepository.swift; sourceTree = "<group>"; };
@@ -164,6 +173,11 @@
 		8F9C0AB62F66757300226A67 /* Files.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Files.swift; sourceTree = "<group>"; };
 		8F9C0AB92F669E1C00226A67 /* ImageFromFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageFromFile.swift; sourceTree = "<group>"; };
 		8F9C0ABB2F66B19F00226A67 /* SVG.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SVG.swift; sourceTree = "<group>"; };
+		8F9C0ABD2F66CCF400226A67 /* CopyRepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CopyRepositoryProtocol.swift; sourceTree = "<group>"; };
+		8F9C0ABF2F66CD1800226A67 /* PasteboardCopyRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasteboardCopyRepository.swift; sourceTree = "<group>"; };
+		8F9C0AC12F66D3E000226A67 /* MainShareInteractorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainShareInteractorProtocol.swift; sourceTree = "<group>"; };
+		8F9C0AC32F66D45C00226A67 /* MainShareInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainShareInteractor.swift; sourceTree = "<group>"; };
+		8F9C0AC52F66D6AB00226A67 /* Toast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Toast.swift; sourceTree = "<group>"; };
 		8FFA15EE2F3A078A00A99CD0 /* TranslationApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TranslationApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -227,6 +241,7 @@
 		8F07DD572F5B04DA00A44ED7 /* Api */ = {
 			isa = PBXGroup;
 			children = (
+				8F9C0AC12F66D3E000226A67 /* MainShareInteractorProtocol.swift */,
 				8F07DD6A2F5D7CC400A44ED7 /* MainFavoritesInteractorProtocol.swift */,
 				8F07DD552F5B045E00A44ED7 /* TranslateInteractorProtocol.swift */,
 			);
@@ -236,6 +251,7 @@
 		8F07DD582F5B04F200A44ED7 /* Impl */ = {
 			isa = PBXGroup;
 			children = (
+				8F9C0AC32F66D45C00226A67 /* MainShareInteractor.swift */,
 				8F07DD682F5D7CA200A44ED7 /* MainFavoritesInteractor.swift */,
 				8F07DD592F5B04FD00A44ED7 /* TranslateInteractor.swift */,
 			);
@@ -344,6 +360,7 @@
 				8F9C0A8B2F63E4F700226A67 /* SoundRepositoryProtocol.swift */,
 				8F9C0A972F6459C400226A67 /* ContryIconsLocalRepositoryProtocol.swift */,
 				8F9C0A992F645C5E00226A67 /* ContryIconsRemoteRepositoryProtocol.swift */,
+				8F9C0ABD2F66CCF400226A67 /* CopyRepositoryProtocol.swift */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -374,6 +391,7 @@
 				8F07DD532F5AF79100A44ED7 /* LocaleLanguageRepository.swift */,
 				8F07DD702F5EB7D500A44ED7 /* AVFoundationSpeechSynthesizerRepository.swift */,
 				8F9C0A8D2F63E61000226A67 /* BundleSoundRepository.swift */,
+				8F9C0ABF2F66CD1800226A67 /* PasteboardCopyRepository.swift */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -421,6 +439,8 @@
 				8F8CDBB42F571291006AB03A /* CardBackground.swift */,
 				8F9C0A952F63FB5A00226A67 /* PulseAnimation.swift */,
 				8F9C0AB92F669E1C00226A67 /* ImageFromFile.swift */,
+				8F9C0AC52F66D6AB00226A67 /* Toast.swift */,
+				8F3CE6982F67E6E700A221C8 /* ActivityView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -461,6 +481,7 @@
 				8F8CDBCC2F580A7F006AB03A /* TextExtensions.swift */,
 				8F8CDBCA2F580518006AB03A /* SpacingExtensions.swift */,
 				8F9C0ABB2F66B19F00226A67 /* SVG.swift */,
+				8F3CE69A2F67EB5D00A221C8 /* SizeReader.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -596,10 +617,13 @@
 				8F8CDBCB2F580520006AB03A /* SpacingExtensions.swift in Sources */,
 				8F07DD6B2F5D7CC400A44ED7 /* MainFavoritesInteractorProtocol.swift in Sources */,
 				8F9C0AB12F666BC800226A67 /* FileContryIconsLocalRepository.swift in Sources */,
+				8F9C0AC42F66D45C00226A67 /* MainShareInteractor.swift in Sources */,
 				8F8CDBCF2F580C1E006AB03A /* IconButton.swift in Sources */,
+				8F9C0AC62F66D6AB00226A67 /* Toast.swift in Sources */,
 				8F07DD4E2F5AE32200A44ED7 /* TranslationSessionRepository.swift in Sources */,
 				8F07DD8C2F6160AF00A44ED7 /* LanguageDto.swift in Sources */,
 				8F07DD892F615C4D00A44ED7 /* UserDefaultsSettingsRepository.swift in Sources */,
+				8F3CE6992F67E6E700A221C8 /* ActivityView.swift in Sources */,
 				8F07DD6D2F5D849200A44ED7 /* Translation.swift in Sources */,
 				8F07DD5E2F5C8F0000A44ED7 /* SearchBar.swift in Sources */,
 				8F8CDBD12F580E8E006AB03A /* TextButton.swift in Sources */,
@@ -610,6 +634,7 @@
 				8F8CDBBD2F5716F9006AB03A /* InputCardView.swift in Sources */,
 				8F6932152F582A1800C0432E /* AppButton.swift in Sources */,
 				8F49EB2C2F59AD570089A44F /* ConditionalViewExtensions.swift in Sources */,
+				8F9C0AC02F66CD1800226A67 /* PasteboardCopyRepository.swift in Sources */,
 				8F3A86E72F56FAFC000CBF7A /* CameraScanner.swift in Sources */,
 				8F9C0A962F63FB5A00226A67 /* PulseAnimation.swift in Sources */,
 				8F9C0AB82F667E7600226A67 /* Files.swift in Sources */,
@@ -629,6 +654,7 @@
 				8F6932272F58AAF500C0432E /* TabBar.swift in Sources */,
 				8F07DD792F5ED04800A44ED7 /* CommonVoiceInteractor.swift in Sources */,
 				8F07DD5C2F5C315500A44ED7 /* AppList.swift in Sources */,
+				8F3CE69B2F67EB5D00A221C8 /* SizeReader.swift in Sources */,
 				8F9C0A8E2F63E61000226A67 /* BundleSoundRepository.swift in Sources */,
 				8F8CDBB52F57129B006AB03A /* CardBackground.swift in Sources */,
 				8F07DD502F5AF69600A44ED7 /* LanguagesRepositoryProtocol.swift in Sources */,
@@ -643,6 +669,7 @@
 				8F07DD542F5AF79100A44ED7 /* LocaleLanguageRepository.swift in Sources */,
 				8F9C0AAF2F65B81800226A67 /* LanguageCountryMapper.swift in Sources */,
 				8F8CDBCD2F580A8B006AB03A /* TextExtensions.swift in Sources */,
+				8F9C0ABE2F66CCF400226A67 /* CopyRepositoryProtocol.swift in Sources */,
 				8F9C0ABA2F669E3000226A67 /* ImageFromFile.swift in Sources */,
 				8F6932212F585C6300C0432E /* TranslateCardView.swift in Sources */,
 				8F3A86E82F56FAFC000CBF7A /* ContentView.swift in Sources */,
@@ -651,6 +678,7 @@
 				8F9C0A8C2F63E4F700226A67 /* SoundRepositoryProtocol.swift in Sources */,
 				8F9C0A9F2F657DFC00226A67 /* NetworkContryIconsRemoteRepository.swift in Sources */,
 				8F07DD622F5D756400A44ED7 /* FavoritesRepositoryProtocol.swift in Sources */,
+				8F9C0AC22F66D3E000226A67 /* MainShareInteractorProtocol.swift in Sources */,
 				8F3A86E92F56FAFC000CBF7A /* TranslationApp.swift in Sources */,
 				8F07DD8F2F61611B00A44ED7 /* TranslationMapper.swift in Sources */,
 				8F07DD762F5ECE8F00A44ED7 /* VoiceInteractorProtocol.swift in Sources */,

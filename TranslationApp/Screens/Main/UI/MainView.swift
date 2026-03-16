@@ -10,6 +10,7 @@ import VisionKit
 
 struct MainView<ViewModel: MainViewModelProtocol>: View {
     @State var viewModel: ViewModel
+    @State var shareHeight: CGFloat = 0
     
     var body: some View {
         VStack(spacing:.l) {
@@ -35,8 +36,8 @@ struct MainView<ViewModel: MainViewModelProtocol>: View {
                               isFavorite: viewModel.isFavorite,
                               onLngClick: viewModel.onLngToClick,
                               onSpeakerClick: viewModel.onToSpeakerClick,
-                              onCopyClick: {},
-                              onShareClick: {},
+                              onCopyClick: viewModel.onToCopyClick,
+                              onShareClick: viewModel.onToShareClick,
                               onFavoriteClick: viewModel.onToFavoriteClick
             )
 
@@ -48,34 +49,42 @@ struct MainView<ViewModel: MainViewModelProtocol>: View {
                     ToolBarButton(item: .icon(.icMenu), action: {})
                  ]
         )
-        .sheet(isPresented: $viewModel.showSheet) {
-            
+        .toast(model: $viewModel.toast)
+        .sheet(item: $viewModel.bottomSheet) { item in
             //TODO refactor navigation to sheet
-            VStack(spacing: .s) {
-                SearchBar(text: $viewModel.filter, placeholder: .Main.searchPlaceholder)
-                    .paddings(.s,.l,.s,.l)
-                List(viewModel.languages, id: \.id) { language in
-                    Button(action: {
-                        viewModel.onSelectLanguage(language)
-                    }){
-                        Text(language.name)
-                    }
-                    .textListRow()
-                }
-                .appListStyle()
-                .font(.textS)
-                .foregroundStyle(.appPrimaryText)
-                
-                .background(.appSecondaryBackground)
-                
+            switch item {
+            case .languages:
+                languagesSheet
+            case .share(let text):
+                ActivityViewController(activityItems: [text])
+                    .presentationDetents([.medium])
             }
-            .background(.appSecondaryBackground)
-            .cornerRadius(24)
-            .paddings(.s,.l,.s,.l)
-            .downShadow()
-            
         }
         
+    }
+    
+    private var languagesSheet: some View {
+        VStack(spacing: .s) {
+            SearchBar(text: $viewModel.filter, placeholder: .Main.searchPlaceholder)
+                .paddings(.s,.l,.s,.l)
+            List(viewModel.languages, id: \.id) { language in
+                Button(action: {
+                    viewModel.onSelectLanguage(language)
+                }){
+                    Text(language.name)
+                }
+                .textListRow()
+            }
+            .appListStyle()
+            .font(.textS)
+            .foregroundStyle(.appPrimaryText)
+            .background(.appSecondaryBackground)
+            
+        }
+        .background(.appSecondaryBackground)
+        .cornerRadius(24)
+        .paddings(.s,.l,.s,.l)
+        .downShadow()
     }
 }
 
@@ -94,7 +103,7 @@ struct MainView<ViewModel: MainViewModelProtocol>: View {
         toLng: .init(id: "0",name: "English"),
         fromText: "Hola",
         toText: "Hello",
-    showSheet: true)
+        bottomSheet: .languages)
     )
 }
 

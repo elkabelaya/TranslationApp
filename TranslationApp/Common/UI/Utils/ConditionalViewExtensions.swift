@@ -15,6 +15,17 @@ extension View {
         }
     }
     
+    func iflet<Conditional,Content: View>(
+        _ conditional: Conditional?,
+        content: (Self, Conditional) -> Content
+    ) -> some View {
+        if let conditional {
+            return AnyView(content(self, conditional))
+        } else {
+            return AnyView(self)
+        }
+    }
+    
     func apply<Content: View>(transform: (Self) -> Content) -> some View {
         transform(self)
     }

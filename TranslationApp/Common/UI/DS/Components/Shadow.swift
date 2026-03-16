@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-private struct Shadow: ViewModifier {
+fileprivate struct Shadow: ViewModifier {
     let y: CGFloat
      func body(content: Content) -> some View {
         content

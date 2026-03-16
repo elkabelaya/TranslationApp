@@ -8,11 +8,14 @@
 import SwiftUI
 import Combine
 
+
+
 @Observable
 final class MainViewModel: MainViewModelProtocol {
     let translateIntractor: TranslateInteractorProtocol
     let favoritesInteractor: MainFavoritesInteractorProtocol
     let voiceInteractor: VoiceInteractorProtocol
+    let shareInteractor: MainShareInteractorProtocol
     
     private var cancellables: Set<AnyCancellable> = []
     private var filterPublisher = CurrentValueSubject<String, Never>("")
@@ -21,12 +24,17 @@ final class MainViewModel: MainViewModelProtocol {
         case to
     }
     private var selectingLanguage: FromToLanguage? = nil {
-        didSet {showSheet = selectingLanguage != nil}
+        didSet {
+            if  selectingLanguage != nil {
+                bottomSheet = .languages
+            }
+        }
     }
     
     var filter: String = "" {didSet {filterPublisher.send(filter)}}
     var languages: [Language] = []
-    var showSheet: Bool = false {didSet {if !showSheet {filter = ""} }}
+    //var showSheet: Bool = false {didSet {if !showSheet {filter = ""} }}
+    var bottomSheet: MainBottomSheet? {didSet {if bottomSheet == nil {filter = ""} }}
     
     var fromLng: Language?
     var toLng: Language?
@@ -36,13 +44,16 @@ final class MainViewModel: MainViewModelProtocol {
     var toText: String = ""
     var isFavorite: Bool = false
     var isListening: Bool = false
+    var toast: ToastModel?
     
     init(translateIntractor: TranslateInteractorProtocol,
          favoritesInteractor: MainFavoritesInteractorProtocol,
-         voiceInteractor: VoiceInteractorProtocol){
+         voiceInteractor: VoiceInteractorProtocol,
+         shareInteractor: MainShareInteractorProtocol){
         self.translateIntractor = translateIntractor
         self.favoritesInteractor = favoritesInteractor
         self.voiceInteractor = voiceInteractor
+        self.shareInteractor = shareInteractor
         setup()
     }
     
@@ -95,7 +106,7 @@ final class MainViewModel: MainViewModelProtocol {
         fromText = toText
         toText = ""
         fromIconPath = toIconPath
-        toIconPath = fromIconPath
+        toIconPath = tempFromIconPath
     }
     
     func onFromSpeakerClick() {
@@ -151,7 +162,7 @@ final class MainViewModel: MainViewModelProtocol {
                         to: toLng
                     )
                 } catch {
-                    toText = "test"
+                    toText = "test" //TODO
                     print(error)
                 }
             }
@@ -191,6 +202,18 @@ final class MainViewModel: MainViewModelProtocol {
                 )
             }
         }
+    }
+    
+    
+    func onToCopyClick () {
+        Task {
+            await shareInteractor.copy(string: toText)
+            toast = ToastModel(message: .Main.copiedToast)
+        }
+    }
+    
+    func onToShareClick () {
+        bottomSheet = .share(toText)
     }
     
     private func clearTexts() {

@@ -12,8 +12,14 @@ final class MockMainViewModel: MainViewModelProtocol {
     var fromIconPath: String?
     
     var toIconPath: String?
+    var toast: ToastModel? 
     
-    
+    func onToCopyClick () {
+        
+    }
+    func onToShareClick () {
+        
+    }
     func onToFavoriteClick() {
     
     }
@@ -56,7 +62,7 @@ final class MockMainViewModel: MainViewModelProtocol {
     var toText: String
     var filter: String = ""
     var languages: [Language] = []
-    var showSheet: Bool = false
+    var bottomSheet: MainBottomSheet?
     var isFavorite: Bool = false
     var isListening: Bool = false
     
@@ -66,7 +72,7 @@ final class MockMainViewModel: MainViewModelProtocol {
          toText: String,
          isFavorite: Bool = false,
          isListening: Bool = false,
-         showSheet:Bool = false,
+         bottomSheet: MainBottomSheet? = nil,
          languages:[Language] = [.init(id: "0", name: "English"),
                                  .init(id: "1", name:"Spanish")]
     ) {
@@ -76,7 +82,7 @@ final class MockMainViewModel: MainViewModelProtocol {
         self.toText = toText
         self.isFavorite = isFavorite
         self.isListening = isListening
-        self.showSheet = showSheet
+        self.bottomSheet = bottomSheet
         self.languages = languages
         
     }

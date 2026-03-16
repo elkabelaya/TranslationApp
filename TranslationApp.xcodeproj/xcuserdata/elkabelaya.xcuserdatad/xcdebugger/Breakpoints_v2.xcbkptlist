@@ -46,8 +46,8 @@
             filePath = "TranslationApp/Screens/Main/UI/MainViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "145"
-            endingLineNumber = "145"
+            startingLineNumber = "156"
+            endingLineNumber = "156"
             landmarkName = "onTranslateClick()"
             landmarkType = "7">
          </BreakpointContent>
@@ -62,8 +62,8 @@
             filePath = "TranslationApp/Screens/Main/UI/MainViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "144"
-            endingLineNumber = "144"
+            startingLineNumber = "155"
+            endingLineNumber = "155"
             landmarkName = "onTranslateClick()"
             landmarkType = "7">
          </BreakpointContent>
@@ -78,8 +78,8 @@
             filePath = "TranslationApp/Screens/Main/UI/MainViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "148"
-            endingLineNumber = "148"
+            startingLineNumber = "159"
+            endingLineNumber = "159"
             landmarkName = "onTranslateClick()"
             landmarkType = "7">
          </BreakpointContent>
@@ -94,8 +94,8 @@
             filePath = "TranslationApp/Screens/Main/UI/MainViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "63"
-            endingLineNumber = "63"
+            startingLineNumber = "74"
+            endingLineNumber = "74"
             landmarkName = "setup()"
             landmarkType = "7">
          </BreakpointContent>
@@ -200,8 +200,8 @@
             filePath = "TranslationApp/Screens/Main/UI/MainViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "180"
-            endingLineNumber = "180"
+            startingLineNumber = "191"
+            endingLineNumber = "191"
             landmarkName = "onToFavoriteClick()"
             landmarkType = "7">
          </BreakpointContent>
@@ -216,8 +216,8 @@
             filePath = "TranslationApp/Screens/Main/UI/MainViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "78"
-            endingLineNumber = "78"
+            startingLineNumber = "89"
+            endingLineNumber = "89"
             landmarkName = "onLngFromClick()"
             landmarkType = "7">
          </BreakpointContent>
@@ -232,8 +232,8 @@
             filePath = "TranslationApp/Screens/Main/UI/MainViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "71"
-            endingLineNumber = "71"
+            startingLineNumber = "82"
+            endingLineNumber = "82"
             landmarkName = "getLanguages()"
             landmarkType = "7">
          </BreakpointContent>
@@ -520,8 +520,8 @@
             filePath = "TranslationApp/Screens/Main/UI/MainViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "131"
-            endingLineNumber = "131"
+            startingLineNumber = "142"
+            endingLineNumber = "142"
             landmarkName = "onMicrophoneClick()"
             landmarkType = "7">
          </BreakpointContent>
@@ -568,8 +568,8 @@
             filePath = "TranslationApp/Screens/Main/UI/MainViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "134"
-            endingLineNumber = "134"
+            startingLineNumber = "145"
+            endingLineNumber = "145"
             landmarkName = "onMicrophoneClick()"
             landmarkType = "7">
          </BreakpointContent>
@@ -584,8 +584,8 @@
             filePath = "TranslationApp/Screens/Main/UI/MainViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "53"
-            endingLineNumber = "53"
+            startingLineNumber = "64"
+            endingLineNumber = "64"
             landmarkName = "setup()"
             landmarkType = "7">
          </BreakpointContent>
@@ -600,8 +600,8 @@
             filePath = "TranslationApp/Screens/Main/UI/MainViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "57"
-            endingLineNumber = "57"
+            startingLineNumber = "68"
+            endingLineNumber = "68"
             landmarkName = "setup()"
             landmarkType = "7">
          </BreakpointContent>
@@ -636,6 +636,22 @@
             endingLineNumber = "16"
             landmarkName = "body"
             landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "5BA65DC2-9E3E-42C8-9081-4078865FB2B4"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TranslationApp/Screens/Main/UI/MainViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "216"
+            endingLineNumber = "216"
+            landmarkName = "onToShareClick()"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

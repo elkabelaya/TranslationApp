@@ -7,6 +7,14 @@
 
 import SwiftUI
 
+enum MainBottomSheet: Identifiable {
+    
+    // TODO move to navigation layer
+    case languages
+    case share(String)
+    var id: UUID { UUID() }
+}
+
 protocol MainViewModelProtocol: Observable {
     var fromLng: Language? {get}
     var toLng: Language? { get }
@@ -16,9 +24,10 @@ protocol MainViewModelProtocol: Observable {
     var toText: String { get }
     var filter: String { get set }
     var languages: [Language] { get }
-    var showSheet: Bool { get set }
+    var bottomSheet: MainBottomSheet? { get set }
     var isFavorite: Bool { get }
     var isListening: Bool { get }
+    var toast: ToastModel? { get set }
     func onLngFromClick ()
     func onLngToClick ()
     func onSwapClick ()
@@ -29,5 +38,7 @@ protocol MainViewModelProtocol: Observable {
     func onTranslateClick ()
     func onSelectLanguage (_ lng: Language)
     func onToFavoriteClick ()
+    func onToCopyClick ()
+    func onToShareClick ()
     
 }

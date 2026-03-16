@@ -33,7 +33,7 @@ struct TranslateCardView: View {
             
             HStack(spacing: .l) {
                 Spacer()
-                IconButton(.icCopy, .s, .appSecondaryText, onSpeakerClick)
+                IconButton(.icCopy, .s, .appSecondaryText, onCopyClick)
                 IconButton(.icShare, .s, .appSecondaryText, onShareClick)
                 IconButton(
                     isFavorite ? .icStarFilled :.icStarBordered,

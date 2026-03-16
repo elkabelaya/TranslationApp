@@ -69,6 +69,11 @@ struct ContentView: View {
                                 bundle: Bundle.main,
                                 audioPlayerCreator: DefaultAudioPlayerCreator()
                             )
+                        ),
+                        shareInteractor: MainShareInteractor(
+                            copyRepository: PasteboardCopyRepository(
+                                pasteboard: UIPasteboard.general
+                            )
                         )
                         
                     )
