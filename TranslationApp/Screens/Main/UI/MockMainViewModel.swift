@@ -62,6 +62,7 @@ final class MockMainViewModel: MainViewModelProtocol {
     var toText: String
     var filter: String = ""
     var languages: [Language] = []
+    var showSheet: Bool = false
     var bottomSheet: MainBottomSheet?
     var isFavorite: Bool = false
     var isListening: Bool = false

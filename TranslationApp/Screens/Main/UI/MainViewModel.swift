@@ -23,29 +23,49 @@ final class MainViewModel: MainViewModelProtocol {
         case from
         case to
     }
-    private var selectingLanguage: FromToLanguage? = nil {
+    private var selectingLanguage: FromToLanguage? = nil
+    private var currentTranslation: Translation?
+
+    var filter: String = "" {
         didSet {
-            if  selectingLanguage != nil {
-                bottomSheet = .languages
+            filterPublisher.send(filter)
+        }
+    }
+    var languages: [Language] = []
+    var showSheet: Bool = false
+    var bottomSheet: MainBottomSheet? {
+        didSet {
+            print("bottomSheet changed \(bottomSheet)")
+            if bottomSheet == nil {
+                filter = ""
             }
+            showSheet = bottomSheet != nil
         }
     }
     
-    var filter: String = "" {didSet {filterPublisher.send(filter)}}
-    var languages: [Language] = []
-    //var showSheet: Bool = false {didSet {if !showSheet {filter = ""} }}
-    var bottomSheet: MainBottomSheet? {didSet {if bottomSheet == nil {filter = ""} }}
-    
-    var fromLng: Language?
-    var toLng: Language?
+    var fromLng: Language? {didSet {resetIfChanged(oldValue, fromLng)}}
+    var toLng: Language? {didSet {resetIfChanged(oldValue, toLng)}}
     var fromIconPath: String?
     var toIconPath: String?
-    var fromText: String = ""
-    var toText: String = ""
-    var isFavorite: Bool = false
+    var fromText: String = "" {didSet {resetIfChanged(oldValue, fromText)}}
+    var toText: String {
+        get {
+            currentTranslation?.toText ?? ""
+        }
+    }
+    var isFavorite: Bool {
+        get {
+            currentTranslation?.isFavorite ?? false
+        }
+    }
     var isListening: Bool = false
     var toast: ToastModel?
     
+    private func resetIfChanged<T:Equatable>(_ old: T, _ new: T) {
+        if old != new {
+            currentTranslation = nil
+        }
+    }
     init(translateIntractor: TranslateInteractorProtocol,
          favoritesInteractor: MainFavoritesInteractorProtocol,
          voiceInteractor: VoiceInteractorProtocol,
@@ -87,6 +107,7 @@ final class MainViewModel: MainViewModelProtocol {
         Task {
             getLanguages()
             selectingLanguage = .from
+            bottomSheet = .languages
         }
     }
     
@@ -94,6 +115,7 @@ final class MainViewModel: MainViewModelProtocol {
         Task {
             getLanguages()
             selectingLanguage = .to
+            bottomSheet = .languages
         }
         
     }
@@ -104,7 +126,6 @@ final class MainViewModel: MainViewModelProtocol {
         fromLng = toLng
         toLng = tempFromLng
         fromText = toText
-        toText = ""
         fromIconPath = toIconPath
         toIconPath = tempFromIconPath
     }
@@ -156,13 +177,13 @@ final class MainViewModel: MainViewModelProtocol {
             if let fromLng,
                let toLng {
                 do {
-                    toText = try await translateIntractor.translate(
+                    currentTranslation = try await translateIntractor.translate(
                         text: fromText,
                         from: fromLng,
                         to: toLng
                     )
                 } catch {
-                    toText = "test" //TODO
+                    //TODO
                     print(error)
                 }
             }
@@ -180,7 +201,7 @@ final class MainViewModel: MainViewModelProtocol {
             break
         }
         selectingLanguage = nil
-        
+        bottomSheet = nil
         Task {
             await translateIntractor.saveLanguages(from: fromLng, to: toLng)
         }
@@ -188,18 +209,11 @@ final class MainViewModel: MainViewModelProtocol {
     
     func onToFavoriteClick () {
         Task {
-            if let fromLng,
-               let toLng,
-               !fromText.isEmpty,
-               !toText.isEmpty {
-                isFavorite = try await favoritesInteractor.toggleFavorites(
-                    translation: Translation(
-                        fromCode: fromLng.id,
-                        fromText: fromText,
-                        toCode: toLng.id,
-                        toText: toText
-                    )
+            if let currentTranslation {
+                try await favoritesInteractor.toggleFavorites(
+                    translation: currentTranslation
                 )
+                self.currentTranslation?.isFavorite.toggle()
             }
         }
     }
@@ -218,6 +232,5 @@ final class MainViewModel: MainViewModelProtocol {
     
     private func clearTexts() {
         fromText = ""
-        toText = ""
     }
 }

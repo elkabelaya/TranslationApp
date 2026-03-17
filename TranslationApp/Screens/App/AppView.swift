@@ -9,12 +9,14 @@ import SwiftUI
 import VisionKit
 
 enum Tabs: Int {
-    case menu
-    case translate
+    case chat
+    case camera
     case main
+    case history
+    case favourite
 }
 
-struct ContentView: View {
+struct AppView: View {
     @State var selectedTab: Int = Tabs.main.rawValue
     @Environment(\.modelContext) var modelContext
     var body: some View {
@@ -55,10 +57,14 @@ struct ContentView: View {
                                     directory: .icons
                                 ),
                                 ext: .svg
+                            ),
+                            historyRepository: SwiftDataHistoryRepository(
+                                context: modelContext,
+                                mapper: TranslationMapper()
                             )
                         ),
                         favoritesInteractor: MainFavoritesInteractor(
-                            repository: SwiftDataFavoritesRepository(
+                            repository: SwiftDataHistoryRepository(
                                 context: modelContext,
                                 mapper: TranslationMapper()
                             )
@@ -78,14 +84,49 @@ struct ContentView: View {
                         
                     )
                 )
+            case Tabs.history.rawValue:
+                HistoryView(
+                    viewModel: HistoryViewModel(
+                        historyInteractor: HistoryInteractor(
+                            repository: SwiftDataHistoryRepository(
+                                context : modelContext,
+                                mapper: TranslationMapper()
+                            )
+                        )
+                    )
+                )
+            case Tabs.favourite.rawValue:
+                FavoritesView(
+                    viewModel: FavoritesViewModel(
+                        favoritesInteractor: FavoritesInteractor(
+                            repository: SwiftDataFavoritesRepository(
+                                context : modelContext,
+                                mapper: TranslationMapper()
+                            )
+                        )
+                    )
+                )
             default:
                 Text("TODO")
             }
         }
         .tabbar(selectedIndex: $selectedTab,
-                items: [TabItem(type: .filledIcon,
-                                title: "main",
-                                icon: .icTranslate)
+                items: [
+                    TabItem(type: .icon,
+                            title: .App.tabChat,
+                                    icon: .tabChat),
+                    TabItem(type: .icon,
+                            title: .App.tabCamera,
+                                    icon: .tabCamera),
+                    TabItem(type: .filledIcon,
+                            title: .App.tabMain,
+                                icon: .icTranslate),
+                    TabItem(type: .icon,
+                            title: .App.tabHistory,
+                            icon: .tabHistory),
+                    TabItem(type: .icon,
+                            title: .App.tabFavorites,
+                                    icon: .tabFavorites)
                 ]
         )
     }
@@ -124,5 +165,5 @@ struct ContentView: View {
 //}
 
 #Preview {
-    ContentView()
+    AppView()
 }

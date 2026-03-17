@@ -7,12 +7,12 @@
 
 import SwiftUI
 
-enum MainBottomSheet: Identifiable {
+enum MainBottomSheet:  Equatable {
     
     // TODO move to navigation layer
     case languages
     case share(String)
-    var id: UUID { UUID() }
+    //var id: UUID { UUID() }
 }
 
 protocol MainViewModelProtocol: Observable {
@@ -24,6 +24,7 @@ protocol MainViewModelProtocol: Observable {
     var toText: String { get }
     var filter: String { get set }
     var languages: [Language] { get }
+    var showSheet: Bool { get set }
     var bottomSheet: MainBottomSheet? { get set }
     var isFavorite: Bool { get }
     var isListening: Bool { get }

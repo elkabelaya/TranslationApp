@@ -31,15 +31,18 @@ struct MainView<ViewModel: MainViewModelProtocol>: View {
                           onMicrophoneClick: viewModel.onMicrophoneClick,
                           onTranslateClick: viewModel.onTranslateClick
             )
-            TranslateCardView(lngName: viewModel.toLng?.name,
-                              translation: viewModel.toText,
-                              isFavorite: viewModel.isFavorite,
-                              onLngClick: viewModel.onLngToClick,
-                              onSpeakerClick: viewModel.onToSpeakerClick,
-                              onCopyClick: viewModel.onToCopyClick,
-                              onShareClick: viewModel.onToShareClick,
-                              onFavoriteClick: viewModel.onToFavoriteClick
-            )
+            if !viewModel.toText.isEmpty {
+                TranslateCardView(lngName: viewModel.toLng?.name,
+                                  translation: viewModel.toText,
+                                  isFavorite: viewModel.isFavorite,
+                                  onLngClick: viewModel.onLngToClick,
+                                  onSpeakerClick: viewModel.onToSpeakerClick,
+                                  onCopyClick: viewModel.onToCopyClick,
+                                  onShareClick: viewModel.onToShareClick,
+                                  onFavoriteClick: viewModel.onToFavoriteClick
+                )
+            }
+            Spacer()
 
             
         }
@@ -50,20 +53,22 @@ struct MainView<ViewModel: MainViewModelProtocol>: View {
                  ]
         )
         .toast(model: $viewModel.toast)
-        .sheet(item: $viewModel.bottomSheet) { item in
+        .sheet(isPresented: $viewModel.showSheet) {
             //TODO refactor navigation to sheet
-            switch item {
+            switch viewModel.bottomSheet {
             case .languages:
-                languagesSheet
+                languagesSheet()
             case .share(let text):
                 ActivityViewController(activityItems: [text])
                     .presentationDetents([.medium])
+            case .none:
+                EmptyView()
             }
         }
         
     }
     
-    private var languagesSheet: some View {
+    private func languagesSheet() -> some View {
         VStack(spacing: .s) {
             SearchBar(text: $viewModel.filter, placeholder: .Main.searchPlaceholder)
                 .paddings(.s,.l,.s,.l)

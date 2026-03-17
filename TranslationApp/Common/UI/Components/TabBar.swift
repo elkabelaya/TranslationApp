@@ -13,7 +13,7 @@ enum TabItemType {
 }
 struct TabItem {
     let type: TabItemType
-    let title: String
+    let title: LocalizedStringResource
     let icon: ImageResource
 }
 
@@ -30,12 +30,12 @@ private struct TabItemView: View {
                     IconButton(item.icon,
                                isSelected ? .m : .s,
                                isSelected ? .appSecondaryText : .appPrimaryText,
-                               {}
+                               action
                     )
                     TextButton(item.title,
                                isSelected ? .textS : .textXs,
                                isSelected ? .appSecondaryText: .appPrimaryText,
-                               {}
+                               action
                     )
                     if isSelected {
                         RoundedRectangle(cornerRadius: AppDimens.Corners.xs.rawValue)
@@ -47,8 +47,9 @@ private struct TabItemView: View {
                         item.icon,
                         .xxl,
                         .gradient(.appTertiaryBackgroundGradient,
-                                  .appTertiaryBackground)
-                    ){}
+                                  .appTertiaryBackground),
+                        action
+                    )
                 }
             }
             .frame(maxWidth: .infinity)

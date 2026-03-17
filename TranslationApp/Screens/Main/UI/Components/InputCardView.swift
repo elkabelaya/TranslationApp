@@ -32,7 +32,7 @@ struct InputCardView: View {
                 isListening ? .MainComponents.voiceInputPlaceholder : .MainComponents.inputPlaceholder,
                 text: $input, axis: .vertical
             )
-                .frame(maxHeight: 90)
+            
             Spacer()
             
             HStack(spacing: .zero) {
@@ -52,6 +52,7 @@ struct InputCardView: View {
             }
             
         }
+        .frame(maxHeight: 216)
         .paddings(.s, .l,.l,.l)
         .cardBackground(corners: .m)
         .downShadow()

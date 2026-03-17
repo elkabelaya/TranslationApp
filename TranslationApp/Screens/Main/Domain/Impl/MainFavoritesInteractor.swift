@@ -6,19 +6,17 @@
 //
 
 final class MainFavoritesInteractor: MainFavoritesInteractorProtocol {
-    private let repository: FavoritesRepositoryProtocol
+    private let repository: HistoryRepositoryProtocol
     
-    init(repository: FavoritesRepositoryProtocol) {
+    init(repository: HistoryRepositoryProtocol) {
         self.repository = repository
     }
     
-    func toggleFavorites(translation: Translation)  async throws -> Bool {
-        if try await repository.find(translation) != nil {
-            try await repository.remove(translation)
-            return false
+    func toggleFavorites(translation: Translation)  async throws {
+        if translation.isFavorite {
+            try await repository.removeFromFavorites(translation)
         } else  {
-            try await repository.add(translation)
-            return true
+            try await repository.addToFavorites(translation)
         }
     }
 }

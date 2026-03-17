@@ -23,6 +23,16 @@ struct TextButton: View {
         self.action = action
     }
     
+    init(_ key: LocalizedStringResource,
+         _ font: Font,
+         _ color: Color,
+         _ action: @escaping () -> Void) {
+        self.key = String(localized: key)
+        self.font = font
+        self.color = color
+        self.action = action
+    }
+    
     var body: some View {
         Button(action: action) {
             Text(key)

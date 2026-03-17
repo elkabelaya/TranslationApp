@@ -10,11 +10,20 @@ import SwiftData
 
 @main
 struct TranslationApp: App {
-    var body: some Scene {
-        WindowGroup { 
-            ContentView()
-                
+    let container: ModelContainer
+    
+    init() {
+        do {
+            container = try DatabaseManager.createCurrentModelContainer()
+        } catch {
+            fatalError("Failed to initialize model container.")
         }
-        .modelContainer(for: FavoriteTranslation.self)
+    }
+    
+    var body: some Scene {
+        WindowGroup {
+            AppView()
+        }
+        .modelContainer(container)
     }
 }

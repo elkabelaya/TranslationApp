@@ -8,9 +8,14 @@
 import SwiftUI
 
 extension Text {
-    func appStyle(_ font: Font, _ color: Color) -> some View {
+    func appStyle(_ font: Font, _ color: Color) -> Self {
         self
             .font(font)
             .foregroundStyle(color)
+    }
+    
+    func align() -> some View {
+        self
+            .frame(maxWidth: .infinity, alignment: .leading)
     }
 }

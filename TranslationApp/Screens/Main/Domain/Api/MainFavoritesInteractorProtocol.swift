@@ -6,5 +6,5 @@
 //
 
 protocol MainFavoritesInteractorProtocol {
-    func toggleFavorites(translation: Translation)  async throws -> Bool
+    func toggleFavorites(translation: Translation)  async throws
 }

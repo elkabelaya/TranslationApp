@@ -19,18 +19,23 @@ extension View {
     func listRow() -> some View {
         self
             .listRowSeparator(Visibility.hidden, edges: .bottom)
-            .listRowBackground(Color.appSecondaryBackground)
             .frame(maxWidth: .infinity,
                    maxHeight: .infinity,
                    alignment: .center
             )
+            .buttonStyle(PlainButtonStyle())
             
             
     }
     
-    func textListRow() -> some View {
+    func textListRow(_ background: Color? = .appSecondaryBackground) -> some View {
         self
-            .listRow()
+            .listRowSeparator(Visibility.hidden, edges: .bottom)
+            .listRowBackground(background)
+            .frame(maxWidth: .infinity,
+                   maxHeight: .infinity,
+                   alignment: .center
+            )
             .font(.textS)
             .foregroundStyle(.appPrimaryText)
             
@@ -47,8 +52,6 @@ extension View {
                 .listRow()
         }
         .appListStyle()
-        .searchable(text: $text, prompt: "placeholder")
-        .downShadow()
         .padding(8)
         
         
