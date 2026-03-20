@@ -10,11 +10,11 @@ import SwiftData
 
 @main
 struct TranslationApp: App {
-    let container: ModelContainer
+    //let container: ModelContainer
     
     init() {
         do {
-            container = try DatabaseManager.createCurrentModelContainer()
+            //container = try DatabaseManager.createCurrentModelContainer()
         } catch {
             fatalError("Failed to initialize model container.")
         }
@@ -24,6 +24,6 @@ struct TranslationApp: App {
         WindowGroup {
             AppView()
         }
-        .modelContainer(container)
+        //.modelContainer(container)
     }
 }

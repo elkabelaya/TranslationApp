@@ -87,6 +87,13 @@
 		8F8CDBCD2F580A8B006AB03A /* TextExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F8CDBCC2F580A7F006AB03A /* TextExtensions.swift */; };
 		8F8CDBCF2F580C1E006AB03A /* IconButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F8CDBCE2F580C03006AB03A /* IconButton.swift */; };
 		8F8CDBD12F580E8E006AB03A /* TextButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F8CDBD02F580E8E006AB03A /* TextButton.swift */; };
+		8F903E302F6D2FA6004DA18E /* ServiceLocator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F903E2F2F6D2FA0004DA18E /* ServiceLocator.swift */; };
+		8F903E322F6D2FEA004DA18E /* CommonDataDi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F903E312F6D2FE1004DA18E /* CommonDataDi.swift */; };
+		8F903E342F6D39F8004DA18E /* CommonDi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F903E332F6D39F4004DA18E /* CommonDi.swift */; };
+		8F903E362F6D3A26004DA18E /* CommonDomainDi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F903E352F6D3A19004DA18E /* CommonDomainDi.swift */; };
+		8F903E392F6D3B04004DA18E /* MainDomainDi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F903E382F6D3AFC004DA18E /* MainDomainDi.swift */; };
+		8F903E3C2F6D3B84004DA18E /* MainUIDi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F903E3B2F6D3B84004DA18E /* MainUIDi.swift */; };
+		8F903E3E2F6D3C1E004DA18E /* MainDi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F903E3D2F6D3C1E004DA18E /* MainDi.swift */; };
 		8F9C0A8C2F63E4F700226A67 /* SoundRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F9C0A8B2F63E4F700226A67 /* SoundRepositoryProtocol.swift */; };
 		8F9C0A8E2F63E61000226A67 /* BundleSoundRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F9C0A8D2F63E61000226A67 /* BundleSoundRepository.swift */; };
 		8F9C0A942F63EC7100226A67 /* beep-07a.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8F9C0A932F63EC7100226A67 /* beep-07a.mp3 */; };
@@ -205,6 +212,13 @@
 		8F8CDBCC2F580A7F006AB03A /* TextExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextExtensions.swift; sourceTree = "<group>"; };
 		8F8CDBCE2F580C03006AB03A /* IconButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconButton.swift; sourceTree = "<group>"; };
 		8F8CDBD02F580E8E006AB03A /* TextButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextButton.swift; sourceTree = "<group>"; };
+		8F903E2F2F6D2FA0004DA18E /* ServiceLocator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceLocator.swift; sourceTree = "<group>"; };
+		8F903E312F6D2FE1004DA18E /* CommonDataDi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonDataDi.swift; sourceTree = "<group>"; };
+		8F903E332F6D39F4004DA18E /* CommonDi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonDi.swift; sourceTree = "<group>"; };
+		8F903E352F6D3A19004DA18E /* CommonDomainDi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonDomainDi.swift; sourceTree = "<group>"; };
+		8F903E382F6D3AFC004DA18E /* MainDomainDi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainDomainDi.swift; sourceTree = "<group>"; };
+		8F903E3B2F6D3B84004DA18E /* MainUIDi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainUIDi.swift; sourceTree = "<group>"; };
+		8F903E3D2F6D3C1E004DA18E /* MainDi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainDi.swift; sourceTree = "<group>"; };
 		8F9C0A8B2F63E4F700226A67 /* SoundRepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundRepositoryProtocol.swift; sourceTree = "<group>"; };
 		8F9C0A8D2F63E61000226A67 /* BundleSoundRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BundleSoundRepository.swift; sourceTree = "<group>"; };
 		8F9C0A932F63EC7100226A67 /* beep-07a.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "beep-07a.mp3"; sourceTree = "<group>"; };
@@ -286,7 +300,6 @@
 		8F07DD4A2F5AE2F000A44ED7 /* Repository */ = {
 			isa = PBXGroup;
 			children = (
-				8F07DD482F5AE29100A44ED7 /* TranlationRepositoryProtocol.swift */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -294,7 +307,6 @@
 		8F07DD4B2F5AE2FD00A44ED7 /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				8F07DD4D2F5AE32200A44ED7 /* TranslationSessionRepository.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -304,7 +316,6 @@
 			children = (
 				8F9C0AC12F66D3E000226A67 /* MainShareInteractorProtocol.swift */,
 				8F07DD6A2F5D7CC400A44ED7 /* MainFavoritesInteractorProtocol.swift */,
-				8F07DD552F5B045E00A44ED7 /* TranslateInteractorProtocol.swift */,
 			);
 			path = Api;
 			sourceTree = "<group>";
@@ -314,7 +325,6 @@
 			children = (
 				8F9C0AC32F66D45C00226A67 /* MainShareInteractor.swift */,
 				8F07DD682F5D7CA200A44ED7 /* MainFavoritesInteractor.swift */,
-				8F07DD592F5B04FD00A44ED7 /* TranslateInteractor.swift */,
 			);
 			path = Impl;
 			sourceTree = "<group>";
@@ -334,6 +344,7 @@
 			isa = PBXGroup;
 			children = (
 				8F07DD752F5ECE7C00A44ED7 /* VoiceInteractorProtocol.swift */,
+				8F07DD552F5B045E00A44ED7 /* TranslateInteractorProtocol.swift */,
 			);
 			path = Api;
 			sourceTree = "<group>";
@@ -342,6 +353,7 @@
 			isa = PBXGroup;
 			children = (
 				8F07DD782F5ED04800A44ED7 /* CommonVoiceInteractor.swift */,
+				8F07DD592F5B04FD00A44ED7 /* TranslateInteractor.swift */,
 			);
 			path = Impl;
 			sourceTree = "<group>";
@@ -510,6 +522,7 @@
 				8F9C0A972F6459C400226A67 /* ContryIconsLocalRepositoryProtocol.swift */,
 				8F9C0A992F645C5E00226A67 /* ContryIconsRemoteRepositoryProtocol.swift */,
 				8F9C0ABD2F66CCF400226A67 /* CopyRepositoryProtocol.swift */,
+				8F07DD482F5AE29100A44ED7 /* TranlationRepositoryProtocol.swift */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -542,6 +555,7 @@
 				8F07DD702F5EB7D500A44ED7 /* AVFoundationSpeechSynthesizerRepository.swift */,
 				8F9C0A8D2F63E61000226A67 /* BundleSoundRepository.swift */,
 				8F9C0ABF2F66CD1800226A67 /* PasteboardCopyRepository.swift */,
+				8F07DD4D2F5AE32200A44ED7 /* TranslationSessionRepository.swift */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -549,6 +563,7 @@
 		8F69321C2F5850A000C0432E /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				8F903E3F2F6D3FAC004DA18E /* DI */,
 				8F49EB312F59B99E0089A44F /* Data */,
 				8F49EB2D2F59B8210089A44F /* Domain */,
 				8F3A86DB2F56FAFC000CBF7A /* UI */,
@@ -571,6 +586,7 @@
 		8F8CDBAC2F57008E006AB03A /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				8F903E372F6D3AF3004DA18E /* DI */,
 				8F07DD4B2F5AE2FD00A44ED7 /* Data */,
 				8F07DD472F5AE26200A44ED7 /* Domain */,
 				8F07DD462F5AE25500A44ED7 /* UI */,
@@ -639,6 +655,27 @@
 				8F3CE69A2F67EB5D00A221C8 /* SizeReader.swift */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		8F903E372F6D3AF3004DA18E /* DI */ = {
+			isa = PBXGroup;
+			children = (
+				8F903E3D2F6D3C1E004DA18E /* MainDi.swift */,
+				8F903E382F6D3AFC004DA18E /* MainDomainDi.swift */,
+				8F903E3B2F6D3B84004DA18E /* MainUIDi.swift */,
+			);
+			path = DI;
+			sourceTree = "<group>";
+		};
+		8F903E3F2F6D3FAC004DA18E /* DI */ = {
+			isa = PBXGroup;
+			children = (
+				8F903E352F6D3A19004DA18E /* CommonDomainDi.swift */,
+				8F903E332F6D39F4004DA18E /* CommonDi.swift */,
+				8F903E312F6D2FE1004DA18E /* CommonDataDi.swift */,
+				8F903E2F2F6D2FA0004DA18E /* ServiceLocator.swift */,
+			);
+			path = DI;
 			sourceTree = "<group>";
 		};
 		8F9C0A8F2F63E71000226A67 /* Bundle */ = {
@@ -855,9 +892,11 @@
 				8F07DD6E2F5D8E1700A44ED7 /* SwiftDataHistoryRepository.swift in Sources */,
 				8F8CDBC82F572AF1006AB03A /* AppFonts.swift in Sources */,
 				8F9C0AA12F657F7F00226A67 /* NetworkProtocol.swift in Sources */,
+				8F903E322F6D2FEA004DA18E /* CommonDataDi.swift in Sources */,
 				8F3A86E62F56FAFC000CBF7A /* CameraScannerViewController.swift in Sources */,
 				8F8CDBCB2F580520006AB03A /* SpacingExtensions.swift in Sources */,
 				8F07DD6B2F5D7CC400A44ED7 /* MainFavoritesInteractorProtocol.swift in Sources */,
+				8F903E392F6D3B04004DA18E /* MainDomainDi.swift in Sources */,
 				8F9C0AB12F666BC800226A67 /* FileContryIconsLocalRepository.swift in Sources */,
 				8F9C0AC42F66D45C00226A67 /* MainShareInteractor.swift in Sources */,
 				8F8CDBCF2F580C1E006AB03A /* IconButton.swift in Sources */,
@@ -888,10 +927,12 @@
 				8F3CE69D2F67F40B00A221C8 /* SavedTranslationCard.swift in Sources */,
 				8F9C0A962F63FB5A00226A67 /* PulseAnimation.swift in Sources */,
 				8F9C0AB82F667E7600226A67 /* Files.swift in Sources */,
+				8F903E342F6D39F8004DA18E /* CommonDi.swift in Sources */,
 				8F9C0ABC2F66B19F00226A67 /* SVG.swift in Sources */,
 				8F8CDBBF2F5718A9006AB03A /* MainViewModelProtocol.swift in Sources */,
 				8F3CE6B92F684DFF00A221C8 /* CurrentSchema.swift in Sources */,
 				8F07DD5A2F5B04FD00A44ED7 /* TranslateInteractor.swift in Sources */,
+				8F903E3E2F6D3C1E004DA18E /* MainDi.swift in Sources */,
 				8F9C0A9D2F6510B800226A67 /* URLSessionNetwork.swift in Sources */,
 				8F07DD872F615BFF00A44ED7 /* SettingsRepositoryProtocol.swift in Sources */,
 				8F6932232F586E5600C0432E /* MockMainViewModel.swift in Sources */,
@@ -914,11 +955,14 @@
 				8F07DD562F5B045E00A44ED7 /* TranslateInteractorProtocol.swift in Sources */,
 				8F8CDBB32F570821006AB03A /* AppDimens.swift in Sources */,
 				8F07DD952F61633A00A44ED7 /* JSONCoder.swift in Sources */,
+				8F903E3C2F6D3B84004DA18E /* MainUIDi.swift in Sources */,
 				8F6932272F58AAF500C0432E /* TabBar.swift in Sources */,
 				8F07DD792F5ED04800A44ED7 /* CommonVoiceInteractor.swift in Sources */,
+				8F903E302F6D2FA6004DA18E /* ServiceLocator.swift in Sources */,
 				8F07DD5C2F5C315500A44ED7 /* AppList.swift in Sources */,
 				8F3CE69B2F67EB5D00A221C8 /* SizeReader.swift in Sources */,
 				8F9C0A8E2F63E61000226A67 /* BundleSoundRepository.swift in Sources */,
+				8F903E362F6D3A26004DA18E /* CommonDomainDi.swift in Sources */,
 				8F8CDBB52F57129B006AB03A /* CardBackground.swift in Sources */,
 				8F07DD502F5AF69600A44ED7 /* LanguagesRepositoryProtocol.swift in Sources */,
 				8F07DD712F5EB7E900A44ED7 /* AVFoundationSpeechSynthesizerRepository.swift in Sources */,

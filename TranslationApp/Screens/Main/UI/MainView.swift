@@ -8,8 +8,8 @@
 import SwiftUI
 import VisionKit
 
-struct MainView<ViewModel: MainViewModelProtocol>: View {
-    @State var viewModel: ViewModel
+struct MainView: View {
+    @State var viewModel: MainViewModelProtocol
     @State var shareHeight: CGFloat = 0
     
     var body: some View {

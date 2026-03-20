@@ -43,8 +43,28 @@ final class MainViewModel: MainViewModelProtocol {
         }
     }
     
-    var fromLng: Language? {didSet {resetIfChanged(oldValue, fromLng)}}
-    var toLng: Language? {didSet {resetIfChanged(oldValue, toLng)}}
+    var fromLng: Language? {
+        didSet {
+            resetIfChanged(oldValue, fromLng)
+            if let fromLng {
+                Task {
+                    fromIconPath = try await translateIntractor.getIconPath(for: fromLng)
+                }
+            }
+        }
+    }
+    
+    var toLng: Language? {
+        didSet {
+            resetIfChanged(oldValue, toLng)
+            if let toLng {
+                Task {
+                    toIconPath = try await translateIntractor.getIconPath(for: toLng)
+                }
+            }
+        }
+    }
+    
     var fromIconPath: String?
     var toIconPath: String?
     var fromText: String = "" {didSet {resetIfChanged(oldValue, fromText)}}
@@ -80,13 +100,6 @@ final class MainViewModel: MainViewModelProtocol {
     private func setup() {
         Task {
             (fromLng, toLng) = await translateIntractor.savedLanguages()
-            if let fromLng {
-                fromIconPath = try await translateIntractor.getIconPath(for: fromLng)
-            }
-            
-            if let toLng {
-                toIconPath = try await translateIntractor.getIconPath(for: toLng)
-            }
         }
         filterPublisher
             .debounce(for: 1, scheduler: DispatchQueue.main)
