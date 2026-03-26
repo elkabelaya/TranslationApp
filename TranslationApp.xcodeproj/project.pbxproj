@@ -38,8 +38,6 @@
 		8F2A6BAA2F743CE4005DB28E /* VNTextRecognizerRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F2A6BA92F743CDD005DB28E /* VNTextRecognizerRepository.swift */; };
 		8F3A86E32F56FAFC000CBF7A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8F3A86DC2F56FAFC000CBF7A /* Assets.xcassets */; };
 		8F3A86E42F56FAFC000CBF7A /* AppColors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8F3A86D92F56FAFC000CBF7A /* AppColors.xcassets */; };
-		8F3A86E62F56FAFC000CBF7A /* CameraScannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F3A86DE2F56FAFC000CBF7A /* CameraScannerViewController.swift */; };
-		8F3A86E72F56FAFC000CBF7A /* CameraScanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F3A86DD2F56FAFC000CBF7A /* CameraScanner.swift */; };
 		8F3A86E82F56FAFC000CBF7A /* AppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F3A86DF2F56FAFC000CBF7A /* AppView.swift */; };
 		8F3A86E92F56FAFC000CBF7A /* TranslationApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F3A86E12F56FAFC000CBF7A /* TranslationApp.swift */; };
 		8F3CE6992F67E6E700A221C8 /* ActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F3CE6982F67E6E700A221C8 /* ActivityView.swift */; };
@@ -189,8 +187,6 @@
 		8F2A6BA92F743CDD005DB28E /* VNTextRecognizerRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VNTextRecognizerRepository.swift; sourceTree = "<group>"; };
 		8F3A86D92F56FAFC000CBF7A /* AppColors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = AppColors.xcassets; sourceTree = "<group>"; };
 		8F3A86DC2F56FAFC000CBF7A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		8F3A86DD2F56FAFC000CBF7A /* CameraScanner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraScanner.swift; sourceTree = "<group>"; };
-		8F3A86DE2F56FAFC000CBF7A /* CameraScannerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraScannerViewController.swift; sourceTree = "<group>"; };
 		8F3A86DF2F56FAFC000CBF7A /* AppView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppView.swift; sourceTree = "<group>"; };
 		8F3A86E02F56FAFC000CBF7A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8F3A86E12F56FAFC000CBF7A /* TranslationApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslationApp.swift; sourceTree = "<group>"; };
@@ -467,8 +463,6 @@
 				8F3CE6C42F6925FE00A221C8 /* Preview */,
 				8F69321C2F5850A000C0432E /* Common */,
 				8F3A86DC2F56FAFC000CBF7A /* Assets.xcassets */,
-				8F3A86DD2F56FAFC000CBF7A /* CameraScanner.swift */,
-				8F3A86DE2F56FAFC000CBF7A /* CameraScannerViewController.swift */,
 				8F3A86E02F56FAFC000CBF7A /* Info.plist */,
 				8F3A86E12F56FAFC000CBF7A /* TranslationApp.swift */,
 				8F8CDBB82F57161B006AB03A /* Screens */,
@@ -1080,7 +1074,6 @@
 				8F8CDBC82F572AF1006AB03A /* AppFonts.swift in Sources */,
 				8F9C0AA12F657F7F00226A67 /* NetworkProtocol.swift in Sources */,
 				8F903E322F6D2FEA004DA18E /* CommonDataDi.swift in Sources */,
-				8F3A86E62F56FAFC000CBF7A /* CameraScannerViewController.swift in Sources */,
 				8F8CDBCB2F580520006AB03A /* SpacingExtensions.swift in Sources */,
 				8F07DD6B2F5D7CC400A44ED7 /* MainFavoritesInteractorProtocol.swift in Sources */,
 				8F903E392F6D3B04004DA18E /* MainDomainDi.swift in Sources */,
@@ -1110,7 +1103,6 @@
 				8F49EB2C2F59AD570089A44F /* ConditionalViewExtensions.swift in Sources */,
 				8F9C0AC02F66CD1800226A67 /* PasteboardCopyRepository.swift in Sources */,
 				8F3CE6B32F68455600A221C8 /* SchemaV100.swift in Sources */,
-				8F3A86E72F56FAFC000CBF7A /* CameraScanner.swift in Sources */,
 				8F903E812F727CE0004DA18E /* PHImagePickerRepository.swift in Sources */,
 				8F903E792F72699C004DA18E /* TextObservation.swift in Sources */,
 				8F3CE6AC2F67FFC800A221C8 /* SavedList.swift in Sources */,
