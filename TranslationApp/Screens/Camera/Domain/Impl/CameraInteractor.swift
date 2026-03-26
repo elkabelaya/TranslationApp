@@ -41,7 +41,7 @@ final class CameraInteractor: CameraInteractorProtocol {
     }
     
     func startVideo() async {
-        await cameraRepository.start()
+        //await cameraRepository.start()
     }
     
     func stopVideo() async {

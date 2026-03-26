@@ -12,10 +12,11 @@ struct BoundingBox: View {
     let size: CGSize
     
     var body: some View {
-        let rect = CGRect(x: observation.boundingBox.minX * size.width - 1,
-                          y: (1 - observation.boundingBox.maxY) * size.height - 1,
-                          width: observation.boundingBox.width * size.width + 2,
-                          height: observation.boundingBox.height * size.height + 2)
+        let rect = CGRect(
+            x: observation.boundingBox.minX * size.width - 1,
+            y: (1 - observation.boundingBox.maxY) * size.height - 1,
+            width: observation.boundingBox.width * size.width + 2,
+            height: observation.boundingBox.height * size.height + 2)
         Path { path in
             path.addRoundedRect(
                 in: rect,
@@ -38,28 +39,26 @@ struct BoundingBox: View {
 
 #Preview {
     @Previewable @State var contentSize: CGSize = .zero
-        LinearGradient(
-            gradient: Gradient(
-                colors: [.white, .black]
-            ),
-            startPoint: .topLeading,
-            endPoint: .bottomTrailing
-        )
-        .frame(
-            width: 220,
-            height: 180
-        )
-        .readSize { size in
-            contentSize = size
+    LinearGradient(
+        gradient: Gradient(
+            colors: [.white, .black]
+        ),
+        startPoint: .topLeading,
+        endPoint: .bottomTrailing
+    )
+    .frame(
+        width: 220,
+        height: 180
+    )
+    .readSize { size in
+        contentSize = size
+    }
+    .overlay(alignment: .topLeading) {
+        ForEach(TextObservation.mocks) { mock in
+            BoundingBox(
+                observation: mock,
+                size: contentSize
+            )
         }
-        .overlay(alignment: .topLeading) {
-            ForEach(TextObservation.mocks) { mock in
-                BoundingBox(
-                    observation: mock,
-                    size: contentSize
-                )
-            }
-        }
-    
-    
+    }
 }
