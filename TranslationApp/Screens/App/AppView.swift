@@ -23,6 +23,7 @@ struct AppView: View {
         do {
             try serviceLocator.diCommon()
             try serviceLocator.diMain()
+            try serviceLocator.diCamera()
         } catch {
             print(error)
         }
@@ -30,6 +31,10 @@ struct AppView: View {
     var body: some View {
         ZStack {
             switch selectedTab {
+            case Tabs.camera.rawValue:
+                CameraView(
+                    viewModel: serviceLocator.resolve()!
+                )
             case Tabs.main.rawValue:
                 MainView(
                     viewModel: serviceLocator.resolve()!

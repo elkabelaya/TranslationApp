@@ -28,16 +28,16 @@ extension View {
 }
 
 
-#Preview(traits: .fixedLayout(width: 300, height: 100)) {
+#Preview {
     HStack(spacing: 24) {
         Rectangle()
             .fill(.appSecondaryBackground)
-            .frame(width: 100, height: 100)
+            .size(100)
             .downShadow()
         
         Rectangle()
             .fill(.appSecondaryBackground)
-            .frame(width: 100, height: 100)
+            .size(100)
             .upShadow()
     }
 }

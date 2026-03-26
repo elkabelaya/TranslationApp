@@ -23,4 +23,15 @@ extension View {
         self
             .cornerRadius(radius.rawValue)
     }
+
+    func size<AnySize: RawRepresentable>(_ size: AnySize) -> some View
+    where AnySize.RawValue == CGFloat {
+        self
+            .frame(width: size.rawValue, height: size.rawValue)
+    }
+    
+    func size(_ size: CGFloat) -> some View {
+        self
+            .frame(width: size, height: size)
+    }
 }

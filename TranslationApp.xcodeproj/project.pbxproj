@@ -34,6 +34,8 @@
 		8F07DD912F61617300A44ED7 /* LanguageMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F07DD902F61616E00A44ED7 /* LanguageMapper.swift */; };
 		8F07DD932F61631800A44ED7 /* CoderProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F07DD922F61631600A44ED7 /* CoderProtocol.swift */; };
 		8F07DD952F61633A00A44ED7 /* JSONCoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F07DD942F61633600A44ED7 /* JSONCoder.swift */; };
+		8F2A6BA82F74318A005DB28E /* PHImageManagerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F2A6BA72F743185005DB28E /* PHImageManagerExtensions.swift */; };
+		8F2A6BAA2F743CE4005DB28E /* VNTextRecognizerRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F2A6BA92F743CDD005DB28E /* VNTextRecognizerRepository.swift */; };
 		8F3A86E32F56FAFC000CBF7A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8F3A86DC2F56FAFC000CBF7A /* Assets.xcassets */; };
 		8F3A86E42F56FAFC000CBF7A /* AppColors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8F3A86D92F56FAFC000CBF7A /* AppColors.xcassets */; };
 		8F3A86E62F56FAFC000CBF7A /* CameraScannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F3A86DE2F56FAFC000CBF7A /* CameraScannerViewController.swift */; };
@@ -94,6 +96,31 @@
 		8F903E392F6D3B04004DA18E /* MainDomainDi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F903E382F6D3AFC004DA18E /* MainDomainDi.swift */; };
 		8F903E3C2F6D3B84004DA18E /* MainUIDi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F903E3B2F6D3B84004DA18E /* MainUIDi.swift */; };
 		8F903E3E2F6D3C1E004DA18E /* MainDi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F903E3D2F6D3C1E004DA18E /* MainDi.swift */; };
+		8F903E542F6D4CCD004DA18E /* CameraDataDi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F903E412F6D4CCD004DA18E /* CameraDataDi.swift */; };
+		8F903E552F6D4CCD004DA18E /* CameraViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F903E4F2F6D4CCD004DA18E /* CameraViewModel.swift */; };
+		8F903E562F6D4CCD004DA18E /* CameraDi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F903E422F6D4CCD004DA18E /* CameraDi.swift */; };
+		8F903E572F6D4CCD004DA18E /* MockCameraViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F903E512F6D4CCD004DA18E /* MockCameraViewModel.swift */; };
+		8F903E582F6D4CCD004DA18E /* CameraInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F903E482F6D4CCD004DA18E /* CameraInteractor.swift */; };
+		8F903E592F6D4CCD004DA18E /* CameraViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F903E502F6D4CCD004DA18E /* CameraViewModelProtocol.swift */; };
+		8F903E5A2F6D4CCD004DA18E /* CameraDomainDi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F903E432F6D4CCD004DA18E /* CameraDomainDi.swift */; };
+		8F903E5B2F6D4CCD004DA18E /* CameraInteractorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F903E462F6D4CCD004DA18E /* CameraInteractorProtocol.swift */; };
+		8F903E5C2F6D4CCD004DA18E /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F903E4E2F6D4CCD004DA18E /* CameraView.swift */; };
+		8F903E5D2F6D4CCD004DA18E /* CameraUiDi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F903E442F6D4CCD004DA18E /* CameraUiDi.swift */; };
+		8F903E5E2F6D4CCD004DA18E /* CameraComponents.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 8F903E4B2F6D4CCD004DA18E /* CameraComponents.xcstrings */; };
+		8F903E5F2F6D4CCD004DA18E /* Camera.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 8F903E4D2F6D4CCD004DA18E /* Camera.xcstrings */; };
+		8F903E672F7144A8004DA18E /* CameraPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F903E662F7144A3004DA18E /* CameraPreview.swift */; };
+		8F903E692F7147D6004DA18E /* CircleIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F903E682F7147D6004DA18E /* CircleIcon.swift */; };
+		8F903E6B2F714C3A004DA18E /* ThumbnailIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F903E6A2F714C31004DA18E /* ThumbnailIcon.swift */; };
+		8F903E702F7262BB004DA18E /* CameraRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F903E6F2F7262B4004DA18E /* CameraRepositoryProtocol.swift */; };
+		8F903E722F7262E0004DA18E /* TextRecognizerRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F903E712F7262D7004DA18E /* TextRecognizerRepositoryProtocol.swift */; };
+		8F903E742F726308004DA18E /* ImagePickerRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F903E732F7262F5004DA18E /* ImagePickerRepositoryProtocol.swift */; };
+		8F903E762F7264BD004DA18E /* AVCameraRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F903E752F726491004DA18E /* AVCameraRepository.swift */; };
+		8F903E792F72699C004DA18E /* TextObservation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F903E782F72699B004DA18E /* TextObservation.swift */; };
+		8F903E7D2F726A3B004DA18E /* VNObservationMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F903E7C2F726A38004DA18E /* VNObservationMapper.swift */; };
+		8F903E7F2F7277B5004DA18E /* PhotoPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F903E7E2F7277AA004DA18E /* PhotoPicker.swift */; };
+		8F903E812F727CE0004DA18E /* PHImagePickerRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F903E802F727CD7004DA18E /* PHImagePickerRepository.swift */; };
+		8F903E832F72A17D004DA18E /* TextObservationMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F903E822F72A17A004DA18E /* TextObservationMock.swift */; };
+		8F903E852F72A5D8004DA18E /* BoundingBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F903E842F72A5D6004DA18E /* BoundingBox.swift */; };
 		8F9C0A8C2F63E4F700226A67 /* SoundRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F9C0A8B2F63E4F700226A67 /* SoundRepositoryProtocol.swift */; };
 		8F9C0A8E2F63E61000226A67 /* BundleSoundRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F9C0A8D2F63E61000226A67 /* BundleSoundRepository.swift */; };
 		8F9C0A942F63EC7100226A67 /* beep-07a.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8F9C0A932F63EC7100226A67 /* beep-07a.mp3 */; };
@@ -158,6 +185,8 @@
 		8F07DD902F61616E00A44ED7 /* LanguageMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageMapper.swift; sourceTree = "<group>"; };
 		8F07DD922F61631600A44ED7 /* CoderProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoderProtocol.swift; sourceTree = "<group>"; };
 		8F07DD942F61633600A44ED7 /* JSONCoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONCoder.swift; sourceTree = "<group>"; };
+		8F2A6BA72F743185005DB28E /* PHImageManagerExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PHImageManagerExtensions.swift; sourceTree = "<group>"; };
+		8F2A6BA92F743CDD005DB28E /* VNTextRecognizerRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VNTextRecognizerRepository.swift; sourceTree = "<group>"; };
 		8F3A86D92F56FAFC000CBF7A /* AppColors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = AppColors.xcassets; sourceTree = "<group>"; };
 		8F3A86DC2F56FAFC000CBF7A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8F3A86DD2F56FAFC000CBF7A /* CameraScanner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraScanner.swift; sourceTree = "<group>"; };
@@ -219,6 +248,31 @@
 		8F903E382F6D3AFC004DA18E /* MainDomainDi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainDomainDi.swift; sourceTree = "<group>"; };
 		8F903E3B2F6D3B84004DA18E /* MainUIDi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainUIDi.swift; sourceTree = "<group>"; };
 		8F903E3D2F6D3C1E004DA18E /* MainDi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainDi.swift; sourceTree = "<group>"; };
+		8F903E412F6D4CCD004DA18E /* CameraDataDi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraDataDi.swift; sourceTree = "<group>"; };
+		8F903E422F6D4CCD004DA18E /* CameraDi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraDi.swift; sourceTree = "<group>"; };
+		8F903E432F6D4CCD004DA18E /* CameraDomainDi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraDomainDi.swift; sourceTree = "<group>"; };
+		8F903E442F6D4CCD004DA18E /* CameraUiDi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraUiDi.swift; sourceTree = "<group>"; };
+		8F903E462F6D4CCD004DA18E /* CameraInteractorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraInteractorProtocol.swift; sourceTree = "<group>"; };
+		8F903E482F6D4CCD004DA18E /* CameraInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraInteractor.swift; sourceTree = "<group>"; };
+		8F903E4B2F6D4CCD004DA18E /* CameraComponents.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = CameraComponents.xcstrings; sourceTree = "<group>"; };
+		8F903E4D2F6D4CCD004DA18E /* Camera.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Camera.xcstrings; sourceTree = "<group>"; };
+		8F903E4E2F6D4CCD004DA18E /* CameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraView.swift; sourceTree = "<group>"; };
+		8F903E4F2F6D4CCD004DA18E /* CameraViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewModel.swift; sourceTree = "<group>"; };
+		8F903E502F6D4CCD004DA18E /* CameraViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewModelProtocol.swift; sourceTree = "<group>"; };
+		8F903E512F6D4CCD004DA18E /* MockCameraViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockCameraViewModel.swift; sourceTree = "<group>"; };
+		8F903E662F7144A3004DA18E /* CameraPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraPreview.swift; sourceTree = "<group>"; };
+		8F903E682F7147D6004DA18E /* CircleIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleIcon.swift; sourceTree = "<group>"; };
+		8F903E6A2F714C31004DA18E /* ThumbnailIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThumbnailIcon.swift; sourceTree = "<group>"; };
+		8F903E6F2F7262B4004DA18E /* CameraRepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraRepositoryProtocol.swift; sourceTree = "<group>"; };
+		8F903E712F7262D7004DA18E /* TextRecognizerRepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextRecognizerRepositoryProtocol.swift; sourceTree = "<group>"; };
+		8F903E732F7262F5004DA18E /* ImagePickerRepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerRepositoryProtocol.swift; sourceTree = "<group>"; };
+		8F903E752F726491004DA18E /* AVCameraRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AVCameraRepository.swift; sourceTree = "<group>"; };
+		8F903E782F72699B004DA18E /* TextObservation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextObservation.swift; sourceTree = "<group>"; };
+		8F903E7C2F726A38004DA18E /* VNObservationMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VNObservationMapper.swift; sourceTree = "<group>"; };
+		8F903E7E2F7277AA004DA18E /* PhotoPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoPicker.swift; sourceTree = "<group>"; };
+		8F903E802F727CD7004DA18E /* PHImagePickerRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PHImagePickerRepository.swift; sourceTree = "<group>"; };
+		8F903E822F72A17A004DA18E /* TextObservationMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextObservationMock.swift; sourceTree = "<group>"; };
+		8F903E842F72A5D6004DA18E /* BoundingBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoundingBox.swift; sourceTree = "<group>"; };
 		8F9C0A8B2F63E4F700226A67 /* SoundRepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundRepositoryProtocol.swift; sourceTree = "<group>"; };
 		8F9C0A8D2F63E61000226A67 /* BundleSoundRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BundleSoundRepository.swift; sourceTree = "<group>"; };
 		8F9C0A932F63EC7100226A67 /* beep-07a.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "beep-07a.mp3"; sourceTree = "<group>"; };
@@ -377,6 +431,14 @@
 			path = Mapper;
 			sourceTree = "<group>";
 		};
+		8F2A6BA62F74316C005DB28E /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				8F2A6BA72F743185005DB28E /* PHImageManagerExtensions.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
 		8F3A86DA2F56FAFC000CBF7A /* DS */ = {
 			isa = PBXGroup;
 			children = (
@@ -483,6 +545,7 @@
 		8F3CE6C42F6925FE00A221C8 /* Preview */ = {
 			isa = PBXGroup;
 			children = (
+				8F903E822F72A17A004DA18E /* TextObservationMock.swift */,
 				8F3CE6C52F69262F00A221C8 /* TranslationMock.swift */,
 			);
 			path = Preview;
@@ -530,6 +593,7 @@
 		8F49EB312F59B99E0089A44F /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				8F2A6BA62F74316C005DB28E /* Utils */,
 				8F9C0AB22F66751000226A67 /* Files */,
 				8F9C0A9B2F65104A00226A67 /* Network */,
 				8F49EB322F59B9A50089A44F /* Repository */,
@@ -597,6 +661,7 @@
 		8F8CDBB12F57070C006AB03A /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				8F903E682F7147D6004DA18E /* CircleIcon.swift */,
 				8F07DD5D2F5C8EFA00A44ED7 /* SearchBar.swift */,
 				8F07DD5B2F5C315500A44ED7 /* AppList.swift */,
 				8F6932142F582A0E00C0432E /* AppButton.swift */,
@@ -620,6 +685,7 @@
 				8F8CDBAC2F57008E006AB03A /* Main */,
 				8F3CE6A52F67F8F600A221C8 /* Favorites */,
 				8FAC1C202F6957910094BD8B /* History */,
+				8F903E532F6D4CCD004DA18E /* Camera */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -676,6 +742,125 @@
 				8F903E2F2F6D2FA0004DA18E /* ServiceLocator.swift */,
 			);
 			path = DI;
+			sourceTree = "<group>";
+		};
+		8F903E402F6D4CCD004DA18E /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				8F903E7A2F7269E4004DA18E /* Repository */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		8F903E452F6D4CCD004DA18E /* DI */ = {
+			isa = PBXGroup;
+			children = (
+				8F903E412F6D4CCD004DA18E /* CameraDataDi.swift */,
+				8F903E422F6D4CCD004DA18E /* CameraDi.swift */,
+				8F903E432F6D4CCD004DA18E /* CameraDomainDi.swift */,
+				8F903E442F6D4CCD004DA18E /* CameraUiDi.swift */,
+			);
+			path = DI;
+			sourceTree = "<group>";
+		};
+		8F903E472F6D4CCD004DA18E /* Api */ = {
+			isa = PBXGroup;
+			children = (
+				8F903E462F6D4CCD004DA18E /* CameraInteractorProtocol.swift */,
+			);
+			path = Api;
+			sourceTree = "<group>";
+		};
+		8F903E492F6D4CCD004DA18E /* Impl */ = {
+			isa = PBXGroup;
+			children = (
+				8F903E482F6D4CCD004DA18E /* CameraInteractor.swift */,
+			);
+			path = Impl;
+			sourceTree = "<group>";
+		};
+		8F903E4A2F6D4CCD004DA18E /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				8F903E772F726993004DA18E /* Models */,
+				8F903E6E2F72623E004DA18E /* Repository */,
+				8F903E472F6D4CCD004DA18E /* Api */,
+				8F903E492F6D4CCD004DA18E /* Impl */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		8F903E4C2F6D4CCD004DA18E /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				8F903E842F72A5D6004DA18E /* BoundingBox.swift */,
+				8F903E7E2F7277AA004DA18E /* PhotoPicker.swift */,
+				8F903E6A2F714C31004DA18E /* ThumbnailIcon.swift */,
+				8F903E662F7144A3004DA18E /* CameraPreview.swift */,
+				8F903E4B2F6D4CCD004DA18E /* CameraComponents.xcstrings */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		8F903E522F6D4CCD004DA18E /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				8F903E4C2F6D4CCD004DA18E /* Components */,
+				8F903E4D2F6D4CCD004DA18E /* Camera.xcstrings */,
+				8F903E4E2F6D4CCD004DA18E /* CameraView.swift */,
+				8F903E4F2F6D4CCD004DA18E /* CameraViewModel.swift */,
+				8F903E502F6D4CCD004DA18E /* CameraViewModelProtocol.swift */,
+				8F903E512F6D4CCD004DA18E /* MockCameraViewModel.swift */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		8F903E532F6D4CCD004DA18E /* Camera */ = {
+			isa = PBXGroup;
+			children = (
+				8F903E402F6D4CCD004DA18E /* Data */,
+				8F903E452F6D4CCD004DA18E /* DI */,
+				8F903E4A2F6D4CCD004DA18E /* Domain */,
+				8F903E522F6D4CCD004DA18E /* UI */,
+			);
+			path = Camera;
+			sourceTree = "<group>";
+		};
+		8F903E6E2F72623E004DA18E /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				8F903E732F7262F5004DA18E /* ImagePickerRepositoryProtocol.swift */,
+				8F903E712F7262D7004DA18E /* TextRecognizerRepositoryProtocol.swift */,
+				8F903E6F2F7262B4004DA18E /* CameraRepositoryProtocol.swift */,
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
+		8F903E772F726993004DA18E /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				8F903E782F72699B004DA18E /* TextObservation.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		8F903E7A2F7269E4004DA18E /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				8F2A6BA92F743CDD005DB28E /* VNTextRecognizerRepository.swift */,
+				8F903E802F727CD7004DA18E /* PHImagePickerRepository.swift */,
+				8F903E7B2F7269ED004DA18E /* Mapper */,
+				8F903E752F726491004DA18E /* AVCameraRepository.swift */,
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
+		8F903E7B2F7269ED004DA18E /* Mapper */ = {
+			isa = PBXGroup;
+			children = (
+				8F903E7C2F726A38004DA18E /* VNObservationMapper.swift */,
+			);
+			path = Mapper;
 			sourceTree = "<group>";
 		};
 		8F9C0A8F2F63E71000226A67 /* Bundle */ = {
@@ -874,6 +1059,8 @@
 				8F3CE6A62F67F8F600A221C8 /* Favorites.xcstrings in Resources */,
 				8F9C0A942F63EC7100226A67 /* beep-07a.mp3 in Resources */,
 				8F6932172F584B5300C0432E /* Main.xcstrings in Resources */,
+				8F903E5E2F6D4CCD004DA18E /* CameraComponents.xcstrings in Resources */,
+				8F903E5F2F6D4CCD004DA18E /* Camera.xcstrings in Resources */,
 				8FAC1C272F6957910094BD8B /* History.xcstrings in Resources */,
 				8FAC1C282F6957910094BD8B /* HistoryComponents.xcstrings in Resources */,
 				8F8CDBB02F570267006AB03A /* AppIcons.xcassets in Resources */,
@@ -911,6 +1098,7 @@
 				8F3CE6B52F6845B100A221C8 /* TranslationMigrationPlan.swift in Sources */,
 				8F07DD6D2F5D849200A44ED7 /* Translation.swift in Sources */,
 				8FAC1C352F6996B70094BD8B /* ErrorExtensions.swift in Sources */,
+				8F903E702F7262BB004DA18E /* CameraRepositoryProtocol.swift in Sources */,
 				8F07DD5E2F5C8F0000A44ED7 /* SearchBar.swift in Sources */,
 				8F8CDBD12F580E8E006AB03A /* TextButton.swift in Sources */,
 				8F07DD672F5D76AF00A44ED7 /* FavoriteTranslation.swift in Sources */,
@@ -923,10 +1111,25 @@
 				8F9C0AC02F66CD1800226A67 /* PasteboardCopyRepository.swift in Sources */,
 				8F3CE6B32F68455600A221C8 /* SchemaV100.swift in Sources */,
 				8F3A86E72F56FAFC000CBF7A /* CameraScanner.swift in Sources */,
+				8F903E812F727CE0004DA18E /* PHImagePickerRepository.swift in Sources */,
+				8F903E792F72699C004DA18E /* TextObservation.swift in Sources */,
 				8F3CE6AC2F67FFC800A221C8 /* SavedList.swift in Sources */,
 				8F3CE69D2F67F40B00A221C8 /* SavedTranslationCard.swift in Sources */,
 				8F9C0A962F63FB5A00226A67 /* PulseAnimation.swift in Sources */,
 				8F9C0AB82F667E7600226A67 /* Files.swift in Sources */,
+				8F903E542F6D4CCD004DA18E /* CameraDataDi.swift in Sources */,
+				8F903E742F726308004DA18E /* ImagePickerRepositoryProtocol.swift in Sources */,
+				8F903E552F6D4CCD004DA18E /* CameraViewModel.swift in Sources */,
+				8F903E562F6D4CCD004DA18E /* CameraDi.swift in Sources */,
+				8F2A6BAA2F743CE4005DB28E /* VNTextRecognizerRepository.swift in Sources */,
+				8F903E572F6D4CCD004DA18E /* MockCameraViewModel.swift in Sources */,
+				8F903E582F6D4CCD004DA18E /* CameraInteractor.swift in Sources */,
+				8F903E672F7144A8004DA18E /* CameraPreview.swift in Sources */,
+				8F903E592F6D4CCD004DA18E /* CameraViewModelProtocol.swift in Sources */,
+				8F903E5A2F6D4CCD004DA18E /* CameraDomainDi.swift in Sources */,
+				8F903E5B2F6D4CCD004DA18E /* CameraInteractorProtocol.swift in Sources */,
+				8F903E5C2F6D4CCD004DA18E /* CameraView.swift in Sources */,
+				8F903E5D2F6D4CCD004DA18E /* CameraUiDi.swift in Sources */,
 				8F903E342F6D39F8004DA18E /* CommonDi.swift in Sources */,
 				8F9C0ABC2F66B19F00226A67 /* SVG.swift in Sources */,
 				8F8CDBBF2F5718A9006AB03A /* MainViewModelProtocol.swift in Sources */,
@@ -938,26 +1141,32 @@
 				8F6932232F586E5600C0432E /* MockMainViewModel.swift in Sources */,
 				8F6932132F58262000C0432E /* FilledIconButton.swift in Sources */,
 				8F07DD732F5ECC3500A44ED7 /* SpeechSynthesizerRepositoryProtocol.swift in Sources */,
+				8F903E852F72A5D8004DA18E /* BoundingBox.swift in Sources */,
 				8F8CDBC12F571965006AB03A /* MainViewModel.swift in Sources */,
 				8F3CE6A72F67F8F600A221C8 /* FavoritesViewModel.swift in Sources */,
 				8FAC1C2A2F6962910094BD8B /* SwiftDataFavoritesRepository.swift in Sources */,
 				8FAC1C212F6957910094BD8B /* HistoryViewModel.swift in Sources */,
 				8FAC1C222F6957910094BD8B /* MockHistoryViewModel.swift in Sources */,
 				8FAC1C232F6957910094BD8B /* HistoryView.swift in Sources */,
+				8F903E692F7147D6004DA18E /* CircleIcon.swift in Sources */,
 				8FAC1C242F6957910094BD8B /* HistoryViewModelProtocol.swift in Sources */,
 				8FAC1C3D2F6997F10094BD8B /* ListContextObserver.swift in Sources */,
 				8FAC1C252F6957910094BD8B /* HistoryInteractorProtocol.swift in Sources */,
 				8FAC1C262F6957910094BD8B /* HistoryInteractor.swift in Sources */,
 				8F3CE6A82F67F8F600A221C8 /* MockFavoritesViewModel.swift in Sources */,
 				8F3CE6A92F67F8F600A221C8 /* FavoritesViewModelProtocol.swift in Sources */,
+				8F903E6B2F714C3A004DA18E /* ThumbnailIcon.swift in Sources */,
 				8F3CE6AA2F67F8F600A221C8 /* FavoritesView.swift in Sources */,
+				8F2A6BA82F74318A005DB28E /* PHImageManagerExtensions.swift in Sources */,
 				8F8CDBBA2F5716B9006AB03A /* MainView.swift in Sources */,
 				8F07DD562F5B045E00A44ED7 /* TranslateInteractorProtocol.swift in Sources */,
 				8F8CDBB32F570821006AB03A /* AppDimens.swift in Sources */,
 				8F07DD952F61633A00A44ED7 /* JSONCoder.swift in Sources */,
+				8F903E7F2F7277B5004DA18E /* PhotoPicker.swift in Sources */,
 				8F903E3C2F6D3B84004DA18E /* MainUIDi.swift in Sources */,
 				8F6932272F58AAF500C0432E /* TabBar.swift in Sources */,
 				8F07DD792F5ED04800A44ED7 /* CommonVoiceInteractor.swift in Sources */,
+				8F903E722F7262E0004DA18E /* TextRecognizerRepositoryProtocol.swift in Sources */,
 				8F903E302F6D2FA6004DA18E /* ServiceLocator.swift in Sources */,
 				8F07DD5C2F5C315500A44ED7 /* AppList.swift in Sources */,
 				8F3CE69B2F67EB5D00A221C8 /* SizeReader.swift in Sources */,
@@ -968,6 +1177,7 @@
 				8F07DD712F5EB7E900A44ED7 /* AVFoundationSpeechSynthesizerRepository.swift in Sources */,
 				8F3CE6C32F69158600A221C8 /* FavoritesInteractor.swift in Sources */,
 				8F3CE6C02F69152A00A221C8 /* FavoritesInteractorProtocol.swift in Sources */,
+				8F903E7D2F726A3B004DA18E /* VNObservationMapper.swift in Sources */,
 				8F07DD692F5D7CA200A44ED7 /* MainFavoritesInteractor.swift in Sources */,
 				8F9C0AB42F66753F00226A67 /* FileConstants.swift in Sources */,
 				8F6932112F5821F800C0432E /* DimensViewExtensions.swift in Sources */,
@@ -979,6 +1189,7 @@
 				8F9C0AAF2F65B81800226A67 /* LanguageCountryMapper.swift in Sources */,
 				8F8CDBCD2F580A8B006AB03A /* TextExtensions.swift in Sources */,
 				8F9C0ABE2F66CCF400226A67 /* CopyRepositoryProtocol.swift in Sources */,
+				8F903E762F7264BD004DA18E /* AVCameraRepository.swift in Sources */,
 				8F9C0ABA2F669E3000226A67 /* ImageFromFile.swift in Sources */,
 				8F6932212F585C6300C0432E /* TranslateCardView.swift in Sources */,
 				8F3A86E82F56FAFC000CBF7A /* AppView.swift in Sources */,
@@ -991,6 +1202,7 @@
 				8F3A86E92F56FAFC000CBF7A /* TranslationApp.swift in Sources */,
 				8F07DD8F2F61611B00A44ED7 /* TranslationMapper.swift in Sources */,
 				8F07DD762F5ECE8F00A44ED7 /* VoiceInteractorProtocol.swift in Sources */,
+				8F903E832F72A17D004DA18E /* TextObservationMock.swift in Sources */,
 				8F69321B2F584F1800C0432E /* LanguagesCardView.swift in Sources */,
 				8F49EB2F2F59B8530089A44F /* SpeachRecognizerRepositoryProtocol.swift in Sources */,
 				8F9C0A982F6459C400226A67 /* ContryIconsLocalRepositoryProtocol.swift in Sources */,
@@ -1137,6 +1349,7 @@
 				INFOPLIST_FILE = TranslationApp/Info.plist;
 				INFOPLIST_KEY_NSCameraUsageDescription = "For capture text";
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = "For speach-to-text function";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = NSPhotoLibraryUsageDescription;
 				INFOPLIST_KEY_NSSpeechRecognitionUsageDescription = "For speach-to-text function";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -1179,6 +1392,7 @@
 				INFOPLIST_FILE = TranslationApp/Info.plist;
 				INFOPLIST_KEY_NSCameraUsageDescription = "For capture text";
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = "For speach-to-text function";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = NSPhotoLibraryUsageDescription;
 				INFOPLIST_KEY_NSSpeechRecognitionUsageDescription = "For speach-to-text function";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;

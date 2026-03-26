@@ -35,7 +35,6 @@ final class MainViewModel: MainViewModelProtocol {
     var showSheet: Bool = false
     var bottomSheet: MainBottomSheet? {
         didSet {
-            print("bottomSheet changed \(bottomSheet)")
             if bottomSheet == nil {
                 filter = ""
             }

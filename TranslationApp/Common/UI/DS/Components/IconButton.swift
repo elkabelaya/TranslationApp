@@ -29,12 +29,12 @@ struct IconButton: View {
                 .renderingMode(.template)
                 .resizable()
                 .foregroundStyle(color)
-                .frame(width: size.rawValue, height: size.rawValue)
+                .size(size)
         }
     }
  }
 
-#Preview(traits: .fixedLayout(width: 300, height: 100)) {
+#Preview {
     VStack(alignment: .leading, spacing: 8) {
         IconButton(.icCopy, .s, .appAccentText){}
         IconButton(.icCopy, .m, .appSecondaryText){}

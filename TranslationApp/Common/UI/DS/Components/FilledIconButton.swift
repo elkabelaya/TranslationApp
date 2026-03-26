@@ -49,26 +49,28 @@ struct FilledIconButton: View {
                             }
                         }
                     }
-                    .frame(width: size.rawValue, height: size.rawValue)
+                    .size(size)
                 Image(icon)
                     .resizable()
                     .renderingMode(.original)
-                    .frame(width: size.icon(), height: size.icon())
+                    .size(size.icon())
                     
             }
         }
     }
  }
 
-#Preview(traits: .fixedLayout(width: 300, height: 100)) {
-    FilledIconButton(.icMicrophone,
-                     .xl,
-                     .plain(.appTertiaryBackground),
-                     {})
-    FilledIconButton(.icMicrophone,
-                     .xl,
-                     .gradient(.appTertiaryBackgroundGradient,
-                               .appTertiaryBackground),
-                     {})
+#Preview {
+    VStack {
+        FilledIconButton(.icMicrophone,
+                         .xl,
+                         .plain(.appTertiaryBackground),
+                         {})
+        FilledIconButton(.icMicrophone,
+                         .xl,
+                         .gradient(.appTertiaryBackgroundGradient,
+                                   .appTertiaryBackground),
+                         {})
+    }
         
 }

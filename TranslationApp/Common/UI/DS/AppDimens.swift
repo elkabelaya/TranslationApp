@@ -9,6 +9,7 @@ import CoreFoundation
 
 enum AppDimens {
     enum Corners: CGFloat {
+        case xxs = 6.0
         case xs = 12.0
         case m = 16.0
         case l = 24.0
@@ -26,6 +27,7 @@ enum AppDimens {
         case l = 20
         case xl = 22
         case xxl = 40
+        case xxxl = 60
     }
     
     enum Font: CGFloat {
@@ -40,6 +42,7 @@ enum AppDimens {
         case s = 24
         case m = 32
     }
+    
     enum FilledIcon: CGFloat {
         case xl = 40
         case xxl = 48
@@ -50,6 +53,14 @@ enum AppDimens {
         
         func paddings() -> CGFloat {
             (self.rawValue - icon())/2
+        }
+    }
+    
+    enum CircleIcon: CGFloat {
+        case l = 75
+        
+        func border() -> CGFloat {
+            6
         }
     }
     
