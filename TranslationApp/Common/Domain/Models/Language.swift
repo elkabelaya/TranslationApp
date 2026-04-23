@@ -10,3 +10,8 @@ struct Language: Equatable {
     let id: LanguageCode
     let name: String
 }
+
+enum LanguageType: Codable {
+    case from
+    case to
+}

@@ -99,21 +99,14 @@ extension ServiceLocator {
             )
         }
 
-        register(SettingsRepositoryProtocol.self) { r in
-            return  UserDefaultsSettingsRepository(
-                userDefaults: r.resolve()!,
-                mapper: r.resolve()!,
-                coder: r.resolve()!
-            )
-        }
-
-        register(SettingsRepositoryProtocol.self) { r in
-            return  UserDefaultsSettingsRepository(
-                userDefaults: r.resolve()!,
-                mapper: r.resolve()!,
-                coder: r.resolve()!
-            )
-        }
+        register(SettingsRepositoryProtocol.self,
+                 UserDefaultsSettingsRepository(
+                    userDefaults: self.resolve()!,
+                    mapper: self.resolve()!,
+                    coder: self.resolve()!
+                 )
+        )
+        
 
         register(LanguagesRepositoryProtocol.self) { r in
             return  LocaleLanguageRepository(

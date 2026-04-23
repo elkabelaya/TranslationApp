@@ -48,4 +48,8 @@ final class MockCameraViewModel: CameraViewModelProtocol {
     func onPickImage(image: UIImage){
         
     }
+    
+    func onBack() {
+        
+    }
 }

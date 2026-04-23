@@ -13,18 +13,17 @@ class SFSpeechRecognizerRepository: SpeachRecognizerRepositoryProtocol {
 
     private var continuation: AsyncThrowingStream<String, Error>.Continuation?
     
-    // MARK: Swft 6.2. crash overlap
+    // MARK: Swft 6.2.4 crash overlap
     private var engine: SpeechRecognizerEngineProtocol = SFSpeechRecognizerEngine()//TODO di
     private var timer: Timer?
 
     func startStreaming(
         lng: LanguageCode
-    ) async -> AsyncThrowingStream<String, Error> {
+    ) -> AsyncThrowingStream<String, Error> {
         AsyncThrowingStream { continuation in
             self.continuation = continuation
             engine.delegate = self
             engine.start(lng: lng)
-            resetTimer()
         }
     }
     
@@ -60,7 +59,7 @@ protocol SpeechRecognizerEngineProtocol {
     func stop()
 }
 
-class SFSpeechRecognizerEngine: SpeechRecognizerEngineProtocol {
+final class SFSpeechRecognizerEngine: SpeechRecognizerEngineProtocol {
     weak var delegate: SpeechRecDelegate? = nil
     
     var speechRecognizer: SFSpeechRecognizer?
@@ -69,26 +68,26 @@ class SFSpeechRecognizerEngine: SpeechRecognizerEngineProtocol {
     let audioEngine = AVAudioEngine()
     
     func start(lng: String) {
-            if SFSpeechRecognizer.authorizationStatus() == .authorized {
-                AVAudioSession.sharedInstance().requestRecordPermission { granted in
-                        DispatchQueue.main.async {
-                            if granted {
-                                Task { @MainActor in
-                                    self.startRecognition(lng: lng)
-                                }
-                            } else {
-                                //TODO
-                            }
-                        }
-                    }
-                
+        Task {
+            if await isAuthorized() {
+                self.startRecognition(lng: lng)
+            } else {
+                //TODO
             }
+        }
     }
     
     func startRecognition(lng: String) {
-        do {
+        do {//TODO di
             let audioSession = AVAudioSession.sharedInstance()
-            try audioSession.setCategory(.record, mode: .measurement, options: .defaultToSpeaker)
+            try audioSession.setCategory(
+                .playAndRecord,
+                mode: .measurement,
+                options: [
+                    .defaultToSpeaker,
+                    .allowBluetoothHFP
+                ]
+            )
             try audioSession.setActive(true, options: .notifyOthersOnDeactivation)
             speechRecognizer = SFSpeechRecognizer(locale: Locale(identifier: "ru"))
             recognitionRequest = SFSpeechAudioBufferRecognitionRequest()
@@ -124,6 +123,25 @@ class SFSpeechRecognizerEngine: SpeechRecognizerEngineProtocol {
         audioEngine.inputNode.removeTap(onBus: 0)
         audioEngine.stop()
         recognitionRequest?.endAudio()
+    }
+    
+    private func isAuthorized() async -> Bool {
+        //TODO extract to auth repo
+        var status = SFSpeechRecognizer.authorizationStatus()
+        
+        if status == .notDetermined {
+            status = await  withCheckedContinuation { continuation in
+                SFSpeechRecognizer.requestAuthorization { status in
+                    continuation.resume(returning: status)
+                }
+            }
+        }
+        
+        if status == .authorized {
+            return await AVAudioApplication.requestRecordPermission()
+        }
+        
+        return false
     }
 }
 

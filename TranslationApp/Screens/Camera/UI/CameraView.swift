@@ -49,6 +49,14 @@ struct CameraView: View {
         .sheet(isPresented: $viewModel.isPicking) {
             PhotoPicker(onImageSelected: viewModel.onPickImage)
         }
+        .toolbar(title: .Camera.title,
+                 leading: [
+                    ToolBarButton(
+                        item: .icon(.icArrowBack),
+                        action: viewModel.onBack
+                    )
+                 ]
+        )
     }
     
     func contentView() -> any View {

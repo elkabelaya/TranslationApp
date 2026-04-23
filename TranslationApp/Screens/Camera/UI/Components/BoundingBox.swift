@@ -13,8 +13,8 @@ struct BoundingBox: View {
     
     var body: some View {
         let rect = CGRect(
-            x: observation.boundingBox.minX * size.width - 1,
-            y: (1 - observation.boundingBox.maxY) * size.height - 1,
+            x: observation.topLeading.x * size.width - 1,
+            y: (1 - observation.topLeading.y) * size.height - 1,
             width: observation.boundingBox.width * size.width + 2,
             height: observation.boundingBox.height * size.height + 2)
         Path { path in
@@ -32,6 +32,14 @@ struct BoundingBox: View {
             radius: 1,
             x: 1,
             y: 1
+        )
+        .rotationEffect(
+            Angle(degrees: observation.anglePi),
+            anchor:.leading
+//            anchor: UnitPoint(
+//                x: observation.topLeading.x * size.width,
+//                y: (1 - observation.topLeading.y) * size.height
+//            )
         )
         
     }

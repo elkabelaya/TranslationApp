@@ -9,6 +9,6 @@ import Combine
 protocol SpeachRecognizerRepositoryProtocol {
     func startStreaming(
         lng: LanguageCode
-    ) async  -> AsyncThrowingStream<String, Error>
+    ) -> AsyncThrowingStream<String, Error>
     func stop() async throws
 }

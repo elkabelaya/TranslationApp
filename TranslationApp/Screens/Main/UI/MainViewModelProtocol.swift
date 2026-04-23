@@ -22,10 +22,6 @@ protocol MainViewModelProtocol: Observable {
     var toIconPath: String? {get}
     var fromText: String { get set }
     var toText: String { get }
-    var filter: String { get set }
-    var languages: [Language] { get }
-    var showSheet: Bool { get set }
-    var bottomSheet: MainBottomSheet? { get set }
     var isFavorite: Bool { get }
     var isListening: Bool { get }
     var toast: ToastModel? { get set }
@@ -37,7 +33,6 @@ protocol MainViewModelProtocol: Observable {
     func onFromCloseClick ()
     func onMicrophoneClick ()
     func onTranslateClick ()
-    func onSelectLanguage (_ lng: Language)
     func onToFavoriteClick ()
     func onToCopyClick ()
     func onToShareClick ()

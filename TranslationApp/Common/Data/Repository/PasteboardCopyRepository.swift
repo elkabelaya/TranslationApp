@@ -14,7 +14,6 @@ final class PasteboardCopyRepository: CopyRepositoryProtocol {
         self.pasteboard = pasteboard
     }
     
-    
     func copy(_ text: String) {
         pasteboard.string = text
     }

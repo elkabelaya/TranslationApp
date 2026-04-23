@@ -52,44 +52,7 @@ struct MainView: View {
                     ToolBarButton(item: .icon(.icMenu), action: {})
                  ]
         )
-        .toast(model: $viewModel.toast)
-        .sheet(isPresented: $viewModel.showSheet) {
-            //TODO refactor navigation to sheet
-            switch viewModel.bottomSheet {
-            case .languages:
-                languagesSheet()
-            case .share(let text):
-                ActivityViewController(activityItems: [text])
-                    .presentationDetents([.medium])
-            case .none:
-                EmptyView()
-            }
-        }
-        
-    }
-    
-    private func languagesSheet() -> some View {
-        VStack(spacing: .s) {
-            SearchBar(text: $viewModel.filter, placeholder: .Main.searchPlaceholder)
-                .paddings(.s,.l,.s,.l)
-            List(viewModel.languages, id: \.id) { language in
-                Button(action: {
-                    viewModel.onSelectLanguage(language)
-                }){
-                    Text(language.name)
-                }
-                .textListRow()
-            }
-            .appListStyle()
-            .font(.textS)
-            .foregroundStyle(.appPrimaryText)
-            .background(.appSecondaryBackground)
-            
-        }
-        .background(.appSecondaryBackground)
-        .cornerRadius(24)
-        .paddings(.s,.l,.s,.l)
-        .downShadow()
+        .toast(model: $viewModel.toast)        
     }
 }
 
@@ -99,16 +62,6 @@ struct MainView: View {
         toLng: .init(id: "0",name: "English"),
         fromText: "Hola",
         toText: "Hello")
-    )
-}
-
-#Preview("BottomSheet") {
-    MainView(viewModel: MockMainViewModel(
-        fromLng: .init(id: "0",name: "Spanish"),
-        toLng: .init(id: "0",name: "English"),
-        fromText: "Hola",
-        toText: "Hello",
-        bottomSheet: .languages)
     )
 }
 

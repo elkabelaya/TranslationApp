@@ -10,20 +10,39 @@ import SwiftData
 
 @main
 struct TranslationApp: App {
-    //let container: ModelContainer
-    
+    let serviceLocator: ServiceLocator = .init()
     init() {
-        do {
-            //container = try DatabaseManager.createCurrentModelContainer()
-        } catch {
-            fatalError("Failed to initialize model container.")
-        }
+        serviceLocator.di()
     }
     
     var body: some Scene {
         WindowGroup {
-            AppView()
+            RootView(serviceLocator: serviceLocator)
         }
-        //.modelContainer(container)
     }
+}
+
+struct RootView: View  {
+    @State var appViewModel: AppViewModelProtocol
+    init(serviceLocator: ServiceLocator) {
+        appViewModel = serviceLocator.resolve()!
+    }
+    
+    var body: some View {
+        AppView(viewModel: appViewModel)
+    }
+}
+
+extension ServiceLocator {
+    func di() {
+        try? diApp()
+        try? diCommon()
+        try? diMain()
+        try? diCamera()
+        try? diLanguagesList()
+    }
+}
+
+#Preview {
+    return RootView(serviceLocator: ServiceLocator.mock)
 }

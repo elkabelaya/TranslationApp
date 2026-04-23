@@ -12,17 +12,6 @@
         }
       }
     },
-    "search_placeholder" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Start typing…"
-          }
-        }
-      }
-    },
     "title" : {
       "extractionState" : "manual",
       "localizations" : {

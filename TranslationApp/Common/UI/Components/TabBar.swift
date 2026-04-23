@@ -11,14 +11,16 @@ enum TabItemType {
     case icon
     case filledIcon
 }
-struct TabItem {
+
+struct TabItem<Tabbing:Tabbable> {
     let type: TabItemType
     let title: LocalizedStringResource
     let icon: ImageResource
+    let tab: Tabbing
 }
 
-private struct TabItemView: View {
-    let item: TabItem
+private struct TabItemView<Tabbing:Tabbable>: View {
+    let item: TabItem<Tabbing>
     let isSelected: Bool
     let action: () -> Void
     
@@ -58,25 +60,27 @@ private struct TabItemView: View {
     }
 }
 
-private struct CustomTabBarView: ViewModifier {
-    @Binding var selectedIndex: Int
+private struct CustomTabBarView<Tabbing: Tabbable>: ViewModifier {
+    @Binding var selectedTab: Tabbing
     
-    private let items: [TabItem]
+    private let items: [TabItem<Tabbing>]
 
-    init(selectedIndex: Binding<Int>, items: [TabItem]) {
-        self._selectedIndex = selectedIndex
+    init(selectedTab: Binding<Tabbing>, items: [TabItem<Tabbing>]) {
+        self._selectedTab = selectedTab
         self.items = items
     }
     
     func body(content: Content) -> some View {
         VStack(spacing: .zero) {
             content
-                .frame(maxHeight: .infinity)
+                .frame(maxWidth: .infinity,maxHeight: .infinity)
             
             HStack {
                 ForEach(Array(items.enumerated()), id: \.offset) { index, item in
-                    TabItemView(item: item, isSelected: selectedIndex == index) {
-                        selectedIndex = index
+                    TabItemView(
+                        item: item,
+                        isSelected: selectedTab == item.tab) {
+                            selectedTab = item.tab
                     }
                 }
             }
@@ -88,17 +92,27 @@ private struct CustomTabBarView: ViewModifier {
 }
 
 extension View {
-    func tabbar(selectedIndex: Binding<Int>, items: [TabItem]) -> some View {
-        self.modifier(CustomTabBarView(selectedIndex: selectedIndex, items: items))
+    func tabbar<Tabbing: Tabbable>(selectedTab: Binding<Tabbing>, items: [TabItem<Tabbing>]) -> some View {
+        self.modifier(CustomTabBarView(selectedTab: selectedTab, items: items))
     }
 }
 
 #Preview {
-    @Previewable @State var selectedIndex = 2
+    @Previewable @State var selectedIndex: Int? = 2
     Text("Any View")
-        .tabbar(selectedIndex: $selectedIndex, items: [
-            TabItem(type: .icon, title: "item1", icon: .icCopy),
-            TabItem(type: .filledIcon, title: "item2", icon: .icMicrophone),
-            TabItem(type: .icon, title: "item3", icon: .icMicrophone),
+        .tabbar(selectedTab: $selectedIndex,
+                items: [
+                    TabItem(type: .icon,
+                            title: "item1",
+                            icon: .icCopy,
+                            tab: 1),
+                    TabItem(type: .filledIcon,
+                            title: "item2",
+                            icon: .icMicrophone,
+                            tab: 2),
+                    TabItem(type: .icon,
+                            title: "item3",
+                            icon: .icMicrophone,
+                            tab: 3),
     ])
 }

@@ -10,12 +10,15 @@ import Combine
 
 @Observable
 final class FavoritesViewModel: FavoritesViewModelProtocol {
-    let favoritesInteractor: FavoritesInteractorProtocol
+    private let favoritesInteractor: FavoritesInteractorProtocol
+    private let router: AppRouterProtocol
     var items: [Translation] = []
     var cancellables: Set<AnyCancellable> = []
     
-    init(favoritesInteractor: FavoritesInteractorProtocol) {
+    init(favoritesInteractor: FavoritesInteractorProtocol,
+         router: AppRouterProtocol) {
         self.favoritesInteractor = favoritesInteractor
+        self.router = router
         favoritesInteractor.getList()
             .sink{[weak self] receiveValue in
                 self?.items = receiveValue
@@ -30,7 +33,7 @@ final class FavoritesViewModel: FavoritesViewModelProtocol {
     }
     
     func onBack() {
-        
+        router.showMain()
     }
     
 }

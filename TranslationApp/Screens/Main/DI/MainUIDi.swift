@@ -16,7 +16,8 @@ extension ServiceLocator {
                 translateIntractor: r.resolve()!,
                 favoritesInteractor: r.resolve()!,
                 voiceInteractor: r.resolve()!,
-                shareInteractor: r.resolve()!
+                shareInteractor: r.resolve()!,
+                router: r.resolve()!
             )
         }
     }

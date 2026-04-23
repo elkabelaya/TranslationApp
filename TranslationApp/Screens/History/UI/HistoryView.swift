@@ -15,9 +15,11 @@ struct HistoryView<ViewModel: HistoryViewModelProtocol>: View {
             items: $viewModel.items,
             onClick: viewModel.onFavoriteClick
         )
-        .toolbar(title: .Favorites.title,
+        .toolbar(title: .History.title,
                  leading: [
-                    ToolBarButton(item: .icon(.icArrowBack), action: {})
+                    ToolBarButton(
+                        item: .icon(.icArrowBack),
+                        action: viewModel.onBack)
                  ]
         )
     }

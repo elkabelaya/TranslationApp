@@ -81,7 +81,6 @@ struct Request: AnyRequestProtocol {
         }
         return self
     }
-    
 }
 
 extension Request: BodyRequestProtocol {

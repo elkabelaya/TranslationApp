@@ -24,8 +24,8 @@ final class CommonVoiceInteractor: VoiceInteractorProtocol {
         await synthesizerRepository.speak(text, lng: language.id)
     }
     
-    func listen(language: Language) async -> AsyncThrowingStream<String, Error> {
-        return await recogniserRepository.startStreaming(lng: language.id)
+    func listen(language: Language) -> AsyncThrowingStream<String, Error> {
+        return recogniserRepository.startStreaming(lng: language.id)
     }
         
     func notify()  async  {

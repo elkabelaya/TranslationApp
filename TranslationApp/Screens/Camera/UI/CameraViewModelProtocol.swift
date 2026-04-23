@@ -23,4 +23,5 @@ protocol CameraViewModelProtocol: Observable {
     func onTorchClick()
     func onCameraClick()
     func onPickImage(image: UIImage)
+    func onBack()
 }

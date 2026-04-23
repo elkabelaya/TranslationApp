@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Combine
 
 final class TranslateInteractor: TranslateInteractorProtocol {
     let languagesRepository: LanguagesRepositoryProtocol
@@ -15,7 +16,6 @@ final class TranslateInteractor: TranslateInteractorProtocol {
     let localIconsRepository: ContryIconsLocalRepositoryProtocol
     let historyRepository: HistoryRepositoryProtocol
 
-    
     init(languagesRepository: LanguagesRepositoryProtocol,
          translationRepository: TranlationRepositoryProtocol,
          settingsRpository: SettingsRepositoryProtocol,
@@ -30,11 +30,9 @@ final class TranslateInteractor: TranslateInteractorProtocol {
         self.historyRepository = historyRepository
     }
     
-    func getLanguages(filter: String) async throws -> [Language] {
-        return languagesRepository.getList().filter {
-            filter.isEmpty ||
-            $0.name.lowercased().contains(filter.lowercased())
-        }
+    func selectedLanguages() -> CurrentValueSubject<
+        (from: Language?, to: Language?), Never> {
+            return settingsRpository.selectedLanguages
     }
     
     func getIconPath(for lng: Language) async throws -> String {
@@ -72,11 +70,7 @@ final class TranslateInteractor: TranslateInteractorProtocol {
         return nil
     }
     
-    func saveLanguages(from: Language?, to: Language?) async {
-        settingsRpository.save(from: from, to: to)
-    }
-    
-    func savedLanguages() async  -> (from: Language?, to: Language?) {
-        settingsRpository.restoreLanguages()
+    func swap() {
+        settingsRpository.swapLanguages()
     }
 }

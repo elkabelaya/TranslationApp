@@ -13,31 +13,28 @@ private struct ToolBar: ViewModifier {
     let trailing: [ToolBarButton]
     
      func body(content: Content) -> some View {
-         NavigationStack {
-             VStack(spacing:.zero) {
-                 HStack(spacing: 16) {
-                     ForEach(Array(leading.enumerated()), id: \.offset) { id, item in
-                         getButton(by: item)
-                     }
-                     Text(self.title)
-                         .font(.titleL)
-                         .foregroundStyle(.appOnAccentText)
-                     Spacer()
-                     ForEach(Array(trailing.enumerated()), id: \.offset) { id, item in
-                         getButton(by: item)
-                     }
+         VStack(spacing:.zero) {
+             HStack(spacing: 16) {
+                 ForEach(Array(leading.enumerated()), id: \.offset) { id, item in
+                     getButton(by: item)
                  }
-                 .paddings(.zero, .xl, .zero, .xl)
-                 .frame(maxWidth: .infinity)
-                 .frame(height: 60)
-                 .background(.appTertiaryBackground)
-                 content
-                     .frame(maxHeight: .infinity)
-                     .background(Color.appPrimaryBackground)
+                 Text(self.title)
+                     .font(.titleL)
+                     .foregroundStyle(.appOnAccentText)
+                 Spacer()
+                 ForEach(Array(trailing.enumerated()), id: \.offset) { id, item in
+                     getButton(by: item)
+                 }
              }
-             
+             .paddings(.zero, .xl, .zero, .xl)
+             .frame(maxWidth: .infinity)
+             .frame(height: 60)
+             .background(.appTertiaryBackground)
+             content
+                 .frame(maxHeight: .infinity)
+                 .background(Color.appPrimaryBackground)
          }
-         
+         .toolbar(.hidden, for: .navigationBar)
      }
     
     private func getButton(by: ToolBarButton) -> some View {

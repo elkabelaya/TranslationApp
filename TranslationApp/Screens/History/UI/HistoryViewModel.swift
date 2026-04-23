@@ -11,10 +11,13 @@ import Combine
 @Observable
 final class HistoryViewModel: HistoryViewModelProtocol {
     private let historyInteractor: HistoryInteractorProtocol
+    private let router: AppRouterProtocol
     var items: [Translation] = []
     var cancellables: Set<AnyCancellable> = []
-    init(historyInteractor: HistoryInteractorProtocol) {
+    init(historyInteractor: HistoryInteractorProtocol,
+         router: AppRouterProtocol) {
         self.historyInteractor = historyInteractor
+        self.router = router
         self.historyInteractor.getList()
             .sink{[weak self] receiveValue in
                 self?.items = receiveValue
@@ -35,6 +38,6 @@ final class HistoryViewModel: HistoryViewModelProtocol {
     }
     
     func onBack() {
-        
+        router.showMain()
     }
 }

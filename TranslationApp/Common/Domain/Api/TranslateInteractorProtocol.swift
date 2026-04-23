@@ -5,10 +5,15 @@
 //  Created by elka belaya  on 06.03.2026.
 //
 
+import Combine
+
 protocol TranslateInteractorProtocol {
-    func getLanguages(filter: String) async throws -> [Language]
+    
     func getIconPath(for: Language) async throws -> String
     func translate(text: String, from: Language, to: Language) async throws -> Translation?
-    func saveLanguages(from: Language?, to: Language?) async
-    func savedLanguages() async  -> (from: Language?, to: Language?)
+    func selectedLanguages() -> CurrentValueSubject<
+        (from: Language?, to: Language?),
+        Never
+    >
+    func swap()
 }

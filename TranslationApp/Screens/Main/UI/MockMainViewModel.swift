@@ -24,9 +24,6 @@ final class MockMainViewModel: MainViewModelProtocol {
     
     }
     
-    func onSelectLanguage(_ lng: Language) {
-
-    }
     
     func onFromSpeakerClick() {
     }
@@ -60,10 +57,7 @@ final class MockMainViewModel: MainViewModelProtocol {
     var toLng: Language?
     var fromText: String
     var toText: String
-    var filter: String = ""
-    var languages: [Language] = []
     var showSheet: Bool = false
-    var bottomSheet: MainBottomSheet?
     var isFavorite: Bool = false
     var isListening: Bool = false
     
@@ -73,9 +67,6 @@ final class MockMainViewModel: MainViewModelProtocol {
          toText: String,
          isFavorite: Bool = false,
          isListening: Bool = false,
-         bottomSheet: MainBottomSheet? = nil,
-         languages:[Language] = [.init(id: "0", name: "English"),
-                                 .init(id: "1", name:"Spanish")]
     ) {
         self.fromLng = fromLng
         self.toLng = toLng
@@ -83,8 +74,5 @@ final class MockMainViewModel: MainViewModelProtocol {
         self.toText = toText
         self.isFavorite = isFavorite
         self.isListening = isListening
-        self.bottomSheet = bottomSheet
-        self.languages = languages
-        
     }
 }

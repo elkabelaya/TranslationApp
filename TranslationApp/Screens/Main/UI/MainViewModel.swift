@@ -16,32 +16,11 @@ final class MainViewModel: MainViewModelProtocol {
     let favoritesInteractor: MainFavoritesInteractorProtocol
     let voiceInteractor: VoiceInteractorProtocol
     let shareInteractor: MainShareInteractorProtocol
-    
-    private var cancellables: Set<AnyCancellable> = []
-    private var filterPublisher = CurrentValueSubject<String, Never>("")
-    private enum FromToLanguage {
-        case from
-        case to
-    }
-    private var selectingLanguage: FromToLanguage? = nil
-    private var currentTranslation: Translation?
+    let router: AppRouterProtocol
 
-    var filter: String = "" {
-        didSet {
-            filterPublisher.send(filter)
-        }
-    }
-    var languages: [Language] = []
-    var showSheet: Bool = false
-    var bottomSheet: MainBottomSheet? {
-        didSet {
-            if bottomSheet == nil {
-                filter = ""
-            }
-            showSheet = bottomSheet != nil
-        }
-    }
-    
+    private var currentTranslation: Translation?
+    private var cancellables: Set<AnyCancellable> = []
+
     var fromLng: Language? {
         didSet {
             resetIfChanged(oldValue, fromLng)
@@ -88,58 +67,42 @@ final class MainViewModel: MainViewModelProtocol {
     init(translateIntractor: TranslateInteractorProtocol,
          favoritesInteractor: MainFavoritesInteractorProtocol,
          voiceInteractor: VoiceInteractorProtocol,
-         shareInteractor: MainShareInteractorProtocol){
+         shareInteractor: MainShareInteractorProtocol,
+         router: AppRouterProtocol){
         self.translateIntractor = translateIntractor
         self.favoritesInteractor = favoritesInteractor
         self.voiceInteractor = voiceInteractor
         self.shareInteractor = shareInteractor
+        self.router = router
         setup()
     }
     
     private func setup() {
-        Task {
-            (fromLng, toLng) = await translateIntractor.savedLanguages()
-        }
-        filterPublisher
-            .debounce(for: 1, scheduler: DispatchQueue.main)
-            .sink { [weak self] receiveValue in
-                self?.getLanguages()
+        translateIntractor.selectedLanguages()
+            .sink {receiveValue in
+                self.fromLng = receiveValue.from
+                self.toLng = receiveValue.to
             }
             .store(in: &cancellables)
     }
     
-    private func getLanguages() {
-        Task { [weak self]  in
-            guard let self else { return }
-            languages = (try? await translateIntractor.getLanguages(filter: filter)) ?? []
-        }
-    }
+    
 
     func onLngFromClick () {
         Task {
-            getLanguages()
-            selectingLanguage = .from
-            bottomSheet = .languages
+            router.showLanguagesList(type: .from)
         }
     }
     
     func onLngToClick (){
         Task {
-            getLanguages()
-            selectingLanguage = .to
-            bottomSheet = .languages
+            router.showLanguagesList(type: .to)
         }
         
     }
     
     func onSwapClick (){
-        let tempFromLng = fromLng
-        let tempFromIconPath = fromIconPath
-        fromLng = toLng
-        toLng = tempFromLng
-        fromText = toText
-        fromIconPath = toIconPath
-        toIconPath = tempFromIconPath
+        translateIntractor.swap()
     }
     
     func onFromSpeakerClick() {
@@ -172,6 +135,7 @@ final class MainViewModel: MainViewModelProtocol {
                 do {
                     await voiceInteractor.notify()
                     for try await item in await voiceInteractor.listen(language: fromLng) {
+                        print(item)
                         self.fromText = item
                     }
                     await voiceInteractor.notify()
@@ -203,22 +167,6 @@ final class MainViewModel: MainViewModelProtocol {
         }
     }
     
-    func onSelectLanguage(_ lng: Language) {
-        switch selectingLanguage {
-        case .from:
-            fromLng = lng
-        case .to:
-            toLng = lng
-        default:
-            break
-        }
-        selectingLanguage = nil
-        bottomSheet = nil
-        Task {
-            await translateIntractor.saveLanguages(from: fromLng, to: toLng)
-        }
-    }
-    
     func onToFavoriteClick () {
         Task {
             if let currentTranslation {
@@ -239,7 +187,7 @@ final class MainViewModel: MainViewModelProtocol {
     }
     
     func onToShareClick () {
-        bottomSheet = .share(toText)
+        router.showShare(text: toText)
     }
     
     private func clearTexts() {

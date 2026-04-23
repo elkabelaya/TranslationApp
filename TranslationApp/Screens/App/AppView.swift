@@ -8,85 +8,60 @@
 import SwiftUI
 import VisionKit
 
-enum Tabs: Int {
-    case chat
-    case camera
-    case main
-    case history
-    case favourite
-}
 
-struct AppView: View {
-    @State var selectedTab: Int = Tabs.main.rawValue
-    let serviceLocator: ServiceLocator = .init()
-    init() {
-        do {
-            try serviceLocator.diCommon()
-            try serviceLocator.diMain()
-            try serviceLocator.diCamera()
-        } catch {
-            print(error)
-        }
-    }
+
+
+
+struct AppView: View  {
+    @State var viewModel: AppViewModelProtocol
+    
     var body: some View {
         ZStack {
-            switch selectedTab {
-            case Tabs.camera.rawValue:
-                CameraView(
-                    viewModel: serviceLocator.resolve()!
+            viewModel.chatView
+                .isVisible(viewModel.presentingTab == AppTabs.chat)
+            viewModel.favouriteView
+                .isVisible(viewModel.presentingTab == AppTabs.favourite)
+            viewModel.historyView
+                .isVisible(viewModel.presentingTab == AppTabs.history)
+            viewModel.mainView
+                .isVisible(
+                    viewModel.presentingTab == AppTabs.main ||
+                    viewModel.presentingTab == AppTabs.camera
                 )
-            case Tabs.main.rawValue:
-                MainView(
-                    viewModel: serviceLocator.resolve()!
-                )
-            case Tabs.history.rawValue:
-                HistoryView(
-                    viewModel: HistoryViewModel(
-                        historyInteractor: HistoryInteractor(
-                            repository: SwiftDataHistoryRepository(
-                                context : serviceLocator.resolve()!,
-                                mapper: TranslationMapper()
-                            )
-                        )
-                    )
-                )
-            case Tabs.favourite.rawValue:
-                FavoritesView(
-                    viewModel: FavoritesViewModel(
-                        favoritesInteractor: FavoritesInteractor(
-                            repository: SwiftDataFavoritesRepository(
-                                context : serviceLocator.resolve()!,
-                                mapper: TranslationMapper()
-                            )
-                        )
-                    )
-                )
-            default:
-                Text("TODO")
-            }
         }
-        .tabbar(selectedIndex: $selectedTab,
+        .tabbar(selectedTab: $viewModel.presentingTab,
                 items: [
                     TabItem(type: .icon,
                             title: .App.tabChat,
-                                    icon: .tabChat),
+                            icon: .tabChat,
+                            tab: AppTabs.chat),
                     TabItem(type: .icon,
                             title: .App.tabCamera,
-                                    icon: .tabCamera),
+                            icon: .tabCamera,
+                            tab: AppTabs.camera),
                     TabItem(type: .filledIcon,
                             title: .App.tabMain,
-                                icon: .icTranslate),
+                            icon: .icTranslate,
+                            tab: AppTabs.main),
                     TabItem(type: .icon,
                             title: .App.tabHistory,
-                            icon: .tabHistory),
+                            icon: .tabHistory,
+                            tab: AppTabs.history),
                     TabItem(type: .icon,
                             title: .App.tabFavorites,
-                                    icon: .tabFavorites)
+                            icon: .tabFavorites,
+                            tab: AppTabs.favourite),
                 ]
         )
+        .router(viewModel.router)
+        .navigationStack(viewModel.router)
     }
 }
 
 #Preview {
-    AppView()
+    AppView(
+        viewModel: MockAppViewModel(
+            router: AppRouter(serviceLocator: ServiceLocator.mock)
+        )
+    )
 }

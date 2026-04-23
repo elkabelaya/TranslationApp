@@ -11,4 +11,6 @@ struct TextObservation: Identifiable {
     let id = UUID()
     let text: String
     let boundingBox: CGRect
+    let topLeading: CGPoint
+    let anglePi: CGFloat
 }

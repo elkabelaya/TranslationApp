@@ -17,7 +17,9 @@ struct FavoritesView<ViewModel: FavoritesViewModelProtocol>: View {
         )
         .toolbar(title: .Favorites.title,
                  leading: [
-                    ToolBarButton(item: .icon(.icArrowBack), action: {})
+                    ToolBarButton(
+                        item: .icon(.icArrowBack),
+                        action: viewModel.onBack)
                  ]
         )
     }

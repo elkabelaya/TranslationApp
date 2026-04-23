@@ -64,7 +64,6 @@ final class SwiftDataFavoritesRepository: ListContextObserverBase<Translation>,
                 predicate: predicate
             )
             descriptor.fetchLimit = 1
-            let result = try context.fetch(descriptor)
             return try context.fetch(descriptor).first
         } catch {
             print(error)

@@ -10,7 +10,10 @@ import SwiftUI
 extension ServiceLocator {
     func diCameraUi() throws {
         register(CameraViewModelProtocol.self) { r in
-            return CameraViewModel(interactor: r.resolve()!, videoSession: r.resolve()!)
+            return CameraViewModel(interactor: r.resolve()!,
+                                   router: r.resolve()!,
+                                   videoSession: r.resolve()!
+            )
         }
     }
 }

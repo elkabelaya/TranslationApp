@@ -12,6 +12,7 @@ import Combine
 @Observable
 final class CameraViewModel: CameraViewModelProtocol {
     private let interactor: CameraInteractorProtocol
+    private let router: AppRouterProtocol
     private var videoSession: AVCaptureSession
     private var isTorchOn: Bool = false
     var state: CameraViewState
@@ -21,8 +22,10 @@ final class CameraViewModel: CameraViewModelProtocol {
     private var cancellables: Set<AnyCancellable> = []
     
     init(interactor: CameraInteractorProtocol,
+         router: AppRouterProtocol,
          videoSession: AVCaptureSession) {
         self.interactor = interactor
+        self.router = router
         self.videoSession = videoSession
         self.state = .video(videoSession, false)
         setup()
@@ -84,5 +87,9 @@ final class CameraViewModel: CameraViewModelProtocol {
     func onPickImage(image: UIImage) {
         state = .photo(image)
         interactor.handlePicked(image: image)
+    }
+    
+    func onBack() {
+        router.showMain()
     }
 }
