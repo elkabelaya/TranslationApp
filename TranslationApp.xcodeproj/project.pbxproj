@@ -53,6 +53,9 @@
 		8F207FC32F9A1D9F00F3E76F /* LanguagesListComponents.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 8F207FB02F9A1D9F00F3E76F /* LanguagesListComponents.xcstrings */; };
 		8F207FC42F9A1D9F00F3E76F /* LanguagesList.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 8F207FB22F9A1D9F00F3E76F /* LanguagesList.xcstrings */; };
 		8F207FC62F9A1FC200F3E76F /* LanguageMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F207FC52F9A1FBB00F3E76F /* LanguageMock.swift */; };
+		8F207FC82F9A494E00F3E76F /* MockLanguagesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F207FC72F9A494E00F3E76F /* MockLanguagesViewModel.swift */; };
+		8F207FCA2F9A496600F3E76F /* LanguagesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F207FC92F9A496600F3E76F /* LanguagesViewModel.swift */; };
+		8F207FCC2F9A497A00F3E76F /* LanguagesViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F207FCB2F9A497A00F3E76F /* LanguagesViewModelProtocol.swift */; };
 		8F2A6BA82F74318A005DB28E /* PHImageManagerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F2A6BA72F743185005DB28E /* PHImageManagerExtensions.swift */; };
 		8F2A6BAA2F743CE4005DB28E /* VNTextRecognizerRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F2A6BA92F743CDD005DB28E /* VNTextRecognizerRepository.swift */; };
 		8F2A6BAD2F7517E0005DB28E /* SFSpeechRecognizerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F2A6BAC2F7517D2005DB28E /* SFSpeechRecognizerExtensions.swift */; };
@@ -227,6 +230,9 @@
 		8F207FB52F9A1D9F00F3E76F /* LanguagesListViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguagesListViewModelProtocol.swift; sourceTree = "<group>"; };
 		8F207FB62F9A1D9F00F3E76F /* MockLanguagesListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockLanguagesListViewModel.swift; sourceTree = "<group>"; };
 		8F207FC52F9A1FBB00F3E76F /* LanguageMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageMock.swift; sourceTree = "<group>"; };
+		8F207FC72F9A494E00F3E76F /* MockLanguagesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockLanguagesViewModel.swift; sourceTree = "<group>"; };
+		8F207FC92F9A496600F3E76F /* LanguagesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguagesViewModel.swift; sourceTree = "<group>"; };
+		8F207FCB2F9A497A00F3E76F /* LanguagesViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguagesViewModelProtocol.swift; sourceTree = "<group>"; };
 		8F2A6BA72F743185005DB28E /* PHImageManagerExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PHImageManagerExtensions.swift; sourceTree = "<group>"; };
 		8F2A6BA92F743CDD005DB28E /* VNTextRecognizerRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VNTextRecognizerRepository.swift; sourceTree = "<group>"; };
 		8F2A6BAC2F7517D2005DB28E /* SFSpeechRecognizerExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFSpeechRecognizerExtensions.swift; sourceTree = "<group>"; };
@@ -560,6 +566,24 @@
 			path = LanguagesList;
 			sourceTree = "<group>";
 		};
+		8F207FCD2F9A499300F3E76F /* Languages */ = {
+			isa = PBXGroup;
+			children = (
+				8F207FCE2F9A49A400F3E76F /* UI */,
+				8F207FC72F9A494E00F3E76F /* MockLanguagesViewModel.swift */,
+				8F207FC92F9A496600F3E76F /* LanguagesViewModel.swift */,
+				8F207FCB2F9A497A00F3E76F /* LanguagesViewModelProtocol.swift */,
+			);
+			path = Languages;
+			sourceTree = "<group>";
+		};
+		8F207FCE2F9A49A400F3E76F /* UI */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
 		8F2A6BA62F74316C005DB28E /* Utils */ = {
 			isa = PBXGroup;
 			children = (
@@ -588,6 +612,7 @@
 				8F8CDBC92F58046C006AB03A /* Utils */,
 				8F3A86DA2F56FAFC000CBF7A /* DS */,
 				8F69321F2F5850B800C0432E /* Components */,
+				8F207FCD2F9A499300F3E76F /* Languages */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -596,11 +621,11 @@
 			isa = PBXGroup;
 			children = (
 				8F3CE6C42F6925FE00A221C8 /* Preview */,
+				8F8CDBB82F57161B006AB03A /* Screens */,
 				8F69321C2F5850A000C0432E /* Common */,
 				8F3A86DC2F56FAFC000CBF7A /* Assets.xcassets */,
 				8F3A86E02F56FAFC000CBF7A /* Info.plist */,
 				8F3A86E12F56FAFC000CBF7A /* TranslationApp.swift */,
-				8F8CDBB82F57161B006AB03A /* Screens */,
 			);
 			path = TranslationApp;
 			sourceTree = "<group>";
@@ -1287,6 +1312,8 @@
 				8F903E5B2F6D4CCD004DA18E /* CameraInteractorProtocol.swift in Sources */,
 				8F207F9F2F9A176A00F3E76F /* AppViewModel.swift in Sources */,
 				8F903E5C2F6D4CCD004DA18E /* CameraView.swift in Sources */,
+				8F207FCA2F9A496600F3E76F /* LanguagesViewModel.swift in Sources */,
+				8F207FC82F9A494E00F3E76F /* MockLanguagesViewModel.swift in Sources */,
 				8F903E5D2F6D4CCD004DA18E /* CameraUiDi.swift in Sources */,
 				8F903E342F6D39F8004DA18E /* CommonDi.swift in Sources */,
 				8F9C0ABC2F66B19F00226A67 /* SVG.swift in Sources */,
@@ -1300,6 +1327,7 @@
 				8F6932232F586E5600C0432E /* MockMainViewModel.swift in Sources */,
 				8F6932132F58262000C0432E /* FilledIconButton.swift in Sources */,
 				8F07DD732F5ECC3500A44ED7 /* SpeechSynthesizerRepositoryProtocol.swift in Sources */,
+				8F207FCC2F9A497A00F3E76F /* LanguagesViewModelProtocol.swift in Sources */,
 				8F903E852F72A5D8004DA18E /* BoundingBox.swift in Sources */,
 				8F8CDBC12F571965006AB03A /* MainViewModel.swift in Sources */,
 				8F3CE6A72F67F8F600A221C8 /* FavoritesViewModel.swift in Sources */,

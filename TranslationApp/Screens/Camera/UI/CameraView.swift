@@ -14,11 +14,16 @@ struct CameraView: View {
 
     var body: some View {
         VStack {
-            //TODO
-            //                LanguagesCardView(
-            //                    onLngFromClick: <#T##() -> Void#>,
-            //                    onLngToClick: <#T##() -> Void#>,
-            //                    onSwapClick: <#T##() -> Void#>)
+            
+            LanguagesCardView(lngFrom: viewModel.fromLng?.name,
+                              lngTo: viewModel.toLng?.name,
+                              iconFrom: viewModel.fromIconPath,
+                              iconTo: viewModel.toIconPath,
+                              onLngFromClick: viewModel.onLngFromClick,
+                              onLngToClick: viewModel.onLngToClick,
+                              onSwapClick: viewModel.onSwapClick
+            )
+            .padding(AppDimens.Paddings.l.rawValue)
             Group {
                 switch viewModel.state {
                 case .video(let session, _):
@@ -117,19 +122,28 @@ struct CameraView: View {
 
 
 #Preview("video") {
-    CameraView(viewModel: MockCameraViewModel(state: .video(AVCaptureSession(), true)))
-        .background(.black)
+    CameraView(viewModel: MockCameraViewModel(
+        fromLng: Language.mock,
+        toLng: Language.otherMock,
+        state: .video(AVCaptureSession(),
+                      true)
+    ))
+    .background(.black)
 }
 
 #Preview("video no torch") {
-    CameraView(viewModel: MockCameraViewModel(state: .video(AVCaptureSession(), false)))
+    CameraView(viewModel: MockCameraViewModel(
+        fromLng: Language.mock,
+        toLng: Language.otherMock,
+        state: .video(AVCaptureSession(), false)))
         .background(.black)
 }
 
 #Preview("photo") {
-    CameraView(
-        viewModel: MockCameraViewModel(
-            state: .photo(
+    CameraView(viewModel: MockCameraViewModel(
+        fromLng: Language.mock,
+        toLng: Language.otherMock,
+        state: .photo(
                 UIImage(systemName: "pawprint")!
             ),
             previewImage: Image(systemName: "pawprint"),

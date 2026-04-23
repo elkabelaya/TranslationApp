@@ -7,11 +7,11 @@
 
 extension Language {
     static var mock: Language {
-        Language(id: "en", name: "English")
+        Language(id: "ar", name: "Arabic")
     }
     
     static var otherMock: Language {
-        Language(id: "ru", name: "Spanish")
+        Language(id: "ab", name: "Abkhazian")
     }
     
     static var mocks: [Language] { [mock, otherMock] }

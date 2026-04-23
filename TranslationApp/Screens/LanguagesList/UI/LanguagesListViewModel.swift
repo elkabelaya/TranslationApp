@@ -16,6 +16,7 @@ final class LanguagesListViewModel: LanguagesListViewModelProtocol {
     private var cancellables: Set<AnyCancellable> = []
     private var type: LanguageType
 
+
     var filter: String = "" {
         didSet {
             filterPublisher.send(filter)

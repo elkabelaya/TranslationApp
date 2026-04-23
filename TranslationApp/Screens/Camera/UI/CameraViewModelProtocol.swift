@@ -12,7 +12,7 @@ enum CameraViewState {
     case photo(UIImage)
     
 }
-protocol CameraViewModelProtocol: Observable {
+protocol CameraViewModelProtocol: LanguagesViewModelProtocol {
     var previewImage: Image? { get }
     var state: CameraViewState{ get }
     var observedTexts: [TextObservation] { get }

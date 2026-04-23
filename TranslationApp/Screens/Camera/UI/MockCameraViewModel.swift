@@ -9,10 +9,9 @@ import SwiftUI
 import AVFoundation
 
 @Observable
-final class MockCameraViewModel: CameraViewModelProtocol {
-    
-    
-    init(
+final class MockCameraViewModel: MockLanguagesViewModel, CameraViewModelProtocol {
+    init(fromLng: Language?,
+         toLng: Language?,
         state: CameraViewState,
          previewImage: Image? = nil,
          observedTexts: [TextObservation] = [],
@@ -22,6 +21,7 @@ final class MockCameraViewModel: CameraViewModelProtocol {
         self.previewImage = previewImage
         self.observedTexts = observedTexts
         self.isPicking = isPicking
+        super.init(fromLng: fromLng, toLng: toLng)
     }
     
     var isPicking: Bool

@@ -7,11 +7,11 @@
 
 import SwiftUI
 
+
+
 @Observable
-final class MockMainViewModel: MainViewModelProtocol {
-    var fromIconPath: String?
+final class MockMainViewModel: MockLanguagesViewModel, MainViewModelProtocol {
     
-    var toIconPath: String?
     var toast: ToastModel? 
     
     func onToCopyClick () {
@@ -40,24 +40,13 @@ final class MockMainViewModel: MainViewModelProtocol {
     func onTranslateClick() {
     }
     
-    func onLngFromClick() {
-
-    }
     
-    func onLngToClick() {
-    }
-    
-    func onSwapClick() {
-    }
     
     func onSpeakerClick() {
     }
-    
-    var fromLng: Language?
-    var toLng: Language?
+
     var fromText: String
     var toText: String
-    var showSheet: Bool = false
     var isFavorite: Bool = false
     var isListening: Bool = false
     
@@ -68,11 +57,11 @@ final class MockMainViewModel: MainViewModelProtocol {
          isFavorite: Bool = false,
          isListening: Bool = false,
     ) {
-        self.fromLng = fromLng
-        self.toLng = toLng
+        
         self.fromText = fromText
         self.toText = toText
         self.isFavorite = isFavorite
         self.isListening = isListening
+        super.init(fromLng: fromLng, toLng: toLng)
     }
 }

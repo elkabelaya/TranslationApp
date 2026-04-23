@@ -18,16 +18,22 @@ struct LanguagesCardView: View {
     
     var body: some View {
         HStack(alignment: .center, spacing: .s ) {
-            lngImage(iconFrom)
-            TextButton(lngFrom ?? "Select", .titleM, .appPrimaryText, onLngFromClick)
-            Spacer()
+            HStack {
+                lngImage(iconFrom)
+                TextButton(lngFrom ?? "Select", .titleM, .appPrimaryText, onLngFromClick)
+                Spacer()
+            }
+            .layoutPriority(1)
             IconButton(.icSwap, .s, .appSecondaryText, onSwapClick)
-            Spacer()
-            TextButton(lngTo ?? "Select", .titleM, .appPrimaryText, onLngToClick)
-            lngImage(iconTo)
+            HStack {
+                Spacer()
+                TextButton(lngTo ?? "Select", .titleM, .appPrimaryText, onLngToClick)
+                lngImage(iconTo)
+            }
+            .layoutPriority(1)
         }
         .paddings(.s,.xs,.s,.xs)
-        .cardBackground(corners: .m)
+        .cardBackground(corners: .xxl)
         .downShadow()
         
     }
@@ -48,8 +54,8 @@ struct LanguagesCardView: View {
 }
 
 #Preview(traits: .fixedLayout(width: 300, height: 100)) {
-    @Previewable @State var lngFromName: String = "Spanish"
-    @Previewable @State var lngToName: String = "English"
+    @Previewable @State var lngFromName: String = Language.mock.name
+    @Previewable @State var lngToName: String = Language.otherMock.name
     LanguagesCardView(lngFrom: lngFromName,
                       lngTo: lngToName,
                       onLngFromClick: {},

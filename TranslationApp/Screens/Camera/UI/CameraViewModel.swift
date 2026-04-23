@@ -10,9 +10,8 @@ import AVFoundation
 import Combine
 
 @Observable
-final class CameraViewModel: CameraViewModelProtocol {
+final class CameraViewModel: LanguagesViewModel, CameraViewModelProtocol {
     private let interactor: CameraInteractorProtocol
-    private let router: AppRouterProtocol
     private var videoSession: AVCaptureSession
     private var isTorchOn: Bool = false
     var state: CameraViewState
@@ -22,13 +21,18 @@ final class CameraViewModel: CameraViewModelProtocol {
     private var cancellables: Set<AnyCancellable> = []
     
     init(interactor: CameraInteractorProtocol,
+         translateIntractor: TranslateInteractorProtocol,
          router: AppRouterProtocol,
          videoSession: AVCaptureSession) {
         self.interactor = interactor
-        self.router = router
         self.videoSession = videoSession
         self.state = .video(videoSession, false)
+        super.init(translateIntractor: translateIntractor,
+                   router: router)
         setup()
+    }
+    
+    override func refresh() {
     }
     
     private func setup() {

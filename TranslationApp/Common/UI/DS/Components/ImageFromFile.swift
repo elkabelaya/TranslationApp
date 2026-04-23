@@ -13,9 +13,14 @@ struct SVGImageFromFile: View {
     @State private var uiImage: UIImage?
     
     var body: some View {
-        Image(uiImage: uiImage ?? UIImage())
+        _ = Self._printChanges()
+        return Image(uiImage: uiImage ?? UIImage())
         .resizable()
-        .onAppear {
+        .task(updateImage)
+        .onChange(of: self, updateImage)
+        
+        func updateImage() {
+            uiImage = nil
                 if let url = URL(string: filePath),
                    let data = try? Data(contentsOf: url),
                    let svg = SVG(data){
@@ -25,7 +30,14 @@ struct SVGImageFromFile: View {
                                 }
                     
                 }
-            
         }
     }
+}
+
+extension SVGImageFromFile: Equatable {
+    static func == (lhs: SVGImageFromFile, rhs: SVGImageFromFile) -> Bool {
+        lhs.filePath == rhs.filePath
+    }
+    
+    
 }

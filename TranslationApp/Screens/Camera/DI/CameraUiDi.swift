@@ -11,6 +11,7 @@ extension ServiceLocator {
     func diCameraUi() throws {
         register(CameraViewModelProtocol.self) { r in
             return CameraViewModel(interactor: r.resolve()!,
+                                   translateIntractor: r.resolve()!,
                                    router: r.resolve()!,
                                    videoSession: r.resolve()!
             )
