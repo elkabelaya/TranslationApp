@@ -28,6 +28,7 @@ enum AppDimens {
         case xl = 22
         case xxl = 40
         case xxxl = 60
+        case xxxxl = 90
     }
     
     enum Font: CGFloat {

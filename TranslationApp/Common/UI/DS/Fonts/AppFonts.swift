@@ -16,11 +16,13 @@ extension Font {
     }
     
     
-    static func titleXs() -> Font { appFont(Self.medium, .xs)}
-    static func titleS() -> Font { appFont(Self.medium, .s)}
+    static var titleXs = appFont(Self.medium, .xs)
+    static var titleS = appFont(Self.medium, .s)
     static var titleM = appFont(Self.medium, .m)
     static var titleL = appFont(Self.medium, .l)
+    static var titleXL = appFont(Self.medium, .xl)
     static var textXs = appFont(Self.regular, .xs)
     static var textS = appFont(Self.regular, .s)
     static var textM = appFont(Self.regular, .m)
+    static var textXL = appFont(Self.regular, .xl)
 }

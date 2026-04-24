@@ -131,6 +131,10 @@ final class MainViewModel: LanguagesViewModel, MainViewModelProtocol {
         router.showShare(text: toText)
     }
     
+    func onMenuClick () {
+        router.showMenu()
+    }
+    
     private func clearTexts() {
         fromText = ""
     }

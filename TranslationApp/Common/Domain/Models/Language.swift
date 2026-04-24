@@ -6,7 +6,7 @@
 //
 
 typealias LanguageCode = String
-struct Language: Equatable {
+struct Language: Equatable, Identifiable {
     let id: LanguageCode
     let name: String
 }

@@ -15,4 +15,8 @@ protocol AppRouterProtocol: Router<AppRoutes>, TabberProtocol where Tabbing == A
     func showMain()
     func showHistory()
     func showFavorite()
+    func showMenu()
+    func showRate()
+    func showPolicy()
+    func showFeedback()
 }

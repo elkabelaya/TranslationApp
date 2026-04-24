@@ -56,6 +56,19 @@
 		8F207FC82F9A494E00F3E76F /* MockLanguagesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F207FC72F9A494E00F3E76F /* MockLanguagesViewModel.swift */; };
 		8F207FCA2F9A496600F3E76F /* LanguagesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F207FC92F9A496600F3E76F /* LanguagesViewModel.swift */; };
 		8F207FCC2F9A497A00F3E76F /* LanguagesViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F207FCB2F9A497A00F3E76F /* LanguagesViewModelProtocol.swift */; };
+		8F207FD02F9A780400F3E76F /* SideDrawer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F207FCF2F9A780000F3E76F /* SideDrawer.swift */; };
+		8F207FE62F9B62B500F3E76F /* IconTextButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F207FE52F9B62B500F3E76F /* IconTextButton.swift */; };
+		8F207FE72F9B826F00F3E76F /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F207FDF2F9B5E6800F3E76F /* MenuView.swift */; };
+		8F207FE82F9B827A00F3E76F /* MenuViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F207FE02F9B5E6800F3E76F /* MenuViewModel.swift */; };
+		8F207FE92F9B827E00F3E76F /* MenuViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F207FE12F9B5E6800F3E76F /* MenuViewModelProtocol.swift */; };
+		8F207FEA2F9B828400F3E76F /* MockMenuViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F207FE22F9B5E6800F3E76F /* MockMenuViewModel.swift */; };
+		8F207FEB2F9B82B700F3E76F /* MenuDataDi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F207FD22F9B5E6800F3E76F /* MenuDataDi.swift */; };
+		8F207FEC2F9B82BC00F3E76F /* MenuDi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F207FD32F9B5E6800F3E76F /* MenuDi.swift */; };
+		8F207FED2F9B82C100F3E76F /* MenuDomainDi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F207FD42F9B5E6800F3E76F /* MenuDomainDi.swift */; };
+		8F207FEE2F9B82C600F3E76F /* MenuUiDi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F207FD52F9B5E6800F3E76F /* MenuUiDi.swift */; };
+		8F207FEF2F9B82CC00F3E76F /* MenuInteractorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F207FD72F9B5E6800F3E76F /* MenuInteractorProtocol.swift */; };
+		8F207FF02F9B82D300F3E76F /* MenuInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F207FD92F9B5E6800F3E76F /* MenuInteractor.swift */; };
+		8F207FF42F9B884900F3E76F /* Menu.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 8F207FF32F9B884900F3E76F /* Menu.xcstrings */; };
 		8F2A6BA82F74318A005DB28E /* PHImageManagerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F2A6BA72F743185005DB28E /* PHImageManagerExtensions.swift */; };
 		8F2A6BAA2F743CE4005DB28E /* VNTextRecognizerRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F2A6BA92F743CDD005DB28E /* VNTextRecognizerRepository.swift */; };
 		8F2A6BAD2F7517E0005DB28E /* SFSpeechRecognizerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F2A6BAC2F7517D2005DB28E /* SFSpeechRecognizerExtensions.swift */; };
@@ -233,6 +246,20 @@
 		8F207FC72F9A494E00F3E76F /* MockLanguagesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockLanguagesViewModel.swift; sourceTree = "<group>"; };
 		8F207FC92F9A496600F3E76F /* LanguagesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguagesViewModel.swift; sourceTree = "<group>"; };
 		8F207FCB2F9A497A00F3E76F /* LanguagesViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguagesViewModelProtocol.swift; sourceTree = "<group>"; };
+		8F207FCF2F9A780000F3E76F /* SideDrawer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideDrawer.swift; sourceTree = "<group>"; };
+		8F207FD22F9B5E6800F3E76F /* MenuDataDi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuDataDi.swift; sourceTree = "<group>"; };
+		8F207FD32F9B5E6800F3E76F /* MenuDi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuDi.swift; sourceTree = "<group>"; };
+		8F207FD42F9B5E6800F3E76F /* MenuDomainDi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuDomainDi.swift; sourceTree = "<group>"; };
+		8F207FD52F9B5E6800F3E76F /* MenuUiDi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuUiDi.swift; sourceTree = "<group>"; };
+		8F207FD72F9B5E6800F3E76F /* MenuInteractorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuInteractorProtocol.swift; sourceTree = "<group>"; };
+		8F207FD92F9B5E6800F3E76F /* MenuInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuInteractor.swift; sourceTree = "<group>"; };
+		8F207FDC2F9B5E6800F3E76F /* MenuComponents.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = MenuComponents.xcstrings; sourceTree = "<group>"; };
+		8F207FDF2F9B5E6800F3E76F /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
+		8F207FE02F9B5E6800F3E76F /* MenuViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewModel.swift; sourceTree = "<group>"; };
+		8F207FE12F9B5E6800F3E76F /* MenuViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewModelProtocol.swift; sourceTree = "<group>"; };
+		8F207FE22F9B5E6800F3E76F /* MockMenuViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockMenuViewModel.swift; sourceTree = "<group>"; };
+		8F207FE52F9B62B500F3E76F /* IconTextButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconTextButton.swift; sourceTree = "<group>"; };
+		8F207FF32F9B884900F3E76F /* Menu.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Menu.xcstrings; sourceTree = "<group>"; };
 		8F2A6BA72F743185005DB28E /* PHImageManagerExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PHImageManagerExtensions.swift; sourceTree = "<group>"; };
 		8F2A6BA92F743CDD005DB28E /* VNTextRecognizerRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VNTextRecognizerRepository.swift; sourceTree = "<group>"; };
 		8F2A6BAC2F7517D2005DB28E /* SFSpeechRecognizerExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFSpeechRecognizerExtensions.swift; sourceTree = "<group>"; };
@@ -584,6 +611,81 @@
 			path = UI;
 			sourceTree = "<group>";
 		};
+		8F207FD12F9B5E6800F3E76F /* Data */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		8F207FD62F9B5E6800F3E76F /* DI */ = {
+			isa = PBXGroup;
+			children = (
+				8F207FD22F9B5E6800F3E76F /* MenuDataDi.swift */,
+				8F207FD32F9B5E6800F3E76F /* MenuDi.swift */,
+				8F207FD42F9B5E6800F3E76F /* MenuDomainDi.swift */,
+				8F207FD52F9B5E6800F3E76F /* MenuUiDi.swift */,
+			);
+			path = DI;
+			sourceTree = "<group>";
+		};
+		8F207FD82F9B5E6800F3E76F /* Api */ = {
+			isa = PBXGroup;
+			children = (
+				8F207FD72F9B5E6800F3E76F /* MenuInteractorProtocol.swift */,
+			);
+			path = Api;
+			sourceTree = "<group>";
+		};
+		8F207FDA2F9B5E6800F3E76F /* Impl */ = {
+			isa = PBXGroup;
+			children = (
+				8F207FD92F9B5E6800F3E76F /* MenuInteractor.swift */,
+			);
+			path = Impl;
+			sourceTree = "<group>";
+		};
+		8F207FDB2F9B5E6800F3E76F /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				8F207FD82F9B5E6800F3E76F /* Api */,
+				8F207FDA2F9B5E6800F3E76F /* Impl */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		8F207FDD2F9B5E6800F3E76F /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				8F207FDC2F9B5E6800F3E76F /* MenuComponents.xcstrings */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		8F207FE32F9B5E6800F3E76F /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				8F207FDD2F9B5E6800F3E76F /* Components */,
+				8F207FF32F9B884900F3E76F /* Menu.xcstrings */,
+				8F207FDF2F9B5E6800F3E76F /* MenuView.swift */,
+				8F207FE02F9B5E6800F3E76F /* MenuViewModel.swift */,
+				8F207FE12F9B5E6800F3E76F /* MenuViewModelProtocol.swift */,
+				8F207FE22F9B5E6800F3E76F /* MockMenuViewModel.swift */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		8F207FE42F9B5E6800F3E76F /* Menu */ = {
+			isa = PBXGroup;
+			children = (
+				8F207FD12F9B5E6800F3E76F /* Data */,
+				8F207FD62F9B5E6800F3E76F /* DI */,
+				8F207FDB2F9B5E6800F3E76F /* Domain */,
+				8F207FE32F9B5E6800F3E76F /* UI */,
+			);
+			path = Menu;
+			sourceTree = "<group>";
+		};
 		8F2A6BA62F74316C005DB28E /* Utils */ = {
 			isa = PBXGroup;
 			children = (
@@ -800,6 +902,7 @@
 		8F69321F2F5850B800C0432E /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				8F207FCF2F9A780000F3E76F /* SideDrawer.swift */,
 				8FE61F462F88023B00089C52 /* Router.swift */,
 				8F3CE69C2F67F40B00A221C8 /* SavedTranslationCard.swift */,
 				8F3CE6AB2F67FFC800A221C8 /* SavedList.swift */,
@@ -830,6 +933,7 @@
 				8F6932142F582A0E00C0432E /* AppButton.swift */,
 				8F6932122F58262000C0432E /* FilledIconButton.swift */,
 				8F8CDBD02F580E8E006AB03A /* TextButton.swift */,
+				8F207FE52F9B62B500F3E76F /* IconTextButton.swift */,
 				8F8CDBCE2F580C03006AB03A /* IconButton.swift */,
 				8F8CDBB62F571497006AB03A /* Shadow.swift */,
 				8F8CDBB42F571291006AB03A /* CardBackground.swift */,
@@ -850,6 +954,7 @@
 				8FAC1C202F6957910094BD8B /* History */,
 				8F903E532F6D4CCD004DA18E /* Camera */,
 				8F207FB82F9A1D9F00F3E76F /* LanguagesList */,
+				8F207FE42F9B5E6800F3E76F /* Menu */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -1228,6 +1333,7 @@
 				8F903E5E2F6D4CCD004DA18E /* CameraComponents.xcstrings in Resources */,
 				8F903E5F2F6D4CCD004DA18E /* Camera.xcstrings in Resources */,
 				8FAC1C272F6957910094BD8B /* History.xcstrings in Resources */,
+				8F207FF42F9B884900F3E76F /* Menu.xcstrings in Resources */,
 				8F207FC32F9A1D9F00F3E76F /* LanguagesListComponents.xcstrings in Resources */,
 				8F207FC42F9A1D9F00F3E76F /* LanguagesList.xcstrings in Resources */,
 				8FAC1C282F6957910094BD8B /* HistoryComponents.xcstrings in Resources */,
@@ -1248,6 +1354,7 @@
 				8F8CDBC82F572AF1006AB03A /* AppFonts.swift in Sources */,
 				8F9C0AA12F657F7F00226A67 /* NetworkProtocol.swift in Sources */,
 				8F903E322F6D2FEA004DA18E /* CommonDataDi.swift in Sources */,
+				8F207FEE2F9B82C600F3E76F /* MenuUiDi.swift in Sources */,
 				8F2A6BAD2F7517E0005DB28E /* SFSpeechRecognizerExtensions.swift in Sources */,
 				8F8CDBCB2F580520006AB03A /* SpacingExtensions.swift in Sources */,
 				8F07DD6B2F5D7CC400A44ED7 /* MainFavoritesInteractorProtocol.swift in Sources */,
@@ -1260,6 +1367,7 @@
 				8F07DD4E2F5AE32200A44ED7 /* TranslationSessionRepository.swift in Sources */,
 				8F3CE6B12F68454200A221C8 /* SchemaV101.swift in Sources */,
 				8F3CE6B72F684B1800A221C8 /* SchemaV200.swift in Sources */,
+				8F207FEC2F9B82BC00F3E76F /* MenuDi.swift in Sources */,
 				8F346ABD2F7670D3000BBE73 /* PathExtensions.swift in Sources */,
 				8F07DD8C2F6160AF00A44ED7 /* LanguageDto.swift in Sources */,
 				8F207FA42F9A18DC00F3E76F /* ServiceLocatorMock.swift in Sources */,
@@ -1267,6 +1375,7 @@
 				8F3CE6992F67E6E700A221C8 /* ActivityView.swift in Sources */,
 				8F3CE6B52F6845B100A221C8 /* TranslationMigrationPlan.swift in Sources */,
 				8F07DD6D2F5D849200A44ED7 /* Translation.swift in Sources */,
+				8F207FE72F9B826F00F3E76F /* MenuView.swift in Sources */,
 				8FAC1C352F6996B70094BD8B /* ErrorExtensions.swift in Sources */,
 				8F903E702F7262BB004DA18E /* CameraRepositoryProtocol.swift in Sources */,
 				8F07DD5E2F5C8F0000A44ED7 /* SearchBar.swift in Sources */,
@@ -1298,11 +1407,13 @@
 				8F9C0A962F63FB5A00226A67 /* PulseAnimation.swift in Sources */,
 				8F2A6BAF2F751B4E005DB28E /* AVAudioSessionExtensions.swift in Sources */,
 				8F207FC62F9A1FC200F3E76F /* LanguageMock.swift in Sources */,
+				8F207FE82F9B827A00F3E76F /* MenuViewModel.swift in Sources */,
 				8F9C0AB82F667E7600226A67 /* Files.swift in Sources */,
 				8F903E542F6D4CCD004DA18E /* CameraDataDi.swift in Sources */,
 				8F903E742F726308004DA18E /* ImagePickerRepositoryProtocol.swift in Sources */,
 				8F903E552F6D4CCD004DA18E /* CameraViewModel.swift in Sources */,
 				8F903E562F6D4CCD004DA18E /* CameraDi.swift in Sources */,
+				8F207FEB2F9B82B700F3E76F /* MenuDataDi.swift in Sources */,
 				8F2A6BAA2F743CE4005DB28E /* VNTextRecognizerRepository.swift in Sources */,
 				8F903E572F6D4CCD004DA18E /* MockCameraViewModel.swift in Sources */,
 				8F903E582F6D4CCD004DA18E /* CameraInteractor.swift in Sources */,
@@ -1310,6 +1421,7 @@
 				8F903E592F6D4CCD004DA18E /* CameraViewModelProtocol.swift in Sources */,
 				8F903E5A2F6D4CCD004DA18E /* CameraDomainDi.swift in Sources */,
 				8F903E5B2F6D4CCD004DA18E /* CameraInteractorProtocol.swift in Sources */,
+				8F207FE62F9B62B500F3E76F /* IconTextButton.swift in Sources */,
 				8F207F9F2F9A176A00F3E76F /* AppViewModel.swift in Sources */,
 				8F903E5C2F6D4CCD004DA18E /* CameraView.swift in Sources */,
 				8F207FCA2F9A496600F3E76F /* LanguagesViewModel.swift in Sources */,
@@ -1326,8 +1438,10 @@
 				8F207F732F99254B00F3E76F /* VisibleModifier.swift in Sources */,
 				8F6932232F586E5600C0432E /* MockMainViewModel.swift in Sources */,
 				8F6932132F58262000C0432E /* FilledIconButton.swift in Sources */,
+				8F207FED2F9B82C100F3E76F /* MenuDomainDi.swift in Sources */,
 				8F07DD732F5ECC3500A44ED7 /* SpeechSynthesizerRepositoryProtocol.swift in Sources */,
 				8F207FCC2F9A497A00F3E76F /* LanguagesViewModelProtocol.swift in Sources */,
+				8F207FE92F9B827E00F3E76F /* MenuViewModelProtocol.swift in Sources */,
 				8F903E852F72A5D8004DA18E /* BoundingBox.swift in Sources */,
 				8F8CDBC12F571965006AB03A /* MainViewModel.swift in Sources */,
 				8F3CE6A72F67F8F600A221C8 /* FavoritesViewModel.swift in Sources */,
@@ -1353,6 +1467,7 @@
 				8F903E7F2F7277B5004DA18E /* PhotoPicker.swift in Sources */,
 				8FDFC5832F98E94200845FE5 /* AppRouterProtocol.swift in Sources */,
 				8F903E3C2F6D3B84004DA18E /* MainUIDi.swift in Sources */,
+				8F207FF02F9B82D300F3E76F /* MenuInteractor.swift in Sources */,
 				8F6932272F58AAF500C0432E /* TabBar.swift in Sources */,
 				8F07DD792F5ED04800A44ED7 /* CommonVoiceInteractor.swift in Sources */,
 				8F903E722F7262E0004DA18E /* TextRecognizerRepositoryProtocol.swift in Sources */,
@@ -1362,6 +1477,8 @@
 				8F9C0A8E2F63E61000226A67 /* BundleSoundRepository.swift in Sources */,
 				8F903E362F6D3A26004DA18E /* CommonDomainDi.swift in Sources */,
 				8F8CDBB52F57129B006AB03A /* CardBackground.swift in Sources */,
+				8F207FD02F9A780400F3E76F /* SideDrawer.swift in Sources */,
+				8F207FEF2F9B82CC00F3E76F /* MenuInteractorProtocol.swift in Sources */,
 				8F07DD502F5AF69600A44ED7 /* LanguagesRepositoryProtocol.swift in Sources */,
 				8F07DD712F5EB7E900A44ED7 /* AVFoundationSpeechSynthesizerRepository.swift in Sources */,
 				8F3CE6C32F69158600A221C8 /* FavoritesInteractor.swift in Sources */,
@@ -1383,6 +1500,7 @@
 				8F903E762F7264BD004DA18E /* AVCameraRepository.swift in Sources */,
 				8F9C0ABA2F669E3000226A67 /* ImageFromFile.swift in Sources */,
 				8F6932212F585C6300C0432E /* TranslateCardView.swift in Sources */,
+				8F207FEA2F9B828400F3E76F /* MockMenuViewModel.swift in Sources */,
 				8F3A86E82F56FAFC000CBF7A /* AppView.swift in Sources */,
 				8F07DD492F5AE29100A44ED7 /* TranlationRepositoryProtocol.swift in Sources */,
 				8F8CDBB72F5714A5006AB03A /* Shadow.swift in Sources */,

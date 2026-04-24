@@ -13,6 +13,8 @@ typealias Tabbable = Hashable & Equatable
 protocol RouterProtocol: Observable {
     associatedtype Routing: Routable
     
+    var presentingDrawer: Binding<Routing?> { get }
+    var isPresentingDrawer: Binding<Bool> { get }
     var presentingSheet: Binding<Routing?> { get }
     var isPresentingSheet: Binding<Bool> { get }
     var path: Binding<[Routing]> { get }
@@ -36,6 +38,7 @@ protocol TabberProtocol: Observable {
 @Observable
 class Router<Routing: Routable>: RouterProtocol {
      struct State {
+        var presentingDrawer: (Routing)? = nil
         var presentingSheet: (Routing)? = nil
         var isPresented: Binding<Bool>?
         var path: [Routing] = []
@@ -69,8 +72,16 @@ extension Router {
         state.presentingSheet = routing
     }
     
+    func presentDrawer(_ routing: Routing) {
+        withAnimation {
+            state.presentingDrawer = routing
+        }
+    }
+    
     func dismiss() {
-        if state.presentingSheet != nil {
+        if state.presentingDrawer != nil {
+            state.presentingDrawer = nil
+        } else if state.presentingSheet != nil {
             state.presentingSheet = nil
         } else if state.isPresented != nil {
             state.isPresented?.wrappedValue = false
@@ -89,6 +100,15 @@ extension Router {
     var path: Binding<[Routing]> {
         binding(keyPath: \.path)
     }
+    
+    var presentingDrawer: Binding<Routing?> {
+        binding(keyPath: \.presentingDrawer)
+    }
+    
+    var isPresentingDrawer: Binding<Bool> {
+        boolBinding(keyPath: \.presentingDrawer)
+    }
+    
     var presentingSheet: Binding<Routing?> {
         binding(keyPath: \.presentingSheet)
     }
@@ -139,6 +159,9 @@ extension View {
     
     func router<Routing: Routable, Router: RouterProtocol>(_ router: Router) -> some View where Routing == Router.Routing {
         self
+            .sideDrawer(item: router.presentingDrawer) { route in
+                router.modal(routing: route, rootPresented: router.isPresentingDrawer)
+            }
             .navigationDestination(for: Routing.self) { route in
                 router.navigation(routing: route)
             }

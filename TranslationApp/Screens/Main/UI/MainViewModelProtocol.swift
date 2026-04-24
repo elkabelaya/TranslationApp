@@ -24,5 +24,6 @@ protocol MainViewModelProtocol: LanguagesViewModelProtocol {
     func onToFavoriteClick ()
     func onToCopyClick ()
     func onToShareClick ()
+    func onMenuClick ()
     
 }

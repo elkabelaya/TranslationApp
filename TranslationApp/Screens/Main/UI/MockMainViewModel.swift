@@ -11,6 +11,8 @@ import SwiftUI
 
 @Observable
 final class MockMainViewModel: MockLanguagesViewModel, MainViewModelProtocol {
+
+    
     
     var toast: ToastModel? 
     
@@ -43,6 +45,9 @@ final class MockMainViewModel: MockLanguagesViewModel, MainViewModelProtocol {
     
     
     func onSpeakerClick() {
+    }
+    
+    func onMenuClick() {
     }
 
     var fromText: String

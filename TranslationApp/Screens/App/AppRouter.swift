@@ -14,6 +14,10 @@ enum AppRoutes: Routable {
     case lngList(type: LanguageType)
     case share(text: String)
     case camera
+    case menu
+    case rate
+    case mail
+    case feedback
 }
 
 enum AppTabs: Tabbable {
@@ -83,6 +87,25 @@ extension AppRouter {
     func showFavorite() {
         changeTab(.favourite)
     }
+    
+    func showMenu() {
+        presentDrawer(.menu)
+    }
+    
+    func showRate() {
+        
+    }
+    
+    func showPolicy() {
+        
+    }
+    
+    
+    
+    func showFeedback() {
+        
+    }
+    
 }
 
 extension AppRouter {
@@ -95,6 +118,14 @@ extension AppRouter {
             CameraView(viewModel: serviceLocator.resolve()!)
         case .share(text: let text):
             ActivityViewController(activityItems: [text])
+        case .menu:
+            MenuView(viewModel: serviceLocator.resolve()!)
+        case .rate:
+            EmptyView()
+        case .mail:
+            EmptyView()
+        case .feedback:
+            EmptyView()
         }
     }
     

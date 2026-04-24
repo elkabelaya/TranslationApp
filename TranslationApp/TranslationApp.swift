@@ -40,6 +40,7 @@ extension ServiceLocator {
         try? diMain()
         try? diCamera()
         try? diLanguagesList()
+        try? diMenu()
     }
 }
 

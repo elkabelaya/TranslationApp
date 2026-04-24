@@ -49,7 +49,10 @@ struct MainView: View {
         .padding(AppDimens.Paddings.l.rawValue)
         .toolbar(title: .Main.title,
                  leading: [
-                    ToolBarButton(item: .icon(.icMenu), action: {})
+                    ToolBarButton(
+                        item: .icon(.icMenu),
+                        action: viewModel.onMenuClick
+                    )
                  ]
         )
         .toast(model: $viewModel.toast)        
